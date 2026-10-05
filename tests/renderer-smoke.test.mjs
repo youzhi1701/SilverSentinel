@@ -106,3 +106,11 @@ test('detail editor uses one persisted scale model without compounding inline fo
   assert.match(styles, /\.nova-market \.chart-panel>\* \{zoom:var\(--panel-scale,1\)\}/);
 });
 
+test('display identity migration preserves legacy layouts without creating unlimited backups', () => {
+  assert.match(renderer, /function backupDisplayLayout\(/);
+  assert.match(renderer, /display-layout-backup:\$\{scope\}:v\$\{schema\}/);
+  assert.match(renderer, /const legacy=localStorage\.getItem\('display-layout'\)/);
+  assert.match(renderer, /displayLayout=migrateDisplayLayout\(parsed\)/);
+  assert.doesNotMatch(renderer, /display-layout-backup:\$\{Date\.now\(\)\}/);
+});
+
