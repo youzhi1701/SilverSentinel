@@ -6,7 +6,7 @@ import { METALS,OFFICIAL_PERIODS,encode,decode,mapQuote,mapHistoricalQuotes,mapI
 import { aggregateCandles } from './candles.mjs';
 export class Feed extends EventEmitter {
  constructor(socketFactory=(url,options)=>new WebSocket(url,options)){super();this.socketFactory=socketFactory;this.lastSource=new Map();this.stopped=true;this.metadata=new Map();this.pending=new Map();this.attempt=0;this.lastMessage=0;this.socket=null;this.retry=null;this.seq=0;this.lastPrices=new Map();this.state={status:'stopped',message:'尚未开始',market:'市场状态待确认',lastMessage:0,session:null};this.quotes=METALS.map(([code,name])=>({code,name,bid:null,ask:null,bidTime:0,askTime:0,precision:2,available:false}));}
- publish(status,message){Object.assign(this.state,{status,message,lastMessage:this.lastMessage});this.emit('status',this.snapshot())}
+ publish(status,message){Object.assign(this.state,{status,message,lastMessage:this.lastMessage});if(this.listenerCount('status'))this.emit('status',this.snapshot())}
  snapshot(){return {...this.state,lastMessage:this.lastMessage,quotes:this.quotes.map(q=>({...q}))}}
  start(){if(!this.stopped)return;this.stopped=false;this.connect()}
  send(msgid,request={},json){if(this.socket?.readyState!==WebSocket.OPEN)throw Error('行情连接尚未就绪');const current=this.seq++;this.socket.send(encode({msgid,seq:current,request,...(json?{jsonReq:JSON.stringify(json)}:{})}));return current}
@@ -22,9 +22,9 @@ export class Feed extends EventEmitter {
    for(const r of msg.response||[]){if(r.tradeStatus&&((r.tradeStatus.codes||[]).includes('RTJ')||msg.msgid===28)){const v=r.tradeStatus.tradeStatus;this.state.market=v===99?'已闭盘':v===40?'暂停交易':[10,20,27,30].includes(v)?'开盘中':'市场状态待确认'}for(const q of r.quotation||[]){const item=mapQuote(q,this.metadata);if(!item)continue;const sourceKey=item.code+'/'+item.side;const rawStamp=Number(q.quoteTime);const stamp=Number(item.sourceTime)||((Number.isFinite(rawStamp)&&rawStamp>0)?rawStamp:0);if(stamp>0&&stamp<(this.lastSource.get(sourceKey)||0))continue;if(stamp>0)this.lastSource.set(sourceKey,stamp);const row=this.quotes.find(r=>r.code===item.code);const old=row[item.side];const key=`${item.code}/${item.side}`;row[item.side]=item.price;row[item.side+'Current']=true;row[item.side+'Time']=Date.now();row[item.side+'SourceTime']=item.sourceTime;for(const field of ['open','high','low','preClose','updown','updownRate'])if(item[field]!=null)row[item.side+field[0].toUpperCase()+field.slice(1)]=item[field];row.precision=item.precision;row.available=true;
     // Record the first observation of every connection, then actual changes only.
     if(!this.lastPrices.has(key)||old!==item.price){this.lastPrices.set(key,item.price);this.emit('quote',{...item,time:Date.now(),session:this.state.session,id:randomUUID()})}
-   }}this.emit('status',this.snapshot());
+   }}if(this.listenerCount('status'))this.emit('status',this.snapshot());
   }catch{this.publish('error','报价格式发生变化，稍后重连');ws.terminate()}});
-  ws.on('error',()=>this.publish('reconnecting','行情连接失败，正在重试'));
+  ws.on('error',()=>{this.publish('reconnecting','行情连接失败，正在重试');try{ws.terminate()}catch{}});
   ws.on('close',()=>{clearInterval(timer);if(ws!==this.socket)return;for(const item of this.pending.values()){clearTimeout(item.timer);item.reject(Error('行情连接已中断'))}this.pending.clear();this.quotes.forEach(q=>{q.available=false;q.bidCurrent=false;q.askCurrent=false});if(this.stopped)return;const delay=Math.min(60000,2000*2**Math.min(this.attempt++,5));this.publish('reconnecting',`连接中断，${Math.round(delay/1000)} 秒后重试`);this.retry=setTimeout(()=>this.connect(),delay)});
  }
  reconnect(){if(this.stopped){this.start();return}if(this.socket?.readyState===WebSocket.OPEN||this.socket?.readyState===WebSocket.CONNECTING)this.socket.terminate();else this.connect()}
