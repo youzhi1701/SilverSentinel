@@ -233,19 +233,28 @@ function addOperationLog(module,action,before,after,restoreType=''){const rows=r
 
 const aiSettingsPath = () => path.join(app.getPath('userData'), 'ai-settings.json');
 const defaultAiSettings = () => ({ enabled: false, autoAnalyze: true, autoTimes: ['09:30','15:30'], lastAutoSlot: '', autoSlots: {}, apiKey: '', model: 'deepseek-v4-flash', resultsByMarket: {}, historyByMarket: {}, lastResult: null, lastError: '', lastRunAt: 0 });
-function readAiSettings() {
-  const value = { ...defaultAiSettings(), ...readJson(aiSettingsPath(), defaultAiSettings) };
-  const times = Array.isArray(value.autoTimes) ? value.autoTimes.filter(isValidClockTime) : [];
-  value.autoTimes = times.length === 2 && times[0] !== times[1] ? times.sort() : ['09:30','15:30'];
-  const slots = value.autoSlots && typeof value.autoSlots === 'object' && !Array.isArray(value.autoSlots) ? Object.entries(value.autoSlots) : [];
-  value.autoSlots = Object.fromEntries(slots.sort((a,b)=>String(b[0]).localeCompare(String(a[0]))).slice(0,120));
-  const histories = value.historyByMarket && typeof value.historyByMarket === 'object' && !Array.isArray(value.historyByMarket) ? value.historyByMarket : {};
-  value.historyByMarket = Object.fromEntries(Object.entries(histories).map(([code,rows])=>[code,Array.isArray(rows)?rows.slice(0,50):[]]));
-  return value;
+let aiSettingsCache = null;
+function normalizeAiSettings(value = {}) {
+  const next = { ...defaultAiSettings(), ...(value && typeof value === 'object' ? value : {}) };
+  const times = Array.isArray(next.autoTimes) ? next.autoTimes.filter(isValidClockTime) : [];
+  next.autoTimes = times.length === 2 && times[0] !== times[1] ? times.sort() : ['09:30','15:30'];
+  const slots = next.autoSlots && typeof next.autoSlots === 'object' && !Array.isArray(next.autoSlots) ? Object.entries(next.autoSlots) : [];
+  next.autoSlots = Object.fromEntries(slots.sort((a,b)=>String(b[0]).localeCompare(String(a[0]))).slice(0,120));
+  const histories = next.historyByMarket && typeof next.historyByMarket === 'object' && !Array.isArray(next.historyByMarket) ? next.historyByMarket : {};
+  next.historyByMarket = Object.fromEntries(Object.entries(histories).map(([code,rows])=>[code,Array.isArray(rows)?rows.slice(0,50):[]]));
+  return next;
 }
-const writeAiSettings = value => atomicWrite(aiSettingsPath(), value);
+function getAiSettings() {
+  if (!aiSettingsCache) aiSettingsCache = normalizeAiSettings(readJson(aiSettingsPath(), defaultAiSettings));
+  return aiSettingsCache;
+}
+function readAiSettings() { return cloneJson(getAiSettings()); }
+function writeAiSettings(value) {
+  aiSettingsCache = normalizeAiSettings(cloneJson(value));
+  atomicWrite(aiSettingsPath(), aiSettingsCache);
+}
 function publicAiSettings() {
-  const value = readAiSettings();
+  const value = getAiSettings();
   let apiKey = '', secretError = '';
   try { apiKey = value.apiKey ? decryptSecret(value.apiKey, 'DeepSeek API Key') : ''; } catch (error) { secretError = error.message; }
   return { enabled: !!value.enabled, autoAnalyze: value.autoAnalyze !== false, autoTimes: Array.isArray(value.autoTimes)?value.autoTimes:['09:30','15:30'], autoSlots: value.autoSlots || {}, apiKey: '', hasApiKey: !!apiKey, keyTail: apiKey ? apiKey.slice(-4) : '', model: value.model, resultsByMarket: value.resultsByMarket || {}, historyByMarket: value.historyByMarket || {}, lastResult: value.lastResult || null, lastError: secretError || value.lastError || '', lastRunAt: value.lastRunAt || 0 };
