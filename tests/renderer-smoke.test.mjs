@@ -96,5 +96,6 @@ test('high-frequency market rendering is guarded by stable signatures', () => {
   assert.match(renderer, /lastSessionSignature/);
   assert.match(renderer, /if\(signature===lastSessionSignature\)return/);
   assert.match(renderer, /if\(signature===lastChoiceSignature\)return/);
+  assert.match(renderer, /if\(auxCodes\.join\('\|'\)!==previousAuxCodes\)localStorage\.setItem\('aux-markets'/);
 });
 
