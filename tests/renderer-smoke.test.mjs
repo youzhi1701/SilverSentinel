@@ -125,3 +125,9 @@ test('display detection failure preserves the already loaded layout', () => {
   assert.match(renderer, /显示器信息读取失败 · 保留当前安全布局/);
 });
 
+test('realtime news refresh follows freshness timestamps, including update and delete events', () => {
+  assert.match(renderer, /snapshot\.newsLastUpdate/);
+  assert.match(renderer, /liveNews\.lastUpdate/);
+  assert.doesNotMatch(renderer, /snapshot\.newsCount\)>Number\(liveNews\.count/);
+});
+
