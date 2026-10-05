@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="0x00000010" android:orientation="1" android:tag="layout/pj_layout_market_detail_longpress_kline_0" android:background="@7F060126" android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+  <LinearLayout android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.000000" android:paddingStart="@7F07019B" android:paddingEnd="@7F07019F">
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:text="@7F10011F" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:id="@7F09026F" android:tag="binding_1" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:text="@7F10011A" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:id="@7F090176" android:tag="binding_2" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:text="@7F100121" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:id="@7F0903E4" android:tag="binding_3" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:tag="binding_4" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000050" android:id="@7F090103" android:tag="binding_5" style="@7F110108"/>
+  </LinearLayout>
+  <LinearLayout android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.000000" android:paddingStart="@7F07019B" android:paddingEnd="@7F07019F">
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:text="@7F100117" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:id="@7F0900ED" android:tag="binding_6" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:text="@7F10011E" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:id="@7F09021A" android:tag="binding_7" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:text="@7F10011B" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:id="@7F09028F" android:tag="binding_8" style="@7F110108"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:tag="binding_9" style="@7F110107"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000030" android:id="@7F090088" android:tag="binding_10" style="@7F110108"/>
+  </LinearLayout>
+</LinearLayout>

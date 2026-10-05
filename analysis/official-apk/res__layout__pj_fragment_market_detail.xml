@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:tag="layout/pj_fragment_market_detail_0" android:layout_width="-1" android:layout_height="-1">
+  <include android:id="@7F0901C5" layout="@7F0C00E5"/>
+  <com.angcyo.tablayout.DslTabLayout android:id="@7F0901CA" android:layout_width="0.000000dip" android:layout_height="@7F0702DB" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toLeftOf="@7F0901B7" app:layout_constraintTop_toBottomOf="@7F0901C5" style="@7F110101">
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2" android:text="分时"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2" android:text="两日"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2" android:text="日K"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2" android:text="周K"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2" android:text="月K"/>
+    <LinearLayout android:gravity="0x00000011" android:layout_width="-2" android:layout_height="-2">
+      <com.pjkj.library.common.weight.textview.EmojiCenterTextView android:textColor="@7F060105" android:gravity="0x00000011" android:id="@7F0902FF" android:layout_width="-1" android:layout_height="-1" android:text="分钟" android:lines="1" android:drawablePadding="@7F070210" android:drawableEnd="@7F0D0003" app:autoSizeMaxTextSize="@7F070342" app:autoSizeMinTextSize="@7F07033E" app:autoSizeTextType="1"/>
+    </LinearLayout>
+  </com.angcyo.tablayout.DslTabLayout>
+  <ImageView android:layout_gravity="0x00000011" android:id="@7F0901B7" android:layout_width="-2" android:layout_height="-2" android:src="@7F0D0059" android:paddingStart="@7F0702CE" android:paddingEnd="@7F0701A2" app:layout_constraintBottom_toBottomOf="@7F0901CA" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@7F0901CA"/>
+  <include android:id="@7F0901C9" android:layout_width="@7F07019F" android:layout_height="@7F07019F" app:layout_constraintBottom_toBottomOf="@7F0901CA" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@7F0901CA" layout="@7F0C00E7"/>
+  <include android:id="@7F0901C8" android:layout_width="@7F07019F" android:layout_height="@7F07019F" app:layout_constraintBottom_toBottomOf="@7F0901CA" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="@7F0901CA" layout="@7F0C00E6"/>
+  <View android:id="@7F0901F0" android:background="@7F0600DC" android:layout_width="0.000000dip" android:layout_height="@7F07019D" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@7F0901CA"/>
+  <FrameLayout android:id="@7F09021B" android:layout_width="@7F07019F" android:layout_height="@7F07019F" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toBottomOf="@7F0901F0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

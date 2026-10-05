@@ -1,0 +1,10 @@
+﻿node_modules/
+release/
+release-*/
+qa/
+outputs/
+*.exe
+*.tgz
+.electron-cache/
+.npm-cache/
+.tools/

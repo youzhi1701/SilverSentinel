@@ -1,0 +1,53 @@
+{
+  "packaged": true,
+  "electron": "44.3.0",
+  "status": {
+    "status": "connected",
+    "message": "行情已连接",
+    "market": "已闭盘",
+    "lastMessage": 1789060390325,
+    "session": "b915702c-4844-4ebf-9c5e-d5e324019c4f",
+    "quotes": [
+      {
+        "code": "JZJ_ag",
+        "name": "白银",
+        "bid": 14.541,
+        "ask": 14.641,
+        "bidTime": 1789060390325,
+        "askTime": 1789060390323,
+        "precision": 3,
+        "available": true,
+        "bidCurrent": true,
+        "askCurrent": true,
+        "askSourceTime": "1789060393718",
+        "askOpen": 15.193,
+        "askHigh": 15.318,
+        "askLow": 14.531,
+        "askPreClose": 15.193,
+        "askUpdown": -0.552,
+        "askUpdownRate": -3.633,
+        "bidSourceTime": "1789060393718",
+        "bidOpen": 15.093,
+        "bidHigh": 15.218,
+        "bidLow": 14.431,
+        "bidPreClose": 15.093,
+        "bidUpdown": -0.552,
+        "bidUpdownRate": -3.657
+      }
+    ],
+    "count": 2,
+    "storageError": null
+  },
+  "candles": [
+    {
+      "time": 1789060200000,
+      "open": 14.641,
+      "high": 14.641,
+      "low": 14.639,
+      "close": 14.639,
+      "count": 2,
+      "precision": 3,
+      "session": "b915702c-4844-4ebf-9c5e-d5e324019c4f"
+    }
+  ]
+}

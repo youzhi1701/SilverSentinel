@@ -1,0 +1,13 @@
+{
+  "miniEnabled": false,
+  "miniAlwaysOnTop": true,
+  "miniPosition": "top-right",
+  "rememberMiniPosition": true,
+  "startAtLogin": false,
+  "miniBounds": {
+    "x": 1592,
+    "y": 58,
+    "width": 310,
+    "height": 126
+  }
+}

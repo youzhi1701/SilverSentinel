@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jzj9999.rtgold" platformBuildVersionCode="32" platformBuildVersionName="12" android:versionCode="12" android:versionName="1.1.1" android:compileSdkVersion="32" android:compileSdkVersionCodename="12">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="32"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <permission android:name="com.jzj9999.rtgold.permission.MIPUSH_RECEIVE" android:protectionLevel="0x00000002"/>
+  <uses-permission android:name="com.jzj9999.rtgold.permission.MIPUSH_RECEIVE"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+  <queries>
+    <package android:name="com.tencent.mm"/>
+    <package android:name="com.eg.android.AlipayGphone"/>
+    <intent>
+      <action android:name="com.huawei.hms.core.aidlservice"/>
+    </intent>
+    <intent>
+      <action android:name="com.huawei.hms.core"/>
+    </intent>
+  </queries>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <permission android:name="com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG" android:protectionLevel="0x00000002"/>
+  <permission android:name="com.jzj9999.rtgold.permission.PUSH_PROVIDER" android:protectionLevel="0x00000002"/>
+  <permission android:name="com.jzj9999.rtgold.permission.PUSH_WRITE_PROVIDER" android:protectionLevel="0x00000002"/>
+  <uses-permission android:name="com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG"/>
+  <uses-permission android:name="com.jzj9999.rtgold.permission.PUSH_PROVIDER"/>
+  <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.READ_SETTINGS"/>
+  <uses-permission android:name="android.permission.GET_TASKS"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+  <application android:theme="@7F11020F" android:label="@7F100095" android:icon="@7F0D0001" android:name="com.stub.StubApp" android:allowBackup="false" android:largeHeap="true" android:supportsRtl="false" android:fullBackupContent="@7F130000" android:usesCleartextTraffic="true" android:networkSecurityConfig="@7F130004" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true" android:dataExtractionRules="@7F130001">
+    <activity android:label="@7F100102" android:name="com.jzj9999.rtgold.ui.market.etf.EtfReportActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100128" android:name="com.jzj9999.rtgold.ui.market.tick.MarketTickActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F1000FD" android:name="com.jzj9999.rtgold.ui.market.detail.setting.CodeParamsSettingInfoActivity" android:exported="false" android:launchMode="1" android:screenOrientation="3" android:configChanges="0x00000400" android:windowSoftInputMode="0x00000002"/>
+    <activity android:label="@7F1000FD" android:name="com.jzj9999.rtgold.ui.market.detail.setting.CodeParamsSettingActivity" android:exported="false" android:launchMode="1" android:screenOrientation="3" android:configChanges="0x00000400"/>
+    <activity android:label="@7F100101" android:name="com.jzj9999.rtgold.ui.market.warning.EarlyWarningListActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:theme="@7F110212" android:label="合约详情" android:name="com.jzj9999.rtgold.ui.market.detail.MarketDetailActivity" android:exported="false"/>
+    <activity android:label="@7F100100" android:name="com.jzj9999.rtgold.ui.search.CodeSearchActivity" android:exported="false" android:launchMode="1" android:configChanges="0x00000400" android:windowSoftInputMode="0x00000022"/>
+    <activity android:label="@7F100158" android:name="com.jzj9999.rtgold.ui.login.SettingPasswordActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F1000FA" android:name="com.jzj9999.rtgold.ui.login.AccountLoginActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F1000FB" android:name="com.jzj9999.rtgold.ui.login.AuthCodeLoginActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F10013F" android:name="com.jzj9999.rtgold.ui.personal.MeActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100153" android:name="com.jzj9999.rtgold.ui.personal.privacy.PrivacyListActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100148" android:name="com.jzj9999.rtgold.ui.personal.PersonalCenterActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100157" android:name="com.jzj9999.rtgold.ui.personal.SettingNicknameActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100164" android:name="com.jzj9999.rtgold.ui.personal.UnregisterActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F1000F4" android:name="com.jzj9999.rtgold.ui.personal.AboutActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F10013C" android:name="com.jzj9999.rtgold.ui.personal.SettingActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100160" android:name="com.jzj9999.rtgold.ui.personal.ThemeActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100154" android:name="com.jzj9999.rtgold.ui.personal.privacy.PrivacyPermissionActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:label="@7F100127" android:name="com.jzj9999.rtgold.ui.optional.MarketOptionalEditActivity" android:exported="false" android:launchMode="1"/>
+    <activity android:theme="@7F110211" android:label="@7F100095" android:name="com.jzj9999.rtgold.ui.splash.SplashActivity" android:exported="true" android:screenOrientation="1">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity android:label="@7F100095" android:name="com.jzj9999.rtgold.ui.MainActivity" android:exported="false" android:launchMode="2" android:screenOrientation="1" android:configChanges="0x000004A0" android:windowSoftInputMode="0x00000012" android:hardwareAccelerated="true"/>
+    <activity android:label="@7F100095" android:name="com.jzj9999.rtgold.ui.common.web.WebActivity" android:exported="true" android:configChanges="0x000004A0" android:windowSoftInputMode="0x00000022" android:hardwareAccelerated="true" android:parentActivityName="com.jzj9999.rtgold.ui.MainActivity"/>
+    <activity android:name="com.jzj9999.rtgold.ui.common.TxtActivity" android:exported="false" android:launchMode="1" android:configChanges="0x00000400"/>
+    <activity android:theme="@7F110210" android:name="com.jzj9999.rtgold.ui.common.notification.PushHandlerActivity" android:exported="true" android:launchMode="1" android:configChanges="0x00000400">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:scheme="androidpjrtj" android:host="nav" android:path="/navurl"/>
+      </intent-filter>
+    </activity>
+    <meta-data android:name="design_width_in_dp" android:value="375"/>
+    <meta-data android:name="design_height_in_dp" android:value="667"/>
+    <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+    <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.jzj9999.rtgold.fileprovider" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F130002"/>
+    </provider>
+    <meta-data android:name="privacy_switcher" android:value="true"/>
+    <service android:name="com.jzj9999.rtgold.service.PushMsgService" android:exported="true">
+      <intent-filter>
+        <action android:name="com.jzj9999.rtgold.push.action.MESSAGE_RECEIVED"/>
+        <action android:name="com.jzj9999.rtgold.push.action.REGISTRATION_ID"/>
+        <category android:name="com.jzj9999.rtgold"/>
+      </intent-filter>
+    </service>
+    <service android:label="NotificationService" android:name="com.alipay.pushsdk.push.NotificationService" android:enabled="true" android:exported="false" android:process=":push">
+      <intent-filter>
+        <action android:name="com.jzj9999.rtgold.push.action.START_PUSHSERVICE"/>
+      </intent-filter>
+    </service>
+    <receiver android:name="com.alipay.pushsdk.BroadcastActionReceiver" android:enabled="true" android:exported="true" android:process=":push">
+      <intent-filter android:priority="2147483647">
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+        <action android:name="android.intent.action.USER_PRESENT"/>
+        <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.mobile.auth.gatewayauth.LoginAuthActivity" android:exported="false" android:launchMode="1" android:configChanges="0x000004A0"/>
+    <activity android:theme="@7F110315" android:name="com.mobile.auth.gatewayauth.PrivacyDialogActivity" android:exported="false" android:launchMode="1" android:screenOrientation="3" android:configChanges="0x000004A0"/>
+    <activity android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity" android:exported="false" android:launchMode="1" android:screenOrientation="3" android:configChanges="0x000004A0"/>
+    <receiver android:name="com.alipay.pushsdk.thirdparty.vivo.PushMessageReceiver" android:exported="true"/>
+    <meta-data android:name="android.notch_support" android:value="true"/>
+    <activity android:theme="@android:01030010" android:name="com.lxj.xpopup.util.XPermission$PermissionActivity"/>
+    <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+    <receiver android:name="com.huawei.hms.support.api.push.PushMsgReceiver" android:permission="com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG" android:exported="true" android:directBootAware="true">
+      <intent-filter>
+        <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY"/>
+        <action android:name="com.huawei.intent.action.PUSH"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name="com.huawei.hms.support.api.push.PushReceiver" android:permission="com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG" android:exported="true" android:directBootAware="true">
+      <intent-filter>
+        <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+        <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+      </intent-filter>
+    </receiver>
+    <service android:name="com.huawei.hms.support.api.push.service.HmsMsgService" android:enabled="true" android:exported="true" android:process=":pushservice" android:directBootAware="true">
+      <intent-filter>
+        <action android:name="com.huawei.push.msg.NOTIFY_MSG"/>
+        <action android:name="com.huawei.push.msg.PASSBY_MSG"/>
+      </intent-filter>
+    </service>
+    <provider android:name="com.huawei.hms.support.api.push.PushProvider" android:readPermission="com.jzj9999.rtgold.permission.PUSH_PROVIDER" android:writePermission="com.jzj9999.rtgold.permission.PUSH_WRITE_PROVIDER" android:exported="true" android:authorities="com.jzj9999.rtgold.huawei.push.provider"/>
+    <meta-data android:name="com.huawei.hms.client.service.name:push" android:value="push:6.7.0.300"/>
+    <meta-data android:name="com.huawei.hms.min_api_level:push:push" android:value="1"/>
+    <activity android:name="com.huawei.hms.support.api.push.TransActivity" android:exported="false"/>
+    <service android:label="dexopt" android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService" android:process=":dexopt"/>
+    <provider android:name="me.jessyan.autosize.InitProvider" android:exported="false" android:multiprocess="true" android:authorities="com.jzj9999.rtgold.autosize-init-provider"/>
+    <activity android:theme="@7F110000" android:name="com.blankj.utilcode.util.UtilsTransActivity4MainProcess" android:configChanges="0x000004A0" android:windowSoftInputMode="0x00000003"/>
+    <activity android:theme="@7F110000" android:name="com.blankj.utilcode.util.UtilsTransActivity" android:multiprocess="true" android:configChanges="0x000004A0" android:windowSoftInputMode="0x00000003"/>
+    <provider android:name="com.blankj.utilcode.util.UtilsFileProvider" android:exported="false" android:authorities="com.jzj9999.rtgold.utilcode.fileprovider" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@7F13000A"/>
+    </provider>
+    <service android:name="com.blankj.utilcode.util.MessengerUtils$ServerService" android:exported="false">
+      <intent-filter>
+        <action android:name="com.jzj9999.rtgold.messenger"/>
+      </intent-filter>
+    </service>
+    <provider android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer" android:exported="false" android:multiprocess="true" android:authorities="com.jzj9999.rtgold.lifecycle-process"/>
+    <provider android:name="com.huawei.hms.aaid.InitProvider" android:exported="false" android:authorities="com.jzj9999.rtgold.aaidinitprovider" android:initOrder="500"/>
+    <meta-data android:name="com.huawei.hms.client.service.name:opendevice" android:value="opendevice:6.7.0.300"/>
+    <meta-data android:name="com.huawei.hms.min_api_level:opendevice:push" android:value="1"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInlite1" android:enabled="true" android:exported="false" android:process=":lite1"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInlite2" android:enabled="true" android:exported="false" android:process=":lite2"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInlite3" android:enabled="true" android:exported="false" android:process=":lite3"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInlite4" android:enabled="true" android:exported="false" android:process=":lite4"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInlite5" android:enabled="true" android:exported="false" android:process=":lite5"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInMainProcess" android:enabled="true" android:exported="false"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInPushProcess" android:enabled="true" android:exported="false" android:process=":push"/>
+    <service android:name="com.alipay.mobile.common.logging.process.LogServiceInToolsProcess" android:enabled="true" android:exported="false" android:process=":tools"/>
+    <meta-data android:name="com.alipay.android.phone.mobilesdk.tianyanadapter.com_alipay_android_phone_mobilesdk_tianyanadapter_FrameworkMetaInfo" android:value="v1.mpaas.meta.info.framework"/>
+    <receiver android:name="com.alipay.mobile.logmonitor.TraceStubReceiver" android:enabled="true" android:exported="false">
+      <intent-filter>
+        <action android:name="monitor.action.dump.traceview"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="monitor.action.dump.stacktracer"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="monitor.action.MONITOR_POWER"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name="com.alipay.mobile.logmonitor.ClientMonitorExtReceiver" android:enabled="false" android:exported="false">
+      <intent-filter>
+        <action android:name="monitor.ext.action.SYNC_MDAP_LOG"/>
+      </intent-filter>
+    </receiver>
+    <service android:name="com.alipay.android.phone.mobilesdk.apm.service.APMInnerService" android:enabled="true" android:exported="false"/>
+    <service android:name="com.alipay.mobile.logmonitor.ClientMonitorService" android:enabled="true" android:exported="false" android:process=":push"/>
+    <meta-data android:name="com.mpaas.mas.adapter.com_mpaas_mas_adapter_FrameworkMetaInfo" android:value="v1.mpaas.meta.info.framework"/>
+    <activity android:name="com.alipay.mobile.core.loading.impl.LoadingPage"/>
+    <meta-data android:name="v1.mpaas.meta.info.router" android:value="true"/>
+    <activity android:name="com.alipay.mobile.quinox.activity.StubActivity" android:exported="false" android:screenOrientation="1" android:configChanges="0x000000E0" android:windowSoftInputMode="0x00000002">
+      <intent-filter>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <action android:name="android.intent.action.MAIN"/>
+      </intent-filter>
+    </activity>
+    <service android:name="com.alipay.mobile.quinox.classloader.DexOptServiceInToolsProcess" android:enabled="true" android:exported="false" android:process=":tools"/>
+    <service android:name="com.alipay.mobile.quinox.preload.PreloadService" android:exported="false"/>
+    <service android:name="com.alipay.mobile.quinox.preload.MainPldService" android:exported="false"/>
+    <service android:name="com.alipay.mobile.quinox.preload.ExcaliburService" android:exported="false"/>
+    <activity android:name="com.alibaba.wireless.security.open.middletier.fc.ui.ContainerActivity" android:exported="false" android:screenOrientation="1">
+      <intent-filter>
+        <action android:name="com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentResult4323"/>
+        <action android:name="com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentCreate4323"/>
+        <action android:name="com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentLog4323"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+      <meta-data android:name="com.alibaba-inc.check.login.status.resume" android:value="0"/>
+    </activity>
+    <service android:name="com.alipay.mobile.common.fgbg.FgBgMonitorService" android:exported="false"/>
+    <receiver android:name="com.alipay.pushsdk.ui.UserActionReceiver" android:exported="false">
+      <intent-filter>
+        <action android:name="mpaas.push.action.MESSAGE_CLICKED"/>
+        <action android:name="mpaas.push.action.MESSAGE_IGNORED"/>
+      </intent-filter>
+    </receiver>
+    <service android:name="com.alipay.pushsdk.push.AppInfoRecvIntentService" android:exported="false" android:process=":push"/>
+    <activity android:theme="@android:0103000F" android:name="com.alipay.pushsdk.thirdparty.MPaaSNcActivity" android:exported="true">
+      <intent-filter>
+        <action android:name="com.alipay.pushsdk.thirdparty.MPaaSNcActivity"/>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:scheme="mpaasscheme" android:host="com.mpaas.thirdparty.push" android:path="/longlink"/>
+      </intent-filter>
+    </activity>
+    <activity android:theme="@android:01030010" android:name="com.mpaas.push.external.hms5.BridgeActivity" android:exported="false"/>
+    <service android:name="com.mpaas.push.external.hms5.HmsMessagingService" android:exported="false">
+      <intent-filter>
+        <action android:name="com.huawei.push.action.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+    <meta-data android:name="com.huawei.hms.client.service.name:base" android:value="base:6.6.0.300"/>
+    <meta-data android:name="com.huawei.hms.min_api_level:base:hmscore" android:value="1"/>
+    <meta-data android:name="availableLoaded" android:value="yes"/>
+    <activity android:theme="@7F1100E7" android:name="com.huawei.hms.activity.BridgeActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="3" android:configChanges="0x40002F84" android:hardwareAccelerated="true">
+      <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+    </activity>
+    <activity android:name="com.huawei.hms.activity.EnableServiceActivity" android:exported="false" android:configChanges="0x00000DA0"/>
+    <provider android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider" android:exported="false" android:authorities="com.jzj9999.rtgold.AGCInitializeProvider"/>
+    <service android:name="com.huawei.agconnect.core.ServiceDiscovery" android:exported="false"/>
+    <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=107582979"/>
+    <meta-data android:name="mobilegw.appid" android:value="ALIPUB36B61CB081620"/>
+    <meta-data android:name="appkey" android:value="ALIPUB36B61CB081620_ANDROID"/>
+    <meta-data android:name="workspaceId" android:value="default"/>
+    <meta-data android:name="mobilegw.url" android:value="https://mgw.mpaas.cn-hangzhou.aliyuncs.com/mgw.htm"/>
+    <meta-data android:name="mpaasapi" android:value="https://mpaasapi.mpaas.cn-hangzhou.aliyuncs.com/mgw.htm"/>
+    <meta-data android:name="rome.push.gw" android:value="push.mpaas.cn-hangzhou.aliyuncs.com"/>
+    <meta-data android:name="rome.push.port" android:value="443"/>
+    <meta-data android:name="ALIPUSH_APPID" android:value="ALIPUB36B61CB081620-default"/>
+    <meta-data android:name="logging.gateway" android:value="https://mdap.mpaas.cn-hangzhou.aliyuncs.com"/>
+    <meta-data android:name="syncport" android:value="443"/>
+    <meta-data android:name="syncserver" android:value="msync.mpaas.cn-hangzhou.aliyuncs.com"/>
+    <meta-data android:name="setting.logging.encryption.pubkey" android:value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpffOiYcozIfgIiaOPWsmfktv7Sl/9Af3mIgYz7vkTXoGq4iMN+t5BLV6KjddVEI/9oLtAYV8qx7FhFrUoi3smcYfX35ETPUiHi1gLizeXKVSRYhIm2kiDF5lGfDgcS7uJZvmKjbdYy/RphnH+WQvQyeEH+4rjYSkdhIRE2W52BwIDAQAB"/>
+    <meta-data android:name="AppSecret" android:value=""/>
+    <meta-data android:name="mobilegw.rpcVersion" android:value="V2"/>
+    <meta-data android:name="artvc_ws_addr" android:value="wss://mrtc.mpaas.cn-hangzhou.aliyuncs.com/ws"/>
+    <meta-data android:name="v6Base64Code" android:value="/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAADAAMDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxHxmKbQv51mZ9aCFoVrizIsjkO5w2EGAAAAAQAAEAUAAB4AAADQAQAAEgAAAHwBAAABAAAAAAAAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAAAAAAAIAAAAAAAAADKLNml3AAAAAAAAAAAAAACpcVoV0tZzERLasy70PZmcuzOzvLOGjCtkfh7UlzqnQKsBVX3YyI7qokIYl3+yMzrl5veYbYPD0QHipZh1cmdjbngBAwF4dWZ3AwECBgEAEQEBCAFxdHNqb3biGXe64cTnJurc63eReis027WsaNIDwrQCXChUKIUkyp7dMBARMnSY3esVIeeG8PVn7bifYRnfBQViM8pEB9zc7ypk68Sz7WVXU3x7O4wIcbvGB9znFk/D3cKnNxkl8KxAkxMcpqi1tOQ7YIlwVWYhMJMsEoNAM5mMCgES/Zx53mOCokuiHbk5QzT/AkhE7hOlPNxK4XRi3c30tAvN/mspcxhWqAVHA2A+/93fgCP5pjVbGkEQZg3azETtEhkt9m0jokcGRl2aISGOu51BndDMqyT6KYlX/ASAWMM6Xr+ynocUW3qOQGpd22Aq/pS855X9qu8p104yUiQbOh41mLf1QUMIeS0N7k8aEA1Ga8VgSbwn96E1bk+6wpFxFsEOXSE0v9fi/goUZdfoSMyEwSF2zWVROWp94d8dju+Hc8vJM1i/QNkkwBG25VasWgdB3CRFhZ6dU3EkUv1/x4nci3+014tzybKeuti5m8S1QStFQu3tHkx3t7W1UutuBvakEoyySZIXUeLsXo4SLGTiDwvgT3JAvscGD7HftoDrN50X8L1PN/ulviMtGpjesuw3F6qhD/vhYO3QbKLdkeLb5fFlERHC11chtjML9RZWV6NSUfwhY/ca5L+HVHrU/wAAwqAYBgAAAAA="/>
+    <meta-data android:name="shBase64Code" android:value=""/>
+    <meta-data android:name="mpaasConfigLicense" android:value="Qg1/9BpUSP29zk13aNJMOTLTVvTU4rziUTdgY3tsP0t3qgUMsLOb55/xTQ5s+6z60xJrzsCRj3RNjx1eYq/HVoAVOP26wl+1sLcYoXcA3L45o4hU4Bhl+0X4SXCTfh6r04JgGnUGMIJCeCFNYVlXNyogT2vY2OLgZ7pOFiuJyWBTMK/NsirekwTOeIxAoNKie65CEI6GCDCXwQmfP10Q77kIg8sLSgyOvsmmDw2I+qB/I3R9dJJ2msiTIBGW119q196MEy2/7PhHJfixCnDmFwBB/YDV5IQK+JbZRxc9qFxwPOx/2NBR8tJeBhMTXzlJ/8NsI7DuSyfOeSCui3cpKQ=="/>
+    <meta-data android:name="mdc" android:value="https://mdc.mpaas.cn-hangzhou.aliyuncs.com"/>
+    <meta-data android:name="mpaasConfigEnv" android:value="ONEX_CLOUD"/>
+    <meta-data android:name="mpaasConfigVersion" android:value="V_1.0"/>
+    <meta-data android:name="absBase64Code" android:value="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"/>
+    <meta-data android:name="mpaasConfigPluginExpired" android:value=""/>
+  </application>
+</manifest>

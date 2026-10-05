@@ -1,0 +1,572 @@
+{
+  "kline": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "Java_cn_jadegold_utils_NDKUtil_compileKlineDataSource"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "Java_cn_jadegold_utils_NDKUtil_compileKlineDataSource"
+    },
+    {
+      "file": "res/layout-land/pj_fragment_market_detail_index_k.xml",
+      "text": "$$cn.jadegold.tbchart.TBChartKLineView"
+    },
+    {
+      "file": "res/layout-land/pj_layout_market_detail_longpress_kline.xml",
+      "text": "55layout-land/pj_layout_market_detail_longpress_kline_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_k.xml",
+      "text": "$$cn.jadegold.tbchart.TBChartKLineView"
+    },
+    {
+      "file": "res/layout/pj_layout_market_detail_longpress_kline.xml",
+      "text": "00layout/pj_layout_market_detail_longpress_kline_0"
+    }
+  ],
+  "market": [
+    {
+      "file": "res/layout-land/pj_activity_market_detail.xml",
+      "text": "''layout-land/pj_activity_market_detail_0"
+    },
+    {
+      "file": "res/layout-land/pj_fragment_market_detail.xml",
+      "text": "''layout-land/pj_fragment_market_detail_0"
+    },
+    {
+      "file": "res/layout-land/pj_fragment_market_detail_index_k.xml",
+      "text": "//layout-land/pj_fragment_market_detail_index_k_0"
+    },
+    {
+      "file": "res/layout-land/pj_layout_market_detail_head.xml",
+      "text": "**layout-land/pj_layout_market_detail_head_0"
+    },
+    {
+      "file": "res/layout-land/pj_layout_market_detail_longpress_kline.xml",
+      "text": "55layout-land/pj_layout_market_detail_longpress_kline_0"
+    },
+    {
+      "file": "res/layout/pj_activity_market_detail.xml",
+      "text": "\"\"layout/pj_activity_market_detail_0"
+    },
+    {
+      "file": "res/layout/pj_activity_market_tick.xml",
+      "text": "  layout/pj_activity_market_tick_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_etf_report.xml",
+      "text": "66com.jzj9999.rtgold.ui.market.etf.weight.EtfReportChart"
+    },
+    {
+      "file": "res/layout/pj_fragment_market.xml",
+      "text": "layout/pj_fragment_market_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_category.xml",
+      "text": "$$layout/pj_fragment_market_category_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail.xml",
+      "text": "\"\"layout/pj_fragment_market_detail_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_k.xml",
+      "text": "**layout/pj_fragment_market_detail_index_k_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m.xml",
+      "text": "**layout/pj_fragment_market_detail_index_m_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m2.xml",
+      "text": "++layout/pj_fragment_market_detail_index_m2_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m_right.xml",
+      "text": "00layout/pj_fragment_market_detail_index_m_right_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m_right_rtj.xml",
+      "text": "44layout/pj_fragment_market_detail_index_m_right_rtj_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_optional.xml",
+      "text": "$$layout/pj_fragment_market_optional_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_optional_item.xml",
+      "text": "))layout/pj_fragment_market_optional_item_0"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_rtj_list.xml",
+      "text": "$$layout/pj_fragment_market_rtj_list_0"
+    },
+    {
+      "file": "res/layout/pj_layout_home_etf_report.xml",
+      "text": "66com.jzj9999.rtgold.ui.market.etf.weight.EtfReportChart"
+    },
+    {
+      "file": "res/layout/pj_layout_market_detail_head.xml",
+      "text": "%%layout/pj_layout_market_detail_head_0"
+    },
+    {
+      "file": "res/layout/pj_layout_market_detail_longpress_kline.xml",
+      "text": "00layout/pj_layout_market_detail_longpress_kline_0"
+    },
+    {
+      "file": "res/layout/pj_layout_market_detail_longpress_mline.xml",
+      "text": "00layout/pj_layout_market_detail_longpress_mline_0"
+    },
+    {
+      "file": "res/layout/pj_popup_window_draw_edit.xml",
+      "text": "@@com.jzj9999.rtgold.ui.market.detail.dialog.drawboard.MyDrawBoard"
+    }
+  ],
+  "quote": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "_ZNSt6__ndk111basic_regexIcNS_12regex_traitsIcEEE23__parse_QUOTED_CHAR_EREIPKcEET_S7_S7_"
+    },
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "SingleQuotes"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "_ZNSt6__ndk111basic_regexIcNS_12regex_traitsIcEEE19__parse_QUOTED_CHARIPKcEET_S7_S7_"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "_ZNSt6__ndk111basic_regexIcNS_12regex_traitsIcEEE23__parse_QUOTED_CHAR_EREIPKcEET_S7_S7_"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "SingleQuotes"
+    }
+  ],
+  "realtime": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "realtimeVolume"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "realtimeVolume"
+    }
+  ],
+  "websocket": [
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketbackurl\":\"connect-ws-drcn.hispace.dbankcloud.com\","
+    },
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketurl\":\"connect-ws-drcn.hispace.dbankcloud.cn\""
+    },
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketgw_all\":{"
+    }
+  ],
+  "socket": [
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketbackurl\":\"connect-ws-drcn.hispace.dbankcloud.com\","
+    },
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketurl\":\"connect-ws-drcn.hispace.dbankcloud.cn\""
+    },
+    {
+      "file": "assets/agconnect-services.json",
+      "text": "\"websocketgw_all\":{"
+    }
+  ],
+  "minute": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "_ZNKSt6__ndk18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIcEE"
+    },
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "_ZNKSt6__ndk18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIwEE"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "_ZNKSt6__ndk18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIcEE"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "_ZNKSt6__ndk18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIwEE"
+    }
+  ],
+  "period": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "period"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "period"
+    }
+  ],
+  "chart": [
+    {
+      "file": "res/layout-land/pj_fragment_market_detail_index_k.xml",
+      "text": "$$cn.jadegold.tbchart.TBChartKLineView"
+    },
+    {
+      "file": "res/layout/pj_fragment_etf_report.xml",
+      "text": "66com.jzj9999.rtgold.ui.market.etf.weight.EtfReportChart"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_k.xml",
+      "text": "$$cn.jadegold.tbchart.TBChartKLineView"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m.xml",
+      "text": "''cn.jadegold.tbchart.TBChartMLineAddView"
+    },
+    {
+      "file": "res/layout/pj_fragment_market_detail_index_m2.xml",
+      "text": "((cn.jadegold.tbchart.TBChartTMLineAddView"
+    },
+    {
+      "file": "res/layout/pj_layout_home_etf_report.xml",
+      "text": "66com.jzj9999.rtgold.ui.market.etf.weight.EtfReportChart"
+    }
+  ],
+  "hq": [
+    {
+      "file": "assets/libjiagu.so",
+      "text": "@j^shQ"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": ":HQfi"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": "(HqUB"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": "kHQrY"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": "phq#-n"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": "WhQ(-Y"
+    },
+    {
+      "file": "assets/libjiagu.so",
+      "text": "Hqo) "
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "dhmHqK"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "HQL~c"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "I&42Hq7!7"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "l+^hq"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": ")`yHqB"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "#HQY8"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "7whql/"
+    },
+    {
+      "file": "assets/libjiagu_a64.so",
+      "text": "gqMHQ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "EMHqd"
+    },
+    {
+      "file": "classes.dex",
+      "text": "9ihQw>"
+    },
+    {
+      "file": "classes.dex",
+      "text": ",fhQvZ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "HQ6;cv"
+    },
+    {
+      "file": "classes.dex",
+      "text": "%<Hq "
+    },
+    {
+      "file": "classes.dex",
+      "text": "Hq$Q>"
+    },
+    {
+      "file": "classes.dex",
+      "text": "9hQc."
+    },
+    {
+      "file": "classes.dex",
+      "text": "hq)Ow]r"
+    },
+    {
+      "file": "classes.dex",
+      "text": "sl{2hQ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "IH[5hQ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "bl,Hq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "rHQ2? "
+    },
+    {
+      "file": "classes.dex",
+      "text": "NWk/3hq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "w[7hQVOl"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hQ#DR"
+    },
+    {
+      "file": "classes.dex",
+      "text": "`Hq^}"
+    },
+    {
+      "file": "classes.dex",
+      "text": "*s=$oHq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "yhQ#c"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hqy?u"
+    },
+    {
+      "file": "classes.dex",
+      "text": "2HQ,F"
+    },
+    {
+      "file": "classes.dex",
+      "text": "a\\Hq5i#"
+    },
+    {
+      "file": "classes.dex",
+      "text": "<ehQW"
+    },
+    {
+      "file": "classes.dex",
+      "text": "HQG!N-"
+    },
+    {
+      "file": "classes.dex",
+      "text": "R*_7Hq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "4VThq!"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hQS<B"
+    },
+    {
+      "file": "classes.dex",
+      "text": "qPHhq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "fi_Hq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "1)hQ*"
+    },
+    {
+      "file": "classes.dex",
+      "text": ",\\Hqy*m"
+    },
+    {
+      "file": "classes.dex",
+      "text": "Kd|HQ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "`\"KHQ\\k"
+    },
+    {
+      "file": "classes.dex",
+      "text": "4Nhq[("
+    },
+    {
+      "file": "classes.dex",
+      "text": "UT`@hQ"
+    },
+    {
+      "file": "classes.dex",
+      "text": "+Hq.#"
+    },
+    {
+      "file": "classes.dex",
+      "text": ";hq&T7S{"
+    },
+    {
+      "file": "classes.dex",
+      "text": "0%iHq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "?)HqzG"
+    },
+    {
+      "file": "classes.dex",
+      "text": "B-sHq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hQ/{~hP1"
+    },
+    {
+      "file": "classes.dex",
+      "text": "HgHqA"
+    },
+    {
+      "file": "classes.dex",
+      "text": "=BhQv"
+    },
+    {
+      "file": "classes.dex",
+      "text": "!hqZF"
+    },
+    {
+      "file": "classes.dex",
+      "text": "3<HQd"
+    },
+    {
+      "file": "classes.dex",
+      "text": "HqKBs"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hqfqo"
+    },
+    {
+      "file": "classes.dex",
+      "text": "*HQDc"
+    },
+    {
+      "file": "classes.dex",
+      "text": "/HQ`7"
+    },
+    {
+      "file": "classes.dex",
+      "text": "?HQBkj!3"
+    },
+    {
+      "file": "classes.dex",
+      "text": "HqC[G"
+    },
+    {
+      "file": "classes.dex",
+      "text": "hQeU8U')B"
+    },
+    {
+      "file": "classes.dex",
+      "text": "q14dhqz"
+    },
+    {
+      "file": "classes.dex",
+      "text": "i^jhq"
+    },
+    {
+      "file": "classes.dex",
+      "text": "(\\?hQe"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmain.so",
+      "text": "hq_+z"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletier.so",
+      "text": "%hqg]l"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "ik8qHq8k"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    },
+    {
+      "file": "lib/arm64-v8a/libsgmiddletierso-5.5.53.so",
+      "text": "hQ7*S,"
+    }
+  ],
+  "quotation": [
+    {
+      "file": "lib/arm64-v8a/libinoccompiler.so",
+      "text": "quotation-mark"
+    },
+    {
+      "file": "lib/armeabi-v7a/libinoccompiler.so",
+      "text": "quotation-mark"
+    }
+  ]
+}

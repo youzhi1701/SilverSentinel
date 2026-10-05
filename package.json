@@ -1,0 +1,92 @@
+{
+  "name": "gold-monitor-desktop",
+  "version": "1.2.0",
+  "description": "融通金全品种实时行情、官方K线、实时快讯、AI分析与多条件预警桌面软件",
+  "author": "Local Tools",
+  "private": true,
+  "type": "module",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.mjs",
+    "probe": "node scripts/probe.mjs",
+    "verify:official": "node scripts/verify-official.mjs",
+    "smoke": "electron . --smoke-test --data-dir=qa/smoke-v0.5.0",
+    "pack": "electron-builder --win portable --x64",
+    "pack:dir": "electron-builder --win --x64 --dir",
+    "capture": "node scripts/capture-all.mjs",
+    "capture:mini": "electron . --disable-gpu --data-dir=qa/v04-profile-mini --capture-mini=qa/v04-mini.png",
+    "capture:settings": "electron . --disable-gpu --data-dir=qa/v04-profile-settings --capture=qa/v04-settings.png",
+    "capture:rule": "electron . --disable-gpu --data-dir=qa/v04-profile-rule --capture=qa/v04-rule-dialog.png",
+    "capture:rule-multi": "electron . --disable-gpu --data-dir=qa/v04-profile-rule-multi --capture=qa/v04-rule-multi.png",
+    "capture:mail": "electron . --disable-gpu --data-dir=qa/v04-profile-mail --capture=qa/v04-mail.png",
+    "capture:logs": "electron . --disable-gpu --data-dir=qa/v04-profile-logs --capture=qa/v04-logs.png",
+    "capture:scale": "electron . --disable-gpu --data-dir=qa/v04-profile-scale --capture=qa/v04-scale-85.png",
+    "capture:small": "electron . --disable-gpu --data-dir=qa/v04-profile-small --capture=qa/v04-small-980x700.png",
+    "capture:small100": "electron . --disable-gpu --data-dir=qa/v04-profile-small100 --capture=qa/v04-small100-980x700.png",
+    "capture:mini-compact": "electron . --disable-gpu --data-dir=qa/v04-profile-mini-compact --capture-mini=qa/v04-mini-compact.png",
+    "capture:chart-5s": "electron . --disable-gpu --data-dir=qa/v041-profile-chart-5s --capture=qa/v041-chart-5s.png",
+    "capture:ai-settings": "electron . --disable-gpu --data-dir=qa/v041-profile-ai-settings --capture=qa/v041-ai-settings.png"
+  },
+  "dependencies": {
+    "egoroof-blowfish": "4.0.3",
+    "nodemailer": "10.0.1",
+    "protobufjs": "8.8.0",
+    "sql.js": "1.14.2",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "electron": "44.3.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.goldmonitor.desktop",
+    "productName": "盛世白银预警哨兵",
+    "directories": {
+      "output": "release-1.2.0-floating-rebuild"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json",
+      "!assets/phosphor/Phosphor.svg",
+      "!assets/phosphor/Phosphor.ttf",
+      "!assets/phosphor/Phosphor.woff",
+      "!node_modules/sql.js/dist/sql-asm*",
+      "!node_modules/sql.js/dist/worker*",
+      "!node_modules/sql.js/dist/*debug*",
+      "!node_modules/sql.js/dist/*browser*",
+      "!node_modules/sql.js/dist/*.zip"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/sql.js/dist/sql-wasm.wasm",
+      "src/taskbar-host.ps1"
+    ],
+    "afterPack": "scripts/after-pack.cjs",
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "assets/shengshi-logo.ico",
+      "artifactName": "SilverSentinel-${version}-${arch}-setup.${ext}",
+      "signAndEditExecutable": true,
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "SilverSentinel-${version}-${arch}-portable.exe"
+    },
+    "electronDist": "node_modules/electron/dist"
+  },
+  "allowScripts": {
+    "electron@44.3.0": true
+  }
+}

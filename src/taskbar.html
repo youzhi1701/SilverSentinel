@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'">
+  <title>盛世白银任务栏行情</title>
+  <link rel="stylesheet" href="taskbar.css">
+  <script src="taskbar.js" defer></script>
+</head>
+<body>
+  <button id="ticker" type="button" aria-label="白银实时回购价和销售价">
+    <strong>白银</strong>
+    <span>回购</span><b id="bid">—</b>
+    <span>销售</span><b id="ask">—</b>
+    <i id="state" aria-hidden="true"></i>
+  </button>
+</body>
+</html>

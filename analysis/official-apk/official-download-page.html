@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no"/>
+  <title>融通金APP下载</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <style>
+    body {
+      background: linear-gradient(179deg, #2B2722  0%, #13110F 100%);
+    }
+    .container {
+      max-width: 520px;
+      margin: auto;
+      background-image: url(/web/static/image/download/d-bg@2x.png);
+      background-repeat: repeat-y;
+      background-size: contain;
+      padding-bottom: 120px;
+    }
+
+
+    .download {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+
+      padding-top: 60px;
+      margin-bottom: 116px;
+    }
+
+    .download-logo {
+      width: 108px;
+      height: 108px;
+    }
+
+    .download-name {
+      margin-top: 10px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 45px;
+      letter-spacing: 1px;
+    }
+
+    .download-version {
+      font-size: 16px;
+      font-weight: 400;
+      color: #FFFFFF70;
+      line-height: 20px;
+      margin-bottom: 24px;
+    }
+
+    .download-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 260px;
+      height: 49px;
+      margin: auto;
+      background: linear-gradient(90deg, #F78502 0%, #F9B846 100%);
+      border-radius: 6px;
+
+      font-size: 18px;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 21px;
+    }
+
+    .download-btn img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      width: 85%;
+      margin: auto;
+    }
+
+    .download-images img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .download-footer {
+      width: 190px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+    }
+    .download-footer-logo {
+      width: 56px;
+      height: 56px;
+      margin-right: 13px;
+    }
+
+    .download-footer-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 30px;
+    }
+
+    .download-footer-intro {
+      font-size: 14px;
+      font-weight: 400;
+      color: #FFFFFF70;
+      line-height: 22px;
+    }
+
+    .flag-android,
+    .flag-ios {
+      display: none;
+    }
+
+    .ios .flag-ios {
+      display: inline-block;
+    }
+    .ios .flag-android {
+      display: none !important;
+    }
+
+    .android .flag-android {
+      display: inline-block;
+    }
+    .android .flag-ios {
+      display: none !important;
+    }
+  </style>
+  <style>
+    .guide-mask {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      background: rgba(7, 12, 23, 0.7);
+    }
+
+
+    .step-content {
+      position: relative;
+      height: 219px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      margin-top: 111px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+
+      padding: 30px 48px;
+    }
+
+    .step-content > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .guide-mask:before {
+       content: '';
+       width: 92px;
+       height: 110px;
+       background: url(/web/static/image/download/guide/arrow.png) no-repeat;
+       background-size: cover;
+
+       position: absolute;
+       right: 10px;
+     }
+
+    .step {
+      width: 32px;
+      height: 32px;
+      margin-right: 11px;
+    }
+
+    .step1 {
+      background: url(/web/static/image/download/guide/step1.png) no-repeat;
+      display: block;
+      background-size: cover;
+    }
+
+    .step2 {
+      background: url(/web/static/image/download/guide/step2.png) no-repeat;
+      display: block;
+      background-size: cover;
+    }
+
+    .step3 {
+      background: url(/web/static/image/download/logo@2x.png) no-repeat;
+      display: block;
+      background-size: cover;
+    }
+
+    .guide-mask.show {
+      display: flex;
+    }
+
+    .guide-mask.none {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="download">
+    <img class="download-logo" src="/web/static/image/download/logo@2x.png" alt="">
+    <div class="download-name">融通金</div>
+    <div class="download-version">
+<!--      版本号 2.1.8-->
+    </div>
+
+    <div class="download-btn">
+      <img class="flag-android" src="/web/static/image/download/android@2x.png" alt="">
+      <img class="flag-ios" src="/web/static/image/download/ios@2x.png" alt="">
+      <span class="flag-android">安卓</span>
+      <span class="flag-ios">iOS</span>下载
+    </div>
+  </div>
+
+  <div class="download-images">
+    <img src="/web/static/image/download/img1@2x.png" alt="">
+    <img src="/web/static/image/download/img2@2x.png" alt="">
+    <img src="/web/static/image/download/img3@2x.png" alt="">
+  </div>
+  <div class="download-footer">
+    <img class="download-footer-logo" src="/web/static/image/download/logo@2x.png" alt="">
+    <div>
+      <div class="download-footer-title">融通金</div>
+      <div class="download-footer-intro">一站式服务平台</div>
+    </div>
+  </div>
+
+  <div class="download-btn fixed">
+    <img class="flag-android" src="/web/static/image/download/android@2x.png" alt="">
+    <img class="flag-ios" src="/web/static/image/download/ios@2x.png" alt="">
+    <span class="flag-android">安卓</span>
+    <span class="flag-ios">iOS</span>下载
+  </div>
+</div>
+<div class="guide-mask none">
+  <div class="step-content">
+    <div><span class="step step1"></span>1. 点击右上角</div>
+    <div><span class="step step2"></span>2. 在浏览器中打开</div>
+    <div><span class="step step3"></span>3. 下载融通金APP</div>
+  </div>
+</div>
+<script>
+  function checkPhone() {
+    let self = {};
+    let agent = (navigator.userAgent || navigator.vendor || window.opera);
+    self.isWeiXin = navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1 ? true : false;
+    if (agent != null) {
+      let agentName = agent.toLowerCase();
+      if (/android/i.test(agentName)) {
+        self.isAndroid = true;
+      } else if (/iphone/i.test(agentName)) {
+        self.isIOS = true;
+      } else {
+        self.isAndroid = true;
+      }
+    }
+
+    return self;
+  }
+
+  const {isAndroid = false, isIOS = false, isWeiXin = false} = checkPhone();
+  let downloadUrl = '#'
+
+  function doDownload() {
+    window.location.href = downloadUrl || "#";
+  }
+
+  const appSchemeUrl = '';
+
+  function onCLick() {
+    if (isWeiXin) {
+      // 提示打开浏览器
+      document.querySelector('.guide-mask').className = 'guide-mask show';
+    } else {
+      // 执行跳转
+      // 符合app唤醒规则得才执行跳转
+      if (appSchemeUrl.indexOf('peijinrtj') > 0) {
+        window.location.href = appSchemeUrl;
+        console.log('跳转到App', appSchemeUrl);
+        setTimeout((function () {
+            // console.log('current state: '+ document.hidden);
+            if (document.hidden || document.visibilityState == 'hidden') {
+              // console.log('进入了app, 结束流程');
+              return null;
+            } else {
+              doDownload();
+            }
+          }
+        ), 2000);
+      } else {
+        doDownload();
+      }
+    }
+  }
+
+  window.onload = function () {
+    document.querySelector('body').className = isAndroid ? 'android' : 'ios';
+
+    for(let btn of [...document.querySelectorAll('.download-btn')]) {
+      btn.onclick = onCLick
+    }
+  }
+
+  async function load() {
+    const resp = await fetch(`${localStorage.getItem('Test') ? '/api': ''}/backend/apprelease/latest?appbranch=rtj_${isAndroid ? 'android': 'ios'}_standard_prod`)
+      .then(res => res.json())
+      .catch((error) => ({error}));
+    if (resp.succ && resp.data) {
+      downloadUrl = resp.data.address;
+      if (resp.data.version) {
+        document.querySelector('.download-version').innerText = '版本号' + resp.data.version
+      }
+    }
+  }
+
+  load()
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+URL=file:///C:/Users/YH/Documents/Codex/2026-09-08/wo/outputs/gold-monitor-desktop/audit-2026-09-11/tradingview-xagusd.html
+TITLE=tradingview-xagusd.html

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="1" android:id="@7F0900F4" android:tag="layout/pj_fragment_market_detail_index_m_right_rtj_0" android:background="@7F0800F5" android:layout_width="-1" android:layout_height="-1">
+  <LinearLayout android:orientation="0" android:background="@7F060127" android:layout_width="-1" android:layout_height="@7F070296">
+    <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033F" android:textColor="@7F060116" android:layout_gravity="0x00000010" android:id="@7F09032D" android:layout_width="-2" android:layout_height="-2" android:text="销售价" android:layout_marginStart="@7F0702ED"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F070342" android:gravity="0x00800015" android:id="@7F09032E" android:layout_width="0.000000dip" android:layout_height="-1" android:layout_weight="1.000000" android:layout_marginEnd="@7F0702ED" app:autoSizeMaxTextSize="@7F070342" app:autoSizeMinTextSize="@7F07035C" app:autoSizeTextType="1"/>
+  </LinearLayout>
+  <View android:background="@7F0600DC" android:layout_width="-1" android:layout_height="@7F07019D"/>
+  <com.pjkj.library.common.weight.textview.EmojiCenterTextView android:textSize="@7F07033E" android:textColor="@7F060114" android:gravity="0x00000011" android:id="@7F0900A9" android:layout_width="-1" android:layout_height="@7F070269" android:text="@7F1001B9"/>
+  <View android:background="@7F0600DC" android:layout_width="-1" android:layout_height="@7F07019D"/>
+  <androidx.recyclerview.widget.RecyclerView android:orientation="1" android:id="@7F090310" android:layout_width="-1" android:layout_height="-1" android:overScrollMode="2" android:paddingStart="@7F0702ED" android:paddingEnd="@7F0702ED" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_behavior="@7F100096"/>
+</LinearLayout>

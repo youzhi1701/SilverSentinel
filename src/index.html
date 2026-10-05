@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://flash-scdn.jin10.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>盛世白银 · 预警哨兵</title>
+  <link rel="stylesheet" href="../assets/phosphor/style.css"><link rel="stylesheet" href="v04.css"><script src="renderer.js" defer></script>
+</head>
+<body>
+<section id="startup-screen" class="startup-screen" aria-live="polite">
+  <img src="../assets/shengshi-logo.png" alt="盛世">
+  <h1>盛世白银</h1><p>正在启动行情监控</p>
+  <div class="startup-steps"><span id="startup-settings"><i></i>读取本地设置</span><span id="startup-market"><i></i>连接官方行情</span><span id="startup-news"><i></i>连接实时资讯</span></div>
+</section>
+<div class="app-shell">
+  <header class="titlebar title-drag">
+    <div class="brand no-drag"><img src="../assets/shengshi-logo.png" alt="白银AG"><div><h1>盛世白银 <span>· 预警哨兵</span></h1><small>白银行情监控与智能预警</small></div></div>
+    <nav class="tabs no-drag" aria-label="主要功能">
+      <button class="tab active" data-page="market"><i class="ph ph-chart-line-up"></i><span>行情总览</span></button>
+      <button class="tab" data-page="analysis"><i class="ph ph-brain"></i><span>AI行情分析</span></button>
+      <button class="tab" data-page="alerts"><i class="ph ph-bell-ringing"></i><span>预警规则</span><b id="tab-rule-count">0</b></button>
+      <button class="tab" data-page="notifications"><i class="ph ph-envelope-simple"></i><span>通知中心</span><b id="tab-pending-count">0</b></button>
+      <button class="tab" data-page="settings"><i class="ph ph-gear-six"></i><span>系统设置</span></button>
+    </nav>
+    <button id="display-settings-button" class="display-settings-button no-drag" title="调整页面显示"><i class="ph ph-monitor"></i><span>显示</span></button>
+    <div class="calendar-clock no-drag"><div class="clock-box date-box"><strong id="calendar-date">—</strong><small><span id="calendar-weekday">—</span><span id="calendar-lunar">—</span></small></div><div class="clock-box time-box"><small><span>北京时间</span><span id="calendar-event">—</span></small><time id="beijing-time">—</time></div></div>
+    <div class="global-health no-drag"><span id="connection-dot" class="status-dot waiting"></span><div><strong id="connection">正在连接行情</strong><small>最后有效行情 <time id="updated-at">—</time></small></div><button id="reconnect" class="icon-btn" title="重新连接行情"><i class="ph ph-arrows-clockwise"></i></button></div>
+    <div class="window-actions no-drag"><button id="minimize" aria-label="最小化"><i class="ph ph-minus"></i></button><button id="maximize" aria-label="最大化或还原"><i class="ph ph-square"></i></button><button id="close" aria-label="关闭到后台"><i class="ph ph-x"></i></button></div>
+  </header>
+
+  <main class="pages">
+    <section class="page active nova-market" data-page-panel="market">
+      <div class="command-grid">
+        <aside class="market-rail">
+          <section class="market-selector panel">
+            <header class="rail-head market-head"><div class="market-head-main"><span class="live-beacon"></span><h2 id="primary-name">白银</h2><button id="session-button" class="session-button" type="button"><i id="session-dot"></i><span id="market-pill">状态确认中</span></button><span id="quote-quality" class="market-warning" hidden></span></div><button id="edit-market-layout" class="icon-btn" title="设置主副品种"><i class="ph ph-sliders-horizontal"></i></button></header>
+            <article class="primary-market" data-market-code="JZJ_ag">
+              <div class="quote-grid">
+                <div class="quote-card" data-side="bid"><div class="quote-label"><span>回购</span><b id="bid-change" class="quote-inline-change neutral">—</b></div><div class="price-line"><strong id="bid">—</strong><small>元/克</small></div></div>
+                <div class="quote-card" data-side="ask"><div class="quote-label"><span>销售</span><b id="ask-change" class="quote-inline-change neutral">—</b></div><div class="price-line"><strong id="ask">—</strong><small>元/克</small></div></div>
+              </div><div class="silver-context"><div class="spread-readout"><span>实时价差</span><strong id="silver-spread">—</strong></div><div class="intraday-position"><div><span id="position-low">最低 —</span><b id="position-current">当前 —</b><span id="position-high">最高 —</span></div><div class="position-track"><span class="position-fill"></span><i id="position-marker"></i></div></div></div></article><div id="aux-markets" class="aux-markets"><div class="aux-placeholder">其他行情接入后显示</div><div class="aux-placeholder">其他行情接入后显示</div></div>
+          </section>
+          <section class="panel intelligence-feed">
+            <header class="rail-head"><div><h2>融通金实时资讯</h2><small id="core-news-status">正在连接官方快讯</small></div><button data-open-news-source class="text-btn">资讯与分析 <i class="ph ph-arrow-square-out"></i></button></header>
+            <div id="core-news-list" class="core-news-list"><div class="intel-empty">正在读取融通金官方快讯</div></div>
+          </section>
+        </aside>
+        <div class="market-workspace">
+          <section class="probability-deck panel">
+            <div class="prob-copy"><div class="prob-title-row"><h2><b id="probability-market-name">白银</b> 情景概率</h2><span id="probability-direction" class="direction-badge neutral">等待分析</span><button id="quick-run-ai" class="secondary-btn"><i class="ph ph-sparkle"></i> 更新分析</button></div><p id="probability-summary">概率来自已保存的最近一次 AI 分析，行情变化不会伪造概率。</p><div id="probability-meta" class="probability-meta"><span>等待分析数据</span></div></div>
+            <div id="ai-brief-content" class="market-horizons"><div><span>未来1天</span><strong>—</strong></div><div><span>未来3天</span><strong>—</strong></div><div><span>未来1周</span><strong>—</strong></div><div><span>未来1个月</span><strong>—</strong></div></div>
+          </section>
+          <section class="panel chart-panel nova-chart">
+            <header class="panel-title chart-title"><div><i class="ph ph-chart-candlestick"></i><h2 id="chart-title-text">白银官方K线</h2></div><div id="chart-head-summary" class="chart-head-summary">销售价 · 1分钟 · 实时跟随</div><div class="chart-head-actions"><select id="chart-period" class="period-select" aria-label="K线周期"><option value="5s">5秒</option><option value="15s">15秒</option><option value="30s">30秒</option><option value="1" selected>1分钟</option><option value="5">5分钟</option><option value="15">15分钟</option><option value="30">30分钟</option><option value="60">1小时</option><option value="120">2小时</option><option value="240">4小时</option><option value="day">日K</option><option value="week">周K</option><option value="month">月K</option></select><div class="segmented chart-sides"><button data-chart-side="ask" class="active">销售</button><button data-chart-side="bid">回购</button></div><button id="open-chart" class="secondary-btn"><i class="ph ph-arrow-square-out"></i> 官方行情</button><button id="reload-chart" class="icon-btn" title="刷新K线"><i class="ph ph-arrows-clockwise"></i></button><button id="chart-zoom-out" class="icon-btn" title="放大K线"><i class="ph ph-magnifying-glass-plus"></i></button><button id="chart-reset" class="secondary-btn">最新</button><button id="chart-zoom-in" class="icon-btn" title="缩小K线"><i class="ph ph-magnifying-glass-minus"></i></button></div></header>
+            <div class="chart-body"><div class="chart-stage"><canvas id="kline-canvas"></canvas><div id="chart-empty" class="chart-empty"><i class="ph ph-chart-candlestick"></i><strong>正在读取融通金官方K线</strong><span>读取成功后可拖动查看往期数据</span></div><div id="chart-tooltip" class="chart-tooltip" hidden></div></div><aside class="quote-tape"><header><span>报价明细</span><strong id="tape-side">销售价</strong></header><div id="quote-tape-list" class="quote-tape-list"><div class="tape-empty">等待官方报价</div></div></aside></div>
+            <footer class="chart-footer"><span id="chart-status"><i class="ph ph-circle-notch"></i> 正在读取</span><span id="chart-source-label">北京时间 · 销售价 · 官方历史数据</span></footer>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page scroll-page" data-page-panel="analysis">
+      <div class="page-head"><div><h2>AI行情分析</h2><p>只根据融通金快讯与当前主品种官方行情生成情景观察。</p></div><div class="page-head-actions"><button id="open-ai-settings" class="secondary-btn"><i class="ph ph-gear-six"></i> AI设置</button><button id="run-ai" class="primary-btn"><i class="ph ph-sparkle"></i> 立即分析</button></div></div>
+      <div id="ai-state" class="notice info"><i class="ph ph-info"></i><span>请先在页面下方配置DeepSeek API Key。AI内容仅作市场观察。</span></div>
+      <div id="ai-result" class="analysis-layout">
+        <section class="panel analysis-summary"><h3>当前结论</h3><div class="empty-block">尚无分析结果</div></section>
+        <section class="panel horizon-panel"><h3>不同周期情景</h3><div id="horizon-list" class="horizon-list"><div class="empty-block">完成一次分析后显示</div></div></section>
+        <section class="panel news-panel"><header class="ai-events-head"><h3>AI采用的重要事件</h3><button id="ai-events-toggle" class="secondary-btn" type="button" hidden>展开全部</button></header><div id="news-list" class="news-list"><div class="empty-block">完成一次分析后显示</div></div></section>
+        <section class="panel live-news-panel"><header class="live-news-head"><div><h3>融通金 · 7×24实时快讯</h3><small id="live-news-status">正在连接快讯</small></div><button data-open-news-source class="secondary-btn"><i class="ph ph-arrow-square-out"></i> 查看原始快讯</button></header><div id="live-news-list" class="live-news-list"><div class="empty-block">正在读取最新快讯</div></div></section><section class="panel ai-history-panel"><header><h3>AI历史分析与复盘</h3><small>保留最近50次真实分析</small></header><div id="ai-history-list" class="ai-history-list"><div class="empty-block">完成分析后显示历史记录</div></div></section>
+      </div>
+    </section>
+
+    <section class="page scroll-page" data-page-panel="alerts">
+      <div class="page-head"><div><h2>预警规则</h2><p>所有规则都使用融通金实时回购价或销售价判断。</p></div><button id="add-rule" class="primary-btn"><i class="ph ph-plus"></i> 新建预警规则</button></div>
+      <div class="summary-cards"><article><span>启用规则</span><strong id="rules-enabled">0</strong></article><article><span>等待数据</span><strong id="rules-waiting">0</strong></article><article><span>今日已触发</span><strong id="rules-triggered">0</strong></article><article><span>待发送通知</span><strong id="rules-pending">0</strong></article></div>
+      <section class="panel list-panel"><header><h3>规则列表</h3><div class="filter-tabs"><button class="active" data-rule-filter="all">全部</button><button data-rule-filter="enabled">启用</button><button data-rule-filter="paused">暂停</button></div></header><div id="rule-list" class="rule-list"></div></section>
+    </section>
+
+    <section class="page scroll-page" data-page-panel="notifications">
+      <div class="page-head"><div><h2>通知中心</h2><p>管理发件邮箱、收件人与通知发送记录。</p></div><label class="master-switch"><input id="mail-enabled" type="checkbox"><span></span><b id="mail-running">邮件未启用</b></label></div>
+      <div class="notification-grid">
+        <section class="panel mail-config"><header><h3>发件邮箱</h3><span id="mail-connection" class="status-chip">尚未测试</span></header><div class="form-grid"><label>显示名称<input id="from-name" autocomplete="off"></label><label>发件邮箱<input id="mail-user" type="email" autocomplete="username"></label><label>SMTP服务<input id="mail-host"></label><label>端口<select id="mail-port"><option value="465">465（SSL）</option><option value="587">587（TLS）</option></select></label><label class="wide">邮箱授权码<div class="password-row"><input id="mail-password" type="password" autocomplete="current-password"><button id="toggle-password" type="button" class="icon-btn" title="显示或隐藏"><i class="ph ph-eye-slash"></i></button></div></label></div><div class="actions split"><button id="dialog-test-connection" class="secondary-btn"><i class="ph ph-plugs-connected"></i> 仅测试连接</button><span>测试不会自动保存</span><button id="save-mail" class="primary-btn">保存邮箱设置</button></div></section>
+        <section class="panel recipients-panel"><header><div><h3>收件人</h3><small id="recipient-summary">尚未添加</small></div><button id="add-recipient" class="secondary-btn"><i class="ph ph-user-plus"></i> 添加</button></header><div id="recipient-list" class="recipient-list"></div><button id="send-test" class="wide-btn"><i class="ph ph-paper-plane-tilt"></i> 向已启用收件人发送测试邮件</button></section>
+        
+        <section class="panel history-panel"><header><h3>预警与发送记录</h3><div class="filter-tabs"><button class="active" data-event-filter="all">全部</button><button data-event-filter="pending">待发送</button><button data-event-filter="success">成功</button><button data-event-filter="failed">失败</button></div></header><div id="event-list" class="event-list"></div><div class="actions"><button id="clear-events" class="danger-btn"><i class="ph ph-trash"></i> 清空已完成记录</button></div></section>
+      </div>
+    </section>
+
+    <section class="page scroll-page" data-page-panel="settings">
+      <div class="page-head"><div><h2>系统设置</h2><p>设置窗口、声音、后台运行、开机启动、缩放和本地数据。</p></div><span id="settings-dirty" class="unsaved" hidden>有未保存的修改</span></div>
+      <div class="settings-toolbar"><input id="settings-search" type="search" placeholder="搜索设置，例如：声音、悬浮窗、日志"><span id="settings-summary">常用设置</span></div><nav class="settings-tabs" aria-label="系统设置分类"><button type="button" class="active" data-settings-view="common">常用</button><button type="button" data-settings-view="display">显示与悬浮窗</button><button type="button" data-settings-view="notice">通知与声音</button><button type="button" data-settings-view="logs">日志与恢复</button><button type="button" data-settings-view="data">数据与程序</button></nav>
+      <div class="settings-layout">
+        <section class="panel setting-group" data-settings-group="common display"><h3>主面板</h3><div class="setting-row"><div><strong>页面显示与分辨率适配</strong><span>使用顶部“显示”按钮实时调整比例、字号、密度和各板块占比，修改后自动保存。</span></div><button id="open-display-settings-secondary" class="secondary-btn" type="button"><i class="ph ph-monitor"></i> 打开显示调整</button></div><input id="auto-scale" type="checkbox" hidden><input id="ui-scale" type="range" value="100" hidden><output id="ui-scale-label" hidden>100%</output><div class="setting-row"><div><strong>关闭主窗口后后台运行</strong><span>行情采集和预警仍会继续。</span></div><b class="fixed-state">始终开启</b></div></section>
+        <section class="panel setting-group floating-settings" data-settings-group="display"><div class="floating-head"><div><h3>悬浮行情与任务栏价格</h3><p>普通悬浮窗和任务栏价格条独立运行，切换模式不会改变另一种模式的尺寸和位置。</p></div><span class="mode-badge">实时行情</span></div><div id="mini-preview" class="mini-preview" data-mode="standard"><strong id="mini-preview-name">盛世白银</strong><span>回购</span><b>14.467</b><span>销售</span><b>14.567</b><i></i></div><div class="floating-setting-block"><h4>显示方式</h4><label class="setting-row"><div><strong>显示迷你悬浮行情</strong><span>独立显示回购、销售、最高、最低和行情状态。</span></div><input id="mini-enabled" type="checkbox"></label><label class="setting-row emphasis-row"><div><strong>在Windows任务栏显示实时价格</strong><span>启用后切换为独立任务栏价格条，只显示白银、回购价和销售价。</span></div><input id="mini-taskbar-mode" type="checkbox"></label></div><div class="floating-setting-block"><h4>普通悬浮窗外观</h4><div class="form-grid"><label>显示密度<select id="mini-density"><option value="strip">超窄价格条</option><option value="compact">紧凑</option><option value="standard">标准</option><option value="expanded">扩展</option></select></label><label>窗口标题<input id="mini-custom-text" maxlength="30" placeholder="例如：盛世白银"></label><label>推荐位置<select id="mini-position"><option value="top-right">右上角</option><option value="top-left">左上角</option><option value="bottom-right">右下角</option><option value="bottom-left">左下角</option></select></label><label>不透明度（最低70%）<div class="range-row"><input id="mini-opacity" type="range" min="70" max="100" step="5"><output id="mini-opacity-label">90%</output></div></label></div></div><div class="floating-setting-block"><h4>操作行为</h4><label class="setting-row"><div><strong>始终置顶</strong><span>普通悬浮窗保持在其他程序上方。</span></div><input id="mini-top" type="checkbox"></label><label class="setting-row"><div><strong>鼠标穿透</strong><span>鼠标操作传给下层窗口；可从托盘菜单随时关闭穿透。</span></div><input id="mini-click-through" type="checkbox"></label><label class="setting-row"><div><strong>记住大小和位置</strong><span>仅记录普通悬浮窗，任务栏价格条使用独立固定位置。</span></div><input id="remember-position" type="checkbox"></label></div></section>
+        <section class="panel setting-group" data-settings-group="common notice"><h3>启动与通知</h3><label class="setting-row"><div><strong>开机自动启动</strong><span>登录Windows后在后台启动监控。</span></div><input id="start-login" type="checkbox"></label><label class="setting-row"><div><strong>Windows系统通知</strong><span>规则触发时显示桌面通知。</span></div><input id="desktop-notifications" type="checkbox"></label></section>
+        <section class="panel setting-group sound-panel" data-settings-group="notice"><h3>预警声音设置</h3><label class="setting-row"><div><strong>允许预警提示音</strong><span>只影响规则中明确启用声音的预警；资讯更新不会播放声音。</span></div><input id="sound-enabled" type="checkbox"></label><div class="form-grid"><label>默认提示音<select id="sound-name"><option value="gentle">轻柔提示</option><option value="chime">清晰铃声</option><option value="urgent">紧急提示</option></select></label><label>全局提示音增益（100%为原始电平，300%为3倍电平）<input id="sound-volume" type="range" min="0" max="300" value="180"><output id="sound-volume-label">180%</output></label></div><label class="setting-row"><div><strong>允许语音播报</strong><span>这是所有预警规则的语音总开关。</span></div><input id="speech-enabled" type="checkbox"></label><div class="form-grid"><label>语音播报音量<input id="speech-volume" type="range" min="0" max="100" value="100"><output id="speech-volume-label">100%</output></label></div><div class="button-stack"><button id="test-sound" class="secondary-btn"><i class="ph ph-speaker-high"></i> 试听提示音</button><button id="test-speech" class="secondary-btn"><i class="ph ph-waveform"></i> 试听语音播报</button></div></section><section class="panel setting-group" data-settings-group="logs"><h3>操作记录与还原</h3><p class="fine-print">记录显示、预警和AI设置的修改。还原只恢复该次修改前的配置，不保存密码或密钥。</p><div class="log-toolbar"><select id="log-module-filter"><option value="all">全部模块</option><option value="启动">启动</option><option value="行情">行情</option><option value="K线">K线</option><option value="资讯">资讯</option><option value="AI">AI</option><option value="预警">预警</option><option value="邮件">邮件</option><option value="存储">存储</option><option value="错误">错误</option></select><span>相同高频状态会自动合并，不按每个报价写日志。</span></div><div id="operation-log-list" class="operation-log-list"><span>正在读取操作记录…</span></div><h4>系统运行日志</h4><div id="system-log-list" class="operation-log-list"><span>正在读取系统日志…</span></div></section><section class="panel setting-group" data-settings-group="data"><h3>数据与程序</h3><div class="button-stack"><button id="open-data" class="secondary-btn"><i class="ph ph-folder-open"></i> 打开本地行情数据</button><button id="source" class="secondary-btn"><i class="ph ph-globe"></i> 打开融通金原始行情</button><button id="quit" class="danger-btn"><i class="ph ph-power"></i> 退出并停止监控</button></div><p class="fine-print">融通金行情仅保存当天。规则、邮箱、AI和界面设置会长期保存在本机。</p></section>
+      </div>
+      <div class="sticky-save"><button id="apply-system" class="primary-btn"><i class="ph ph-check"></i> 保存系统设置</button></div>
+    </section>
+  </main>
+
+<div id="display-panel" class="display-panel" hidden>
+  <header id="display-panel-handle"><div><i class="ph ph-monitor"></i><strong>显示与布局中心</strong></div><button id="display-panel-close" aria-label="关闭"><i class="ph ph-x"></i></button></header>
+  <div class="display-panel-body">
+    <div class="display-screen"><b id="display-resolution">正在检测屏幕</b><span id="display-viewport">—</span></div>
+    <nav class="display-panel-tabs" aria-label="布局设置分类">
+      <button type="button" class="active" data-display-view="basic">常用</button>
+      <button type="button" data-display-view="selected">当前板块</button>
+      <button type="button" data-display-view="advanced">高级</button>
+    </nav>
+    <div class="display-view-intro" id="display-view-intro">只保留最常用的屏幕适配选项。需要调整板块时，点击“自由编辑”，再点击页面中的板块。</div>
+    <details class="display-group-basic" open><summary>屏幕与外观</summary>
+      <label>显示方案<select id="display-preset"><option value="smart">智能适配</option><option value="compact">紧凑办公</option><option value="desktop">标准桌面</option><option value="large">高分大字</option><option value="tv">电视远距</option><option value="tv-secondary-1280">电视副屏 1280×720（300%）</option><option value="wide">超宽屏</option><option value="custom">自定义</option></select></label>
+      <label>界面主题<select id="display-theme"><option value="obsidian">曜石橙黑</option><option value="klein">克莱因蓝黄</option><option value="morandi">莫兰迪绿粉</option><option value="tiffany">蒂芙尼蓝驼</option><option value="china">中国红白</option><option value="tea">茶绿松黄</option></select></label>
+      <label>整体缩放 <output id="quick-scale-value">100%</output><input id="display-scale" type="range" min="15" max="250" step="1"></label>
+      <div class="display-zoom-buttons"><button type="button" data-display-scale="85">85%</button><button type="button" data-display-scale="90">90%</button><button type="button" data-display-scale="95">95%</button><button type="button" data-display-scale="100">100%</button><button type="button" data-display-scale="110">110%</button></div>
+      <div class="display-two"><label>文字<select id="display-font"><option value="small">小</option><option value="standard">标准</option><option value="large">大</option><option value="xlarge">特大</option></select></label><label>密度<select id="display-density"><option value="compact">紧凑</option><option value="standard">标准</option><option value="comfortable">舒展</option></select></label></div>
+    </details>
+    <details class="display-group-advanced"><summary>页面区域</summary>
+      <label>顶部栏高度 <output id="display-header-height-value">60px</output><input id="display-header-height" type="range" min="42" max="96" step="1"></label>
+      <label>顶部内容大小 <output id="display-header-content-value">100%</output><input id="display-header-content" type="range" min="60" max="180" step="1"></label>
+      <label>首页左右 <output id="display-main-split-value">40 / 60</output><input id="display-main-split" type="range" min="20" max="65" step="1"></label>
+      <label>行情/资讯 <output id="display-rail-split-value">40 / 60</output><input id="display-rail-split" type="range" min="20" max="80" step="1"></label>
+      <label>板块间距 <output id="display-gap-value">9px</output><input id="display-gap" type="range" min="0" max="32" step="1"></label>
+      <label>页面边距 <output id="display-padding-value">12px</output><input id="display-padding" type="range" min="0" max="48" step="1"></label>
+      <label>AI区域占比 <output id="display-ai-height-value">26%</output><input id="display-ai-height" type="range" min="16" max="52" step="1"></label>
+      <label>AI左右比例 <output id="display-ai-split-value">40 / 60</output><input id="display-ai-split" type="range" min="20" max="75" step="1"></label>
+      <label>K线最小高度 <output id="display-chart-height-value">280px</output><input id="display-chart-height" type="range" min="220" max="600" step="10"></label>
+      <p class="display-help">行情/资讯和AI/K线以比例分配空间；固定值只作为防止内容被压坏的最小高度。</p>
+    </details>
+    <details class="display-group-advanced"><summary>全局文字与内容</summary>
+      <label>主价格字号 <output id="display-quote-font-value">54px</output><input id="display-quote-font" type="range" min="24" max="100" step="1"></label>
+      <label>涨跌数据字号 <output id="display-change-font-value">13px</output><input id="display-change-font" type="range" min="9" max="28" step="1"></label>
+      <label>黄金/铂金价格 <output id="display-aux-price-font-value">28px</output><input id="display-aux-price-font" type="range" min="16" max="54" step="1"></label>
+      <label>资讯标题字号 <output id="display-news-font-value">16px</output><input id="display-news-font" type="range" min="11" max="32" step="1"></label>
+      <label>资讯摘要字号 <output id="display-news-summary-font-value">14px</output><input id="display-news-summary-font" type="range" min="10" max="28" step="1"></label>
+      <label>时间/来源字号 <output id="display-news-meta-font-value">11px</output><input id="display-news-meta-font" type="range" min="8" max="22" step="1"></label>
+      <label>摘要行数<select id="display-news-lines"><option value="1">1行</option><option value="2">2行</option><option value="3">3行</option><option value="4">4行</option><option value="6">6行</option><option value="8">8行</option></select></label>
+      <label>报价栏宽度 <output id="display-tape-width-value">148px</output><input id="display-tape-width" type="range" min="80" max="360" step="2"></label>
+      <label>报价明细<select id="display-tape-visible"><option value="auto">空间不足自动折叠</option><option value="show">始终显示</option><option value="hide">始终隐藏</option></select></label>
+      <label>AI标题字号 <output id="display-ai-title-font-value">22px</output><input id="display-ai-title-font" type="range" min="14" max="38" step="1"></label>
+      <label>AI摘要字号 <output id="display-ai-summary-font-value">13px</output><input id="display-ai-summary-font" type="range" min="10" max="26" step="1"></label>
+      <label>AI周期字号 <output id="display-ai-horizon-font-value">12px</output><input id="display-ai-horizon-font" type="range" min="9" max="24" step="1"></label>
+      <label>图表工具大小 <output id="display-chart-tools-value">100%</output><input id="display-chart-tools" type="range" min="60" max="180" step="1"></label>
+      <label>报价价格字号 <output id="display-tape-price-font-value">16px</output><input id="display-tape-price-font" type="range" min="10" max="34" step="1"></label>
+      <label>报价时间字号 <output id="display-tape-time-font-value">11px</output><input id="display-tape-time-font" type="range" min="8" max="22" step="1"></label>
+    </details>
+    <details class="display-group-advanced"><summary>K线与动画</summary>
+      <label>坐标字号 <output id="display-chart-font-value">11px</output><input id="display-chart-font" type="range" min="8" max="24" step="1"></label>
+      <label>预警标签字号 <output id="display-alert-font-value">11px</output><input id="display-alert-font" type="range" min="8" max="20" step="1"></label>
+      <label>预警线宽 <output id="display-alert-line-value">1px</output><input id="display-alert-line" type="range" min="1" max="4" step="0.5"></label>
+      <label>实时闪烁 <output id="display-flash-value">420ms</output><input id="display-flash" type="range" min="0" max="1200" step="60"></label>
+      <label>动画模式<select id="display-motion"><option value="subtle">克制</option><option value="standard">标准</option><option value="full">完整动画</option><option value="off">关闭动画和闪烁</option></select></label>
+      <label>边框圆角 <output id="display-radius-value">10px</output><input id="display-radius" type="range" min="0" max="18" step="1"></label>
+      <label>界面对比度 <output id="display-contrast-value">100%</output><input id="display-contrast" type="range" min="90" max="130" step="5"></label>
+    </details>
+    <details id="module-editor" class="display-group-selected" open><summary>当前选中板块</summary>
+      <p class="display-help">进入“自由编辑”后直接点击板块。拖动四边或四角改变大小；这里可输入精确数值。</p>
+      <div id="module-empty">尚未选中板块</div>
+      <div id="module-controls" hidden>
+        <strong id="module-name">板块</strong>
+        <div class="display-two"><label>宽度（px/自动）<input id="module-width" type="number" min="120" max="3000" step="1" placeholder="自动"></label><label>高度（px）<input id="module-height" type="number" min="80" max="2000" step="1"></label></div>
+        <div class="display-two"><label>水平微移 X（px）<input id="module-x" type="number" min="-2000" max="2000" step="1"></label><label>垂直微移 Y（px）<input id="module-y" type="number" min="-2000" max="2000" step="1"></label></div>
+        <div class="display-two"><label>内容大小（%）<input id="module-scale" type="number" min="40" max="250" step="1"></label><label>内容间距（px）<input id="module-gap" type="number" min="0" max="80" step="1"></label></div>
+        <div class="display-two"><label>内边距（px）<input id="module-padding" type="number" min="0" max="80" step="1"></label><label>外边距（px）<input id="module-margin" type="number" min="0" max="80" step="1"></label></div>
+        <div class="display-two"><label>最小高度（px）<input id="module-min-height" type="number" min="20" max="1200" step="1"></label><label>最大高度（px/0自动）<input id="module-max-height" type="number" min="0" max="3000" step="1"></label></div>
+        <div class="display-two"><label>字号（px/0继承）<input id="module-font-size" type="number" min="0" max="160" step="1"></label><label>字重<select id="module-font-weight"><option value="">继承</option><option value="400">常规</option><option value="600">半粗</option><option value="700">粗体</option><option value="900">特粗</option></select></label></div>
+        <div class="display-two"><label>行高（倍数/0继承）<input id="module-line-height" type="number" min="0" max="3" step="0.05"></label><label>字距（px）<input id="module-letter-spacing" type="number" min="-3" max="20" step="0.1"></label></div>
+        <div class="display-two"><label>文字颜色（留空继承）<input id="module-color" type="text" maxlength="20" placeholder="#ffffff"></label><label>层级<select id="module-z-index"><option value="">自动</option><option value="1">普通</option><option value="10">置顶</option><option value="-1">置底</option></select></label></div>
+        <div class="display-two"><label>溢出方式<select id="module-overflow"><option value="visible">自动扩展</option><option value="auto">允许滚动</option><option value="hidden">隐藏溢出</option></select></label><label>空间不足<select id="module-priority"><option value="critical">核心，禁止隐藏</option><option value="normal">普通</option><option value="optional">可优先隐藏</option></select></label></div>
+        <div class="display-two"><label>隐藏后的空间<select id="module-hidden-space"><option value="reflow">自动补位</option><option value="keep">保留空位</option></select></label><span></span></div><div class="module-flags"><label><input id="module-visible" type="checkbox" checked> 显示板块</label><label><input id="module-lock-position" type="checkbox"> 锁定位置</label><label><input id="module-lock-size" type="checkbox"> 锁定大小</label></div>
+        <div class="module-actions"><button id="module-up" type="button">上移</button><button id="module-down" type="button">下移</button><button id="module-compact" type="button">消除空隙</button><button id="module-collapse" type="button">折叠</button><button id="module-reset" type="button">重置板块</button></div>
+        <div class="module-actions module-multi-actions"><button id="module-equal-width" type="button">等宽</button><button id="module-equal-height" type="button">等高</button><button id="module-align-left" type="button">左对齐</button><button id="module-align-top" type="button">上对齐</button><button id="module-distribute-x" type="button">横向均布</button><button id="module-distribute-y" type="button">纵向均布</button></div>
+        <div class="module-actions module-layer-actions"><button id="module-front" type="button">置顶</button><button id="module-back" type="button">置底</button><button id="module-group" type="button">组合</button><button id="module-ungroup" type="button">解组</button></div>
+        <p class="display-help">按住 Ctrl 点击可多选；多选操作会一次保存，可撤销和重做。</p>
+      </div>
+      <div class="module-actions"><button id="layout-undo" type="button">撤销</button><button id="layout-redo" type="button">重做</button><label class="snap-toggle"><input id="layout-snap" type="checkbox" checked> 8px吸附</label></div>
+    </details>
+    <details class="display-group-advanced"><summary>方案、导入导出与诊断</summary>
+      <div class="layout-profile-row"><input id="layout-profile-name" maxlength="30" placeholder="方案名称"><button id="layout-profile-save" type="button">保存方案</button></div>
+      <div class="layout-profile-row"><select id="layout-profile-select"><option value="">选择已保存方案</option></select><button id="layout-profile-load" type="button">应用</button><button id="layout-profile-delete" type="button">删除</button></div>
+      <div class="module-actions"><button id="layout-export" type="button">导出布局</button><button id="layout-import" type="button">导入布局</button><input id="layout-import-file" type="file" accept="application/json,.json" hidden><button id="layout-compact-all" type="button">整页消除空隙</button><button id="layout-restore-visible" type="button">恢复全部可见</button><button id="layout-diagnose" type="button">检查页面问题</button></div>
+      <div id="layout-diagnostics" class="layout-diagnostics"><span>尚未运行布局检查</span></div>
+    </details>
+  </div>
+  <footer><span id="display-save-state">记住当前显示器的布局</span><button id="display-cancel-edit" class="secondary-btn" hidden>取消本次编辑</button><button id="display-lock-layout" class="secondary-btn">🔒 布局已锁定</button><button id="display-detail-mode" class="secondary-btn">自由编辑</button><button id="display-reset" class="secondary-btn">恢复当前设备推荐</button></footer>
+</div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="session-panel" class="session-panel" hidden><header><strong>主要交易时段</strong><button id="session-panel-close" type="button"><i class="ph ph-x"></i></button></header><div id="session-list"></div><small>时间均已换算为北京时间，海外市场自动处理夏令时。</small></div>
+</div>
+
+<dialog id="market-layout-dialog" class="market-layout-dialog"><form id="market-layout-form"><header><div><small class="dialog-eyebrow">行情显示</small><h2>设置主副品种</h2></div><button type="button" data-close-dialog aria-label="关闭"><i class="ph ph-x"></i></button></header><p class="dialog-intro">选择首页展示的三个官方行情。主行情同时控制右侧 K 线和 AI 情景概率。</p><div class="market-layout-fields"><label><span>主行情</span><select id="primary-market" required></select><small>首页大卡片、K 线和 AI 分析</small></label><label><span>副行情 1</span><select id="aux-market-1" required></select><small>主行情下方第一行</small></label><label><span>副行情 2</span><select id="aux-market-2" required></select><small>主行情下方第二行</small></label></div><p id="market-layout-error" class="form-error" hidden>三个位置不能选择相同品种。</p><footer><button type="button" class="secondary-btn" data-close-dialog>取消</button><button class="primary-btn">保存布局</button></footer></form></dialog>
+
+<dialog id="ai-settings-dialog"><form method="dialog"><header><div><small class="dialog-eyebrow">AI分析</small><h2>DeepSeek连接设置</h2></div><button type="button" data-close-dialog aria-label="关闭"><i class="ph ph-x"></i></button></header><div class="form-grid"><label>API Key<div class="password-row"><input id="ai-key" type="password" autocomplete="off" placeholder="sk-..."><button id="toggle-ai-key" type="button" class="icon-btn" title="临时显示或隐藏API Key"><i class="ph ph-eye"></i></button></div></label><label>模型<select id="ai-model"><option value="deepseek-v4-flash">DeepSeek V4 Flash（推荐）</option><option value="deepseek-v4-pro">DeepSeek V4 Pro</option></select></label></div><label class="check-line"><input id="ai-enabled" type="checkbox"><span>启用AI行情分析</span></label><label class="check-line"><input id="ai-auto-enabled" type="checkbox"><span>每天按北京时间自动分析两次</span></label><div class="form-grid ai-time-grid"><label>第一次<input id="ai-auto-time-1" type="time" value="09:30"></label><label>第二次<input id="ai-auto-time-2" type="time" value="15:30"></label></div><p class="fine-print">自动分析使用当时的官方行情和最新快讯；没有新数据时复用结果，不消耗重复请求，也不会发出声音。</p><footer><button type="button" class="secondary-btn" data-close-dialog>取消</button><button id="save-ai" type="button" class="primary-btn">保存AI设置</button></footer></form></dialog>
+<dialog id="image-preview-dialog" class="image-preview-dialog"><header><strong>资讯原图</strong><div><button id="image-fit" class="secondary-btn">适应窗口</button><button id="image-reset" class="secondary-btn">原始比例</button><button type="button" data-close-dialog aria-label="关闭"><i class="ph ph-x"></i></button></div></header><div id="image-preview-stage"><img id="image-preview" alt="资讯原图"></div><p id="image-preview-error" hidden>图片加载失败，请稍后重试。</p></dialog>
+
+<dialog id="recipient-dialog"><form id="recipient-form"><header><div><h2 id="recipient-dialog-title">添加收件人</h2></div><button type="button" data-close-dialog aria-label="关闭"><i class="ph ph-x"></i></button></header><input id="recipient-id" type="hidden"><label>备注名称<input id="recipient-name" required placeholder="例如：张先生"></label><label>收件邮箱<input id="recipient-email" type="email" required placeholder="name@example.com"></label><footer><button type="button" class="secondary-btn" data-close-dialog>取消</button><button class="primary-btn">保存收件人</button></footer></form></dialog>
+
+<dialog id="rule-dialog" class="rule-dialog"><form id="rule-form"><header><div><h2 id="rule-dialog-title">新建预警规则</h2></div><div class="rule-header-actions"><button id="rule-advanced-toggle" type="button" class="secondary-btn">高级设置</button><button type="button" data-close-dialog aria-label="关闭"><i class="ph ph-x"></i></button></div></header><div class="rule-form-body"><section class="form-section"><h3>基本信息</h3><div class="form-grid"><label>监测品种<select id="rule-market"></select></label><label class="rule-advanced-only">规则名称<input id="rule-name" placeholder="例如：销售价10分钟快速上涨"></label><label class="rule-advanced-only">首次检测<select id="rule-trigger-mode"><option value="immediate">保存后立即检测</option><option value="cross">只在条件从未满足变为满足时触发</option></select></label><label class="rule-advanced-only">预警等级<select id="rule-severity"><option value="normal">普通</option><option value="important">重要</option><option value="urgent">紧急</option></select></label></div></section><section class="form-section"><div class="section-heading"><div><h3>监测条件</h3><p>可以组合多项条件，每个条件都会单独显示完整含义。</p></div><button id="add-condition" type="button" class="secondary-btn"><i class="ph ph-plus"></i> 添加条件</button></div><div class="logic-row"><label>条件关系<select id="rule-logic"><option value="all">全部满足</option><option value="any">任意一项满足</option><option value="at_least">至少满足指定数量</option></select></label><label id="minimum-field" hidden>至少满足<input id="rule-minimum" type="number" min="1" value="1"></label></div><div id="condition-list" class="condition-list"></div><div id="rule-preview" class="rule-preview"><i class="ph ph-info"></i><div><strong>规则解释</strong><span>填写条件后显示完整判断方式。</span></div></div></section><section class="form-section rule-advanced-only"><h3>提醒次数</h3><div class="form-grid"><label>提醒模式<select id="rule-reminder-mode"><option value="once">只提醒一次</option><option value="rearm">价格恢复后可再次提醒</option><option value="daily">每天只提醒一次</option><option value="repeat">持续满足时按间隔提醒</option></select></label><label>重复提醒间隔<div class="unit-input"><input id="rule-cooldown" type="number" min="0" value="30"><select id="cooldown-unit"><option value="1">秒</option><option value="60">分钟</option><option value="3600">小时</option></select></div></label><label>每天最多提醒<input id="rule-max" type="number" min="1" max="9999" value="10"></label><label>最大数据中断容忍<input id="rule-gap" type="number" min="60" max="300" value="90"><small>秒；建议90秒，缺口后自动重新累计</small></label></div></section><section class="form-section"><h3>提醒方式</h3><div class="channel-grid"><label><input id="rule-email" type="checkbox"><span><i class="ph ph-envelope"></i><b>邮件</b></span></label><label><input id="rule-desktop" type="checkbox" checked><span><i class="ph ph-notification"></i><b>系统通知</b></span></label><label><input id="rule-sound" type="checkbox"><span><i class="ph ph-speaker-high"></i><b>提示音</b></span></label><label><input id="rule-speech" type="checkbox"><span><i class="ph ph-waveform"></i><b>语音播报</b></span></label></div><div class="form-grid rule-advanced-only"><label>邮件主题<input id="rule-subject" placeholder="例如：白银快速上涨提醒"></label><label>提示音<select id="rule-sound-name"><option value="gentle">轻柔提示</option><option value="chime">清晰铃声</option><option value="urgent">紧急提示</option></select></label><label>本规则相对音量（与全局增益相乘，上限300%）<input id="rule-sound-volume" type="number" min="0" max="300" value="100"></label><label class="wide">邮件内容模板<textarea id="rule-message" rows="3" placeholder="留空使用系统模板。可用：{规则名称} {条件} {当前价格} {变化金额} {触发时间}"></textarea></label><label class="wide">语音播报文字<textarea id="rule-speech-text" rows="2" placeholder="例如：白银价格出现快速变化，请查看行情。"></textarea></label></div><fieldset><legend>邮件发送给</legend><p>没有勾选时发送给全部已启用收件人。</p><div id="rule-recipients" class="recipient-checks"></div></fieldset></section></div><footer><button type="button" class="secondary-btn" data-close-dialog>取消</button><button id="save-rule" class="primary-btn">保存并开始监控</button></footer></form></dialog>
+
+<dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><header><div><h2 id="confirm-title">确认操作</h2></div></header><p id="confirm-message"></p><footer><button value="cancel" class="secondary-btn">取消</button><button value="confirm" class="danger-btn">确认</button></footer></form></dialog>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="0x00000010" android:orientation="0" android:tag="layout/pj_layout_market_detail_longpress_mline_0" android:background="@7F060126" android:clickable="true" android:layout_width="-1" android:layout_height="-1" android:paddingStart="@7F07019B" android:paddingEnd="@7F07019F">
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033C" android:textColor="@7F06010E" android:id="@7F090237" android:tag="binding_1" android:layout_width="-2" android:layout_height="-2" app:fonts="1"/>
+  <TextView android:textSize="@7F07033C" android:textColor="@7F060116" android:layout_width="-2" android:layout_height="-2" android:text="@7F100120" android:layout_marginStart="@7F0701A2"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033C" android:id="@7F090236" android:tag="binding_2" android:layout_width="-2" android:layout_height="-2" app:fonts="1"/>
+  <TextView android:textSize="@7F07033C" android:textColor="@7F060116" android:layout_width="-2" android:layout_height="-2" android:text="@7F100116" android:layout_marginStart="@7F0701A2"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033C" android:textColor="@7F06010E" android:id="@7F090234" android:tag="binding_3" android:layout_width="-2" android:layout_height="-2" app:fonts="1"/>
+  <TextView android:textSize="@7F07033C" android:textColor="@7F060116" android:layout_width="-2" android:layout_height="-2" android:text="@7F100122" android:layout_marginStart="@7F0701A2"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033C" android:textColor="@7F06010E" android:id="@7F090235" android:tag="binding_4" android:layout_width="-2" android:layout_height="-2" app:fonts="1"/>
+</LinearLayout>

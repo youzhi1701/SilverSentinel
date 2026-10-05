@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:tag="layout/pj_layout_market_detail_head_0" android:paddingTop="@7F070324" android:layout_width="-1" android:layout_height="-2">
+  <androidx.constraintlayout.widget.Guideline android:orientation="1" android:id="@7F090171" android:layout_width="-2" android:layout_height="-2" app:layout_constraintGuide_percent="0.650000"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07035E" android:gravity="0x00000010" android:id="@7F09038D" android:tag="binding_1" android:layout_width="0.000000dip" android:layout_height="@7F0702F8" android:maxLines="1" android:layout_marginStart="@7F0701A2" app:autoSizeMaxTextSize="@7F07035E" app:autoSizeMinTextSize="@7F070362" app:autoSizeTextType="1" app:fonts="3" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0" app:layout_constraintWidth_percent="0.300000"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F070340" android:id="@7F0903CF" android:tag="binding_2" android:layout_width="-2" android:layout_height="-2" app:fonts="1" app:layout_constraintLeft_toLeftOf="@7F09038D" app:layout_constraintTop_toBottomOf="@7F09038D"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F070340" android:id="@7F090396" android:tag="binding_3" android:layout_width="-2" android:layout_height="-2" android:layout_marginStart="@7F0701A2" app:fonts="1" app:layout_constraintBottom_toBottomOf="@7F0903CF" app:layout_constraintLeft_toRightOf="@7F0903CF" app:layout_constraintTop_toTopOf="@7F0903CF"/>
+  <LinearLayout android:orientation="1" android:id="@7F090206" android:layout_width="0.000000dip" android:layout_height="0.000000dip" android:layout_marginEnd="@7F0701A2" app:layout_constraintBottom_toBottomOf="@7F0903CF" app:layout_constraintLeft_toRightOf="@7F090205" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0">
+    <com.pjkj.library.common.weight.textview.FontTextView android:id="@7F090361" android:tag="binding_4" app:fonts="1" style="@7F11010C"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:id="@7F0903DE" android:tag="binding_5" app:fonts="1" style="@7F11010C"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:id="@7F09033D" android:tag="binding_6" app:autoSizeTextType="1" app:fonts="1" style="@7F11010C"/>
+  </LinearLayout>
+  <LinearLayout android:gravity="0x00800015" android:orientation="1" android:id="@7F090205" android:layout_width="-2" android:layout_height="0.000000dip" android:layout_marginStart="@7F0702CE" app:layout_constraintBottom_toBottomOf="@7F090206" app:layout_constraintLeft_toLeftOf="@7F090171" app:layout_constraintTop_toTopOf="@7F090206">
+    <TextView android:id="@7F090360" android:text="今开" style="@7F11010B"/>
+    <TextView android:id="@7F0903DD" android:text="昨收" style="@7F11010B"/>
+    <TextView android:id="@7F09033C" android:tag="binding_7" android:text="持仓量" style="@7F11010B"/>
+  </LinearLayout>
+  <LinearLayout android:gravity="0x00800015" android:orientation="1" android:id="@7F090203" android:layout_width="0.000000dip" android:layout_height="0.000000dip" app:layout_constraintBottom_toBottomOf="@7F090206" app:layout_constraintLeft_toRightOf="@7F090202" app:layout_constraintRight_toRightOf="@7F090171" app:layout_constraintTop_toTopOf="@7F090206">
+    <com.pjkj.library.common.weight.textview.FontTextView android:textColor="@7F0600F8" android:id="@7F0903DC" android:tag="binding_8" app:fonts="1" style="@7F11010C"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:textColor="@7F0600F4" android:id="@7F0903DA" android:tag="binding_9" app:fonts="1" style="@7F11010C"/>
+    <com.pjkj.library.common.weight.textview.FontTextView android:id="@7F09033F" android:tag="binding_10" app:fonts="1" style="@7F11010C"/>
+  </LinearLayout>
+  <LinearLayout android:gravity="0x00800015" android:orientation="1" android:id="@7F090202" android:layout_width="-2" android:layout_height="0.000000dip" android:layout_marginStart="@7F0702CE" app:layout_constraintBottom_toBottomOf="@7F090206" app:layout_constraintLeft_toRightOf="@7F09038D" app:layout_constraintTop_toTopOf="@7F090206">
+    <TextView android:id="@7F0903DB" android:text="最高" style="@7F11010B"/>
+    <TextView android:id="@7F0903D9" android:text="最低" style="@7F11010B"/>
+    <TextView android:id="@7F09033E" android:tag="binding_11" android:text="成交量" style="@7F11010B"/>
+  </LinearLayout>
+  <ImageView android:id="@7F0901AF" android:layout_width="-2" android:layout_height="-2" android:src="@7F0D0041" android:layout_marginEnd="@7F0702ED" app:layout_constraintBottom_toBottomOf="@7F090206" app:layout_constraintRight_toRightOf="0"/>
+  <View android:id="@7F0901F2" android:background="@7F0600DC" android:layout_width="-1" android:layout_height="@7F07019D" android:layout_marginTop="@7F070324" app:layout_constraintTop_toBottomOf="@7F0903CF"/>
+  <View android:id="@7F0900B0" android:visibility="0" android:layout_width="@7F07019F" android:layout_height="@7F07019F" app:layout_constraintBottom_toTopOf="@7F0901F2" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

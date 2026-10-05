@@ -1,0 +1,1225 @@
+{
+  "file": {
+    "name": "base.apk",
+    "bytes": 21587578,
+    "sha256": "BDDBBB1B2E869B3FF5C58BADBF14934D1F778B10F1D1784B08F6E2FFC6CCE197"
+  },
+  "app": {
+    "label": "融通金",
+    "package": "com.jzj9999.rtgold",
+    "versionName": "1.1.1",
+    "versionCode": "12",
+    "minSdk": "21",
+    "targetSdk": "32",
+    "mainActivity": "com.jzj9999.rtgold.ui.splash.SplashActivity",
+    "mainActivities": [
+      "com.jzj9999.rtgold.ui.splash.SplashActivity"
+    ],
+    "debuggable": null,
+    "usesCleartextTraffic": "true",
+    "networkSecurityConfig": "@7F130004",
+    "extractNativeLibs": null
+  },
+  "signing": {
+    "v1": true,
+    "v2": true,
+    "v3": false,
+    "certificates": [
+      {
+        "sha256": "E1FB21E262B5B6242FC44E7B8B14DB06B565BDCA855E6DB378CBE292E82C5FDA",
+        "bytes": 843
+      }
+    ]
+  },
+  "permissions": [
+    "android.permission.ACCESS_COARSE_LOCATION",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.ACCESS_WIFI_STATE",
+    "android.permission.BLUETOOTH",
+    "android.permission.CAMERA",
+    "android.permission.CHANGE_NETWORK_STATE",
+    "android.permission.CHANGE_WIFI_STATE",
+    "android.permission.GET_TASKS",
+    "android.permission.INTERNET",
+    "android.permission.KILL_BACKGROUND_PROCESSES",
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.READ_PHONE_STATE",
+    "android.permission.READ_SETTINGS",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
+    "android.permission.REQUEST_INSTALL_PACKAGES",
+    "android.permission.WAKE_LOCK",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.WRITE_SETTINGS",
+    "com.huawei.android.launcher.permission.CHANGE_BADGE",
+    "com.jzj9999.rtgold.permission.MIPUSH_RECEIVE",
+    "com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG",
+    "com.jzj9999.rtgold.permission.PUSH_PROVIDER"
+  ],
+  "components": {
+    "activities": [
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.AboutActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.hms.support.api.push.TransActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.splash.SplashActivity",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "android.intent.action.MAIN",
+            "android.intent.action.VIEW"
+          ],
+          "category": [
+            "android.intent.category.LAUNCHER"
+          ]
+        }
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.common.web.WebActivity",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.privacy.PrivacyPermissionActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.MainActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.hms.activity.EnableServiceActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.pushsdk.thirdparty.MPaaSNcActivity",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.alipay.pushsdk.thirdparty.MPaaSNcActivity",
+            "android.intent.action.VIEW"
+          ],
+          "category": [
+            "android.intent.category.DEFAULT"
+          ],
+          "data": [
+            {
+              "scheme": "mpaasscheme",
+              "host": "com.mpaas.thirdparty.push",
+              "path": "/longlink"
+            }
+          ]
+        }
+      },
+      {
+        "name": "com.huawei.hms.activity.BridgeActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.blankj.utilcode.util.UtilsTransActivity",
+        "exported": null,
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.mpaas.push.external.hms5.BridgeActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.SettingNicknameActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.detail.MarketDetailActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.SettingActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.common.notification.PushHandlerActivity",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "android.intent.action.VIEW"
+          ],
+          "category": [
+            "android.intent.category.BROWSABLE",
+            "android.intent.category.DEFAULT"
+          ],
+          "data": [
+            {
+              "scheme": "androidpjrtj",
+              "host": "nav",
+              "path": "/navurl"
+            }
+          ]
+        }
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.privacy.PrivacyListActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.core.loading.impl.LoadingPage",
+        "exported": null,
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.common.TxtActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alibaba.wireless.security.open.middletier.fc.ui.ContainerActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentResult4323",
+            "com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentCreate4323",
+            "com.alibaba.wireless.security.open.middletier.fc.ui.BXIntentLog4323"
+          ],
+          "category": [
+            "android.intent.category.DEFAULT"
+          ]
+        }
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.login.SettingPasswordActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.lxj.xpopup.util.XPermission$PermissionActivity",
+        "exported": null,
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.quinox.activity.StubActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "android.intent.action.MAIN"
+          ],
+          "category": [
+            "android.intent.category.DEFAULT"
+          ]
+        }
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.UnregisterActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.detail.setting.CodeParamsSettingActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.login.AuthCodeLoginActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.login.AccountLoginActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.mobile.auth.gatewayauth.LoginAuthActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.mobile.auth.gatewayauth.PrivacyDialogActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.PersonalCenterActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.detail.setting.CodeParamsSettingInfoActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.warning.EarlyWarningListActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.ThemeActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.tick.MarketTickActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.optional.MarketOptionalEditActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.blankj.utilcode.util.UtilsTransActivity4MainProcess",
+        "exported": null,
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.market.etf.EtfReportActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.search.CodeSearchActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.ui.personal.MeActivity",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      }
+    ],
+    "services": [
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInPushProcess",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.quinox.preload.ExcaliburService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.logmonitor.ClientMonitorService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.quinox.classloader.DexOptServiceInToolsProcess",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.quinox.preload.PreloadService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.quinox.preload.MainPldService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.pushsdk.push.AppInfoRecvIntentService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.mpaas.push.external.hms5.HmsMessagingService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.huawei.push.action.MESSAGING_EVENT"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.common.fgbg.FgBgMonitorService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.agconnect.core.ServiceDiscovery",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.tencent.smtt.export.external.DexClassLoaderProviderService",
+        "exported": null,
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInlite2",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.hms.support.api.push.service.HmsMsgService",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.huawei.push.msg.NOTIFY_MSG",
+            "com.huawei.push.msg.PASSBY_MSG"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.pushsdk.push.NotificationService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.jzj9999.rtgold.push.action.START_PUSHSERVICE"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInlite3",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInlite4",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.jzj9999.rtgold.service.PushMsgService",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.jzj9999.rtgold.push.action.MESSAGE_RECEIVED",
+            "com.jzj9999.rtgold.push.action.REGISTRATION_ID"
+          ],
+          "category": [
+            "com.jzj9999.rtgold"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInMainProcess",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.android.phone.mobilesdk.apm.service.APMInnerService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.blankj.utilcode.util.MessengerUtils$ServerService",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "com.jzj9999.rtgold.messenger"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInlite1",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInToolsProcess",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.mobile.common.logging.process.LogServiceInlite5",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      }
+    ],
+    "receivers": [
+      {
+        "name": "com.alipay.pushsdk.ui.UserActionReceiver",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "mpaas.push.action.MESSAGE_CLICKED",
+            "mpaas.push.action.MESSAGE_IGNORED"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.logmonitor.TraceStubReceiver",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "monitor.action.dump.traceview",
+            "monitor.action.dump.stacktracer",
+            "monitor.action.MONITOR_POWER"
+          ]
+        }
+      },
+      {
+        "name": "com.huawei.hms.support.api.push.PushMsgReceiver",
+        "exported": "true",
+        "permission": "com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG",
+        "intentFilters": {
+          "action": [
+            "com.huawei.intent.action.PUSH_DELAY_NOTIFY",
+            "com.huawei.intent.action.PUSH"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.mobile.logmonitor.ClientMonitorExtReceiver",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "monitor.ext.action.SYNC_MDAP_LOG"
+          ]
+        }
+      },
+      {
+        "name": "com.alipay.pushsdk.thirdparty.vivo.PushMessageReceiver",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.alipay.pushsdk.BroadcastActionReceiver",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {
+          "action": [
+            "android.intent.action.BOOT_COMPLETED",
+            "android.net.conn.CONNECTIVITY_CHANGE",
+            "android.intent.action.USER_PRESENT",
+            "android.intent.action.ACTION_POWER_CONNECTED"
+          ]
+        }
+      },
+      {
+        "name": "com.huawei.hms.support.api.push.PushReceiver",
+        "exported": "true",
+        "permission": "com.jzj9999.rtgold.permission.PROCESS_PUSH_MSG",
+        "intentFilters": {
+          "action": [
+            "com.huawei.android.push.intent.REGISTRATION",
+            "com.huawei.android.push.intent.RECEIVE"
+          ]
+        }
+      }
+    ],
+    "providers": [
+      {
+        "name": "com.huawei.agconnect.core.provider.AGConnectInitializeProvider",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "androidx.core.content.FileProvider",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.hms.support.api.push.PushProvider",
+        "exported": "true",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "me.jessyan.autosize.InitProvider",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.blankj.utilcode.util.UtilsFileProvider",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      },
+      {
+        "name": "com.huawei.hms.aaid.InitProvider",
+        "exported": "false",
+        "permission": null,
+        "intentFilters": {}
+      }
+    ]
+  },
+  "nativeAbis": [
+    "arm64-v8a",
+    "armeabi-v7a"
+  ],
+  "dexFiles": [
+    "classes.dex"
+  ],
+  "packerSignals": [
+    "assets/libjiagu.so",
+    "assets/libjiagu_a64.so"
+  ],
+  "network": {
+    "urls": [
+      "http://gcc.gnu.org/bugs.html):",
+      "http://schemas.android.com/aapt",
+      "http://schemas.android.com/apk/res-auto",
+      "http://schemas.android.com/apk/res/android",
+      "http://www.winimage.com/zLibDll",
+      "https://agc-storage-dra.cloud.huawei.asia",
+      "https://agc-storage-drcn.cloud.huawei.com.cn",
+      "https://agc-storage-drcn.platform.dbankcloud.cn",
+      "https://agc-storage-dre.cloud.huawei.eu",
+      "https://agc-storage-drru.cloud.huawei.ru",
+      "https://android.googlesource.com/toolchain/clang",
+      "https://android.googlesource.com/toolchain/llvm",
+      "https://android.googlesource.com/toolchain/llvm-project",
+      "https://data-dra.push.dbankcloud.com",
+      "https://data-drcn.push.dbankcloud.com",
+      "https://data-dre.push.dbankcloud.com",
+      "https://data-drru.push.dbankcloud.com",
+      "https://grs.dbankcloud.asia",
+      "https://grs.dbankcloud.cn",
+      "https://grs.dbankcloud.com",
+      "https://grs.dbankcloud.eu",
+      "https://grs.platform.dbankcloud.ru",
+      "https://metrics-dra.dt.hicloud.com:6447",
+      "https://metrics1.data.hicloud.com:6447",
+      "https://metrics2.data.hicloud.com:6447",
+      "https://metrics5.data.hicloud.com:6447",
+      "https://metrics5.dt.dbankcloud.ru:6447",
+      "https://ops-dra.agcstorage.link",
+      "https://ops-dre.agcstorage.link",
+      "https://search-drcn.cloud.huawei.com",
+      "https://unpkg.com/pdfjs-dist@2.3.200/build/pdf.min.js",
+      "https://unpkg.com/pdfjs-dist@2.3.200/cmaps/"
+    ],
+    "domains": [
+      "--androidx.app",
+      "00androidx.app",
+      "22com.google.android.material.app",
+      "44com.pjkj.library.com",
+      "66androidx.appcompat.app",
+      "77androidx.app",
+      "9.io",
+      "99androidx.app",
+      "agc-storage-dra.cloud",
+      "agc-storage-drcn.cloud.huawei.com.cn",
+      "agc-storage-drcn.platform.dbankcloud.cn",
+      "agc-storage-dre.cloud",
+      "agc-storage-drru.cloud",
+      "android.googlesource.com",
+      "androidx.app",
+      "bbcom.pjkj.library.com",
+      "bzip.org",
+      "cmpassport.com",
+      "com.google.android.material.app",
+      "com.google.android.material.appbar.app",
+      "com.huawei.cloud",
+      "com.jzj9999.rtgold.ui.com",
+      "com.pjkj.library.com",
+      "com.pjkj.library.common.weight.recyclerview.app",
+      "connect-dra.dbankcloud.cn",
+      "connect-dra.hispace.hicloud.com",
+      "connect-drcn.dbankcloud.cn",
+      "connect-drcn.hispace.hicloud.com",
+      "connect-dre.dbankcloud.cn",
+      "connect-dre.hispace.hicloud.com",
+      "connect-drru.hispace.dbankcloud.cn",
+      "connect-ws-dra.hispace.dbankcloud.cn",
+      "connect-ws-dra.hispace.dbankcloud.com",
+      "connect-ws-drcn.hispace.dbankcloud.cn",
+      "connect-ws-drcn.hispace.dbankcloud.com",
+      "connect-ws-dre.hispace.dbankcloud.cn",
+      "connect-ws-dre.hispace.dbankcloud.com",
+      "connect-ws-drru.hispace.dbankcloud.cn",
+      "data-dra.push.dbankcloud.com",
+      "data-drcn.push.dbankcloud.com",
+      "data-dre.push.dbankcloud.com",
+      "data-drru.push.dbankcloud.com",
+      "datacollector-dra.dt.dbankcloud.cn",
+      "datacollector-dra.dt.hicloud.com",
+      "datacollector-drcn.dt.dbankcloud.cn",
+      "datacollector-drcn.dt.hicloud.com",
+      "datacollector-dre.dt.dbankcloud.cn",
+      "datacollector-dre.dt.hicloud.com",
+      "datacollector-drru.dt.hicloud.com",
+      "document.body.app",
+      "edukit.edu.cloud.huawei.com.cn",
+      "enrichgw.10010.com",
+      "gcc.gnu.org",
+      "grs.dbankcloud.cn",
+      "grs.dbankcloud.com",
+      "metrics-dra.dt.hicloud.com:6447",
+      "metrics1.data.hicloud.com:6447",
+      "metrics2.data.hicloud.com:6447",
+      "metrics5.data.hicloud.com:6447",
+      "ml-api-drcn.ai.dbankcloud.cn",
+      "ml-api-drcn.ai.dbankcloud.com",
+      "onekey.cmpassport.com",
+      "openssl.org",
+      "schemas.android.com",
+      "search-drcn.cloud.huawei.com",
+      "unpkg.com",
+      "www.memtest86.com",
+      "www.winimage.com"
+    ]
+  },
+  "resourceClues": [
+    "res/drawable-hdpi-v4/marker.webp",
+    "res/drawable-xxhdpi-v4/amap_down.webp",
+    "res/drawable-xxhdpi-v4/amap_end.webp",
+    "res/drawable-xxhdpi-v4/amap_start.webp",
+    "res/drawable-xxhdpi-v4/amap_switch.webp",
+    "res/drawable-xxhdpi-v4/amap_through.webp",
+    "res/drawable-xxhdpi-v4/amap_up.webp",
+    "res/drawable-xxhdpi-v4/h5_title_bar_progress_bg.webp",
+    "res/drawable-xxhdpi-v4/h5_title_bar_progress_bg_gold.webp",
+    "res/drawable-xxhdpi-v4/ic_flash_off.webp",
+    "res/drawable-xxhdpi-v4/ic_flash_on.webp",
+    "res/drawable-xxhdpi-v4/ic_refresh.webp",
+    "res/drawable-xxhdpi-v4/ic_seek_dot.webp",
+    "res/drawable-xxhdpi-v4/ic_video_pause.webp",
+    "res/drawable-xxhdpi-v4/ic_video_play.webp",
+    "res/drawable-xxhdpi-v4/location.webp",
+    "res/drawable-xxhdpi-v4/map_texture.webp",
+    "res/drawable-xxhdpi-v4/map_texture_transparent.webp",
+    "res/drawable/pj_selector_ic_market_detail_optional.xml",
+    "res/drawable/pj_selector_icon_market_m_visible.xml",
+    "res/drawable/pj_selector_market_k_button.xml",
+    "res/drawable/pj_selector_trade_keyboard_code.xml",
+    "res/drawable/pj_selector_trade_keyboard_price.xml",
+    "res/layout-land/pj_activity_market_detail.xml",
+    "res/layout-land/pj_fragment_market_detail.xml",
+    "res/layout-land/pj_fragment_market_detail_index_k.xml",
+    "res/layout-land/pj_layout_market_detail_head.xml",
+    "res/layout-land/pj_layout_market_detail_longpress_kline.xml",
+    "res/layout/pj_activity_market_detail.xml",
+    "res/layout/pj_activity_market_tick.xml",
+    "res/layout/pj_dialog_market_swtich_title.xml",
+    "res/layout/pj_dialog_marketerror.xml",
+    "res/layout/pj_empty_market_optional_add.xml",
+    "res/layout/pj_foot_market_optional_add.xml",
+    "res/layout/pj_foot_market_rtj_list.xml",
+    "res/layout/pj_fragment_home.xml",
+    "res/layout/pj_fragment_market.xml",
+    "res/layout/pj_fragment_market_category.xml",
+    "res/layout/pj_fragment_market_detail.xml",
+    "res/layout/pj_fragment_market_detail_index_k.xml",
+    "res/layout/pj_fragment_market_detail_index_m.xml",
+    "res/layout/pj_fragment_market_detail_index_m2.xml",
+    "res/layout/pj_fragment_market_detail_index_m_right.xml",
+    "res/layout/pj_fragment_market_detail_index_m_right_rtj.xml",
+    "res/layout/pj_fragment_market_optional.xml",
+    "res/layout/pj_fragment_market_optional_item.xml",
+    "res/layout/pj_fragment_market_rtj_list.xml",
+    "res/layout/pj_fragment_web.xml",
+    "res/layout/pj_head_home.xml",
+    "res/layout/pj_head_market_optional_recommend.xml",
+    "res/layout/pj_item_home_news.xml",
+    "res/layout/pj_item_home_stock.xml",
+    "res/layout/pj_item_home_stock_add.xml",
+    "res/layout/pj_item_keyboard_trade.xml",
+    "res/layout/pj_item_market_category.xml",
+    "res/layout/pj_item_market_detail_realtime.xml",
+    "res/layout/pj_item_market_detail_realtime_line.xml",
+    "res/layout/pj_item_market_detail_tick.xml",
+    "res/layout/pj_item_market_detail_tick_hour.xml",
+    "res/layout/pj_item_market_optional_edit.xml",
+    "res/layout/pj_item_market_optional_edit_button.xml",
+    "res/layout/pj_item_market_optional_edit_recommend.xml",
+    "res/layout/pj_item_market_rtj_list.xml",
+    "res/layout/pj_item_market_tick.xml",
+    "res/layout/pj_item_market_tick_hour.xml",
+    "res/layout/pj_keyboard_trade.xml",
+    "res/layout/pj_layout_home_etf_report.xml",
+    "res/layout/pj_layout_market_detail_head.xml",
+    "res/layout/pj_layout_market_detail_longpress_kline.xml",
+    "res/layout/pj_layout_market_detail_longpress_mline.xml",
+    "res/layout/pj_layout_toolbar_market.xml",
+    "res/layout/pj_layout_toolbar_web.xml",
+    "res/layout/pj_popup_window_market_tab_setting.xml",
+    "res/layout/tbchart_window_mline_downswitch.xml",
+    "res/mipmap-hdpi-v4/tb_chart_mode_day.png",
+    "res/mipmap-hdpi-v4/tb_chart_mode_day2.png",
+    "res/mipmap-hdpi-v4/tb_chart_mode_night.png",
+    "res/mipmap-hdpi-v4/tb_chart_mode_night2.png",
+    "res/mipmap-mdpi-v4/tb_chart_mode_day.png",
+    "res/mipmap-mdpi-v4/tb_chart_mode_day2.png",
+    "res/mipmap-mdpi-v4/tb_chart_mode_night.png",
+    "res/mipmap-mdpi-v4/tb_chart_mode_night2.png",
+    "res/mipmap-night-xhdpi-v8/pj_arrow_back.webp",
+    "res/mipmap-night-xhdpi-v8/pj_home_top_bg.webp",
+    "res/mipmap-night-xhdpi-v8/pj_icon_daynight.webp",
+    "res/mipmap-night-xhdpi-v8/pj_market_detail_earlywarning.webp",
+    "res/mipmap-night-xhdpi-v8/pj_market_detail_k_rotate.webp",
+    "res/mipmap-night-xhdpi-v8/pj_market_detail_optional.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_community_click.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_community_default.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_home_default.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_home_logo.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_market_click.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_market_default.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_newflash_click.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_newflash_default.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_optional_click.webp",
+    "res/mipmap-night-xhdpi-v8/pj_tab_optional_default.webp",
+    "res/mipmap-night-xhdpi-v8/pj_update_app_bg.webp",
+    "res/mipmap-night-xhdpi-v8/pj_update_app_logo.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_arrow_back.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_home_top_bg.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_icon_daynight.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_market_detail_earlywarning.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_market_detail_k_rotate.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_market_detail_optional.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_community_click.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_community_default.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_home_default.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_home_logo.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_market_click.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_market_default.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_newflash_click.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_newflash_default.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_optional_click.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_tab_optional_default.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_update_app_bg.webp",
+    "res/mipmap-night-xxhdpi-v8/pj_update_app_logo.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_arrow_back.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_home_top_bg.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_icon_daynight.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_market_detail_earlywarning.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_market_detail_k_rotate.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_market_detail_optional.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_community_click.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_community_default.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_home_default.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_home_logo.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_market_click.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_market_default.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_newflash_click.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_newflash_default.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_optional_click.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_tab_optional_default.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_update_app_bg.webp",
+    "res/mipmap-night-xxxhdpi-v8/pj_update_app_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_arrow_back.webp",
+    "res/mipmap-xhdpi-v4/pj_arrow_down_12.webp",
+    "res/mipmap-xhdpi-v4/pj_arrow_right_12.webp",
+    "res/mipmap-xhdpi-v4/pj_arrow_right_16.webp",
+    "res/mipmap-xhdpi-v4/pj_check_main_click.webp",
+    "res/mipmap-xhdpi-v4/pj_check_main_default.webp",
+    "res/mipmap-xhdpi-v4/pj_close_circle_16.webp",
+    "res/mipmap-xhdpi-v4/pj_close_circle_hollow_26.webp",
+    "res/mipmap-xhdpi-v4/pj_close_circle_red_12.webp",
+    "res/mipmap-xhdpi-v4/pj_default_382x96.webp",
+    "res/mipmap-xhdpi-v4/pj_default_80x60.webp",
+    "res/mipmap-xhdpi-v4/pj_default_head.webp",
+    "res/mipmap-xhdpi-v4/pj_empty_404.webp",
+    "res/mipmap-xhdpi-v4/pj_empty_data.webp",
+    "res/mipmap-xhdpi-v4/pj_empty_net.webp",
+    "res/mipmap-xhdpi-v4/pj_empty_search.webp",
+    "res/mipmap-xhdpi-v4/pj_eye_close.webp",
+    "res/mipmap-xhdpi-v4/pj_eye_open.webp",
+    "res/mipmap-xhdpi-v4/pj_home_gold_etf.webp",
+    "res/mipmap-xhdpi-v4/pj_home_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_home_market_optional_add.webp",
+    "res/mipmap-xhdpi-v4/pj_home_notice.webp",
+    "res/mipmap-xhdpi-v4/pj_home_top_bg.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_daynight.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_net_error.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_optional.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_plus_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_question_16.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_reduce_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_rtj_buy_home.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_rtj_buy_list.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_rtj_sell_home.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_rtj_sell_list.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon01_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon02_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon03_crude.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon03_fine.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon03_middle.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon04_black.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon04_red.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon04_yellow.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon05_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon06_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon07_click.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_icon08.webp",
+    "res/mipmap-xhdpi-v4/pj_icon_transverse_draw_line_style_arrow.webp",
+    "res/mipmap-xhdpi-v4/pj_login_icon_authcode.webp",
+    "res/mipmap-xhdpi-v4/pj_login_icon_password.webp",
+    "res/mipmap-xhdpi-v4/pj_login_icon_phone.webp",
+    "res/mipmap-xhdpi-v4/pj_login_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_drawline.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_earlywarning.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_k_index_arrow.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_k_rotate.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_m_gone.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_m_visible.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_optional.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_optional_delete.webp",
+    "res/mipmap-xhdpi-v4/pj_market_detail_pankou_more.webp",
+    "res/mipmap-xhdpi-v4/pj_market_icon_hui.webp",
+    "res/mipmap-xhdpi-v4/pj_market_icon_xiao.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_add_18.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_add_22.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_add_main.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_edit.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_edit_move.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_empty.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_recommend.webp",
+    "res/mipmap-xhdpi-v4/pj_market_optional_subtract_red.webp",
+    "res/mipmap-xhdpi-v4/pj_menu_22.webp",
+    "res/mipmap-xhdpi-v4/pj_page_loading.webp",
+    "res/mipmap-xhdpi-v4/pj_personal_about.webp",
+    "res/mipmap-xhdpi-v4/pj_personal_cache.webp",
+    "res/mipmap-xhdpi-v4/pj_personal_phone.webp",
+    "res/mipmap-xhdpi-v4/pj_personal_privacy.webp",
+    "res/mipmap-xhdpi-v4/pj_personal_setting.webp",
+    "res/mipmap-xhdpi-v4/pj_radio_main_click.webp",
+    "res/mipmap-xhdpi-v4/pj_radio_main_default.webp",
+    "res/mipmap-xhdpi-v4/pj_rtj_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_search.webp",
+    "res/mipmap-xhdpi-v4/pj_search_22.webp",
+    "res/mipmap-xhdpi-v4/pj_setting_market_detail.webp",
+    "res/mipmap-xhdpi-v4/pj_share_friends.webp",
+    "res/mipmap-xhdpi-v4/pj_share_url.webp",
+    "res/mipmap-xhdpi-v4/pj_share_wx.webp",
+    "res/mipmap-xhdpi-v4/pj_splash_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_symbol_right.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_community_click.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_community_default.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_home_default.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_home_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_market_click.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_market_default.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_newflash_click.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_newflash_default.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_optional_click.webp",
+    "res/mipmap-xhdpi-v4/pj_tab_optional_default.webp",
+    "res/mipmap-xhdpi-v4/pj_triangle_sort_click_down.webp",
+    "res/mipmap-xhdpi-v4/pj_triangle_sort_click_top.webp",
+    "res/mipmap-xhdpi-v4/pj_triangle_sort_default.webp",
+    "res/mipmap-xhdpi-v4/pj_update_app_bg.webp",
+    "res/mipmap-xhdpi-v4/pj_update_app_logo.webp",
+    "res/mipmap-xhdpi-v4/pj_warning_main_12.webp",
+    "res/mipmap-xhdpi-v4/tb_chart_mode_day.png",
+    "res/mipmap-xhdpi-v4/tb_chart_mode_day2.png",
+    "res/mipmap-xhdpi-v4/tb_chart_mode_night.png",
+    "res/mipmap-xhdpi-v4/tb_chart_mode_night2.png",
+    "res/mipmap-xxhdpi-v4/pj_arrow_back.webp",
+    "res/mipmap-xxhdpi-v4/pj_arrow_down_12.webp",
+    "res/mipmap-xxhdpi-v4/pj_arrow_right_12.webp",
+    "res/mipmap-xxhdpi-v4/pj_arrow_right_16.webp",
+    "res/mipmap-xxhdpi-v4/pj_check_main_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_check_main_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_close_circle_16.webp",
+    "res/mipmap-xxhdpi-v4/pj_close_circle_hollow_26.webp",
+    "res/mipmap-xxhdpi-v4/pj_close_circle_red_12.webp",
+    "res/mipmap-xxhdpi-v4/pj_default_382x96.webp",
+    "res/mipmap-xxhdpi-v4/pj_default_80x60.webp",
+    "res/mipmap-xxhdpi-v4/pj_default_head.webp",
+    "res/mipmap-xxhdpi-v4/pj_empty_404.webp",
+    "res/mipmap-xxhdpi-v4/pj_empty_data.webp",
+    "res/mipmap-xxhdpi-v4/pj_empty_net.webp",
+    "res/mipmap-xxhdpi-v4/pj_empty_search.webp",
+    "res/mipmap-xxhdpi-v4/pj_eye_close.webp",
+    "res/mipmap-xxhdpi-v4/pj_eye_open.webp",
+    "res/mipmap-xxhdpi-v4/pj_home_gold_etf.webp",
+    "res/mipmap-xxhdpi-v4/pj_home_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_home_market_optional_add.webp",
+    "res/mipmap-xxhdpi-v4/pj_home_notice.webp",
+    "res/mipmap-xxhdpi-v4/pj_home_top_bg.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_daynight.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_net_error.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_optional.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_plus_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_question_16.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_reduce_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_rtj_buy_home.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_rtj_buy_list.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_rtj_sell_home.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_rtj_sell_list.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon01_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon02_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon03_crude.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon03_fine.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon03_middle.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon04_black.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon04_red.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon04_yellow.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon05_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon06_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon07_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_icon08.webp",
+    "res/mipmap-xxhdpi-v4/pj_icon_transverse_draw_line_style_arrow.webp",
+    "res/mipmap-xxhdpi-v4/pj_login_icon_authcode.webp",
+    "res/mipmap-xxhdpi-v4/pj_login_icon_password.webp",
+    "res/mipmap-xxhdpi-v4/pj_login_icon_phone.webp",
+    "res/mipmap-xxhdpi-v4/pj_login_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_drawline.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_earlywarning.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_k_index_arrow.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_k_rotate.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_m_gone.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_m_visible.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_optional.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_optional_delete.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_detail_pankou_more.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_icon_hui.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_icon_xiao.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_add_18.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_add_22.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_add_main.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_edit.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_edit_move.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_empty.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_recommend.webp",
+    "res/mipmap-xxhdpi-v4/pj_market_optional_subtract_red.webp",
+    "res/mipmap-xxhdpi-v4/pj_menu_22.webp",
+    "res/mipmap-xxhdpi-v4/pj_page_loading.webp",
+    "res/mipmap-xxhdpi-v4/pj_personal_about.webp",
+    "res/mipmap-xxhdpi-v4/pj_personal_cache.webp",
+    "res/mipmap-xxhdpi-v4/pj_personal_phone.webp",
+    "res/mipmap-xxhdpi-v4/pj_personal_privacy.webp",
+    "res/mipmap-xxhdpi-v4/pj_personal_setting.webp",
+    "res/mipmap-xxhdpi-v4/pj_radio_main_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_radio_main_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_rtj_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_search.webp",
+    "res/mipmap-xxhdpi-v4/pj_search_22.webp",
+    "res/mipmap-xxhdpi-v4/pj_setting_market_detail.webp",
+    "res/mipmap-xxhdpi-v4/pj_share_friends.webp",
+    "res/mipmap-xxhdpi-v4/pj_share_url.webp",
+    "res/mipmap-xxhdpi-v4/pj_share_wx.webp",
+    "res/mipmap-xxhdpi-v4/pj_splash_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_symbol_right.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_community_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_community_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_home_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_home_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_market_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_market_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_newflash_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_newflash_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_optional_click.webp",
+    "res/mipmap-xxhdpi-v4/pj_tab_optional_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_triangle_sort_click_down.webp",
+    "res/mipmap-xxhdpi-v4/pj_triangle_sort_click_top.webp",
+    "res/mipmap-xxhdpi-v4/pj_triangle_sort_default.webp",
+    "res/mipmap-xxhdpi-v4/pj_update_app_bg.webp",
+    "res/mipmap-xxhdpi-v4/pj_update_app_logo.webp",
+    "res/mipmap-xxhdpi-v4/pj_warning_main_12.webp",
+    "res/mipmap-xxhdpi-v4/tb_chart_mode_day.png",
+    "res/mipmap-xxhdpi-v4/tb_chart_mode_day2.png",
+    "res/mipmap-xxhdpi-v4/tb_chart_mode_night.png",
+    "res/mipmap-xxhdpi-v4/tb_chart_mode_night2.png",
+    "res/mipmap-xxxhdpi-v4/pj_arrow_back.webp",
+    "res/mipmap-xxxhdpi-v4/pj_arrow_down_12.webp",
+    "res/mipmap-xxxhdpi-v4/pj_arrow_right_12.webp",
+    "res/mipmap-xxxhdpi-v4/pj_arrow_right_16.webp",
+    "res/mipmap-xxxhdpi-v4/pj_check_main_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_check_main_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_close_circle_16.webp",
+    "res/mipmap-xxxhdpi-v4/pj_close_circle_hollow_26.webp",
+    "res/mipmap-xxxhdpi-v4/pj_close_circle_red_12.webp",
+    "res/mipmap-xxxhdpi-v4/pj_default_382x96.webp",
+    "res/mipmap-xxxhdpi-v4/pj_default_80x60.webp",
+    "res/mipmap-xxxhdpi-v4/pj_default_head.webp",
+    "res/mipmap-xxxhdpi-v4/pj_empty_404.webp",
+    "res/mipmap-xxxhdpi-v4/pj_empty_data.webp",
+    "res/mipmap-xxxhdpi-v4/pj_empty_net.webp",
+    "res/mipmap-xxxhdpi-v4/pj_empty_search.webp",
+    "res/mipmap-xxxhdpi-v4/pj_eye_close.webp",
+    "res/mipmap-xxxhdpi-v4/pj_eye_open.webp",
+    "res/mipmap-xxxhdpi-v4/pj_home_gold_etf.webp",
+    "res/mipmap-xxxhdpi-v4/pj_home_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_home_market_optional_add.webp",
+    "res/mipmap-xxxhdpi-v4/pj_home_notice.webp",
+    "res/mipmap-xxxhdpi-v4/pj_home_top_bg.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_daynight.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_net_error.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_optional.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_plus_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_question_16.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_reduce_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_rtj_buy_home.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_rtj_buy_list.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_rtj_sell_home.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_rtj_sell_list.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon01_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon02_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon03_crude.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon03_fine.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon03_middle.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon04_black.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon04_red.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon04_yellow.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon05_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon06_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon07_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_icon08.webp",
+    "res/mipmap-xxxhdpi-v4/pj_icon_transverse_draw_line_style_arrow.webp",
+    "res/mipmap-xxxhdpi-v4/pj_login_icon_authcode.webp",
+    "res/mipmap-xxxhdpi-v4/pj_login_icon_password.webp",
+    "res/mipmap-xxxhdpi-v4/pj_login_icon_phone.webp",
+    "res/mipmap-xxxhdpi-v4/pj_login_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_drawline.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_earlywarning.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_k_index_arrow.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_k_rotate.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_m_gone.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_m_visible.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_optional.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_optional_delete.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_detail_pankou_more.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_icon_hui.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_icon_xiao.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_add_18.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_add_22.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_add_main.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_edit.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_edit_move.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_empty.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_recommend.webp",
+    "res/mipmap-xxxhdpi-v4/pj_market_optional_subtract_red.webp",
+    "res/mipmap-xxxhdpi-v4/pj_menu_22.webp",
+    "res/mipmap-xxxhdpi-v4/pj_page_loading.webp",
+    "res/mipmap-xxxhdpi-v4/pj_personal_about.webp",
+    "res/mipmap-xxxhdpi-v4/pj_personal_cache.webp",
+    "res/mipmap-xxxhdpi-v4/pj_personal_phone.webp",
+    "res/mipmap-xxxhdpi-v4/pj_personal_privacy.webp",
+    "res/mipmap-xxxhdpi-v4/pj_personal_setting.webp",
+    "res/mipmap-xxxhdpi-v4/pj_radio_main_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_radio_main_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_rtj_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_search.webp",
+    "res/mipmap-xxxhdpi-v4/pj_search_22.webp",
+    "res/mipmap-xxxhdpi-v4/pj_setting_market_detail.webp",
+    "res/mipmap-xxxhdpi-v4/pj_share_friends.webp",
+    "res/mipmap-xxxhdpi-v4/pj_share_url.webp",
+    "res/mipmap-xxxhdpi-v4/pj_share_wx.webp",
+    "res/mipmap-xxxhdpi-v4/pj_splash_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_symbol_right.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_community_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_community_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_home_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_home_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_market_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_market_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_newflash_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_newflash_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_optional_click.webp",
+    "res/mipmap-xxxhdpi-v4/pj_tab_optional_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_triangle_sort_click_down.webp",
+    "res/mipmap-xxxhdpi-v4/pj_triangle_sort_click_top.webp",
+    "res/mipmap-xxxhdpi-v4/pj_triangle_sort_default.webp",
+    "res/mipmap-xxxhdpi-v4/pj_update_app_bg.webp",
+    "res/mipmap-xxxhdpi-v4/pj_update_app_logo.webp",
+    "res/mipmap-xxxhdpi-v4/pj_warning_main_12.webp",
+    "res/mipmap-xxxhdpi-v4/tb_chart_mode_day.png",
+    "res/mipmap-xxxhdpi-v4/tb_chart_mode_day2.png",
+    "res/mipmap-xxxhdpi-v4/tb_chart_mode_night.png",
+    "res/mipmap-xxxhdpi-v4/tb_chart_mode_night2.png"
+  ],
+  "keywordHitCounts": {
+    "kline": 6,
+    "market": 24,
+    "quote": 5,
+    "realtime": 2,
+    "websocket": 3,
+    "socket": 3,
+    "minute": 4,
+    "period": 2,
+    "chart": 6,
+    "hq": 80,
+    "quotation": 2
+  }
+}

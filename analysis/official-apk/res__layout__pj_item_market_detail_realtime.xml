@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="0x00000010" android:orientation="0" android:layout_width="-1" android:layout_height="@7F0701E4">
+  <TextView android:textSize="@7F07033C" android:textColor="@7F060116" android:gravity="0x00000010" android:id="@7F09037D" android:layout_width="-2" android:layout_height="-1"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F07033C" android:textColor="@7F060116" android:gravity="0x00800015" android:id="@7F09038D" android:layout_width="0.000000dip" android:layout_height="-1" android:maxLines="1" android:layout_weight="1.000000" app:autoSizeMaxTextSize="@7F07033C" app:autoSizeMinTextSize="@7F070362" app:autoSizeTextType="1" app:fonts="1"/>
+  <TextView android:textSize="@7F07033C" android:textColor="@7F06010E" android:gravity="0x00800015" android:id="@7F090383" android:layout_width="@7F070296" android:layout_height="-1" android:maxLines="1" app:autoSizeMaxTextSize="@7F07033C" app:autoSizeMinTextSize="@7F070362" app:autoSizeTextType="1"/>
+</LinearLayout>

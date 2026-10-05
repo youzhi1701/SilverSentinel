@@ -1,0 +1,14 @@
+:root{color-scheme:dark;--text:#f3f6f7;--muted:#aab5bb;--line:#ffffff1b;--good:#19d5a6;--warn:#f0b84f;--bad:#ff6178}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#151b1f;font:12px/1 "Segoe UI","Microsoft YaHei",sans-serif}
+#ticker{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:0 12px;border:0;border-left:1px solid var(--line);border-right:1px solid var(--line);background:#151b1f;color:var(--text);white-space:nowrap;cursor:pointer;font:inherit;font-variant-numeric:tabular-nums}
+#ticker:hover{background:#20282d}
+#ticker:active{background:#29343a}
+#ticker strong{font-size:13px;color:#fff}
+#ticker span{color:var(--muted)}
+#ticker b{min-width:43px;font-size:14px;letter-spacing:.1px;color:#fff}
+#ticker i{width:6px;height:6px;margin-left:1px;border-radius:50%;background:var(--warn);box-shadow:0 0 6px currentColor}
+body[data-state="online"] #state{color:var(--good);background:var(--good)}
+body[data-state="delayed"] #state{color:var(--warn);background:var(--warn)}
+body[data-state="error"] #state{color:var(--bad);background:var(--bad)}
+@media(max-width:320px){#ticker{gap:6px;padding:0 8px}#ticker strong{font-size:12px}#ticker b{min-width:40px;font-size:13px}}

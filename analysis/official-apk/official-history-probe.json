@@ -1,0 +1,730 @@
+{
+  "source": "https://i.jzj9999.com/quoteh5",
+  "capturedAt": "2026-09-12T02:28:43.823Z",
+  "contracts": [
+    {
+      "code": "JZJ_ag_PS",
+      "group": "JZJ_ag",
+      "side": "S",
+      "name": "白银",
+      "precision": 3
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "group": "JZJ_ag",
+      "side": "B",
+      "name": "白银",
+      "precision": 3
+    }
+  ],
+  "probes": [
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "INFO",
+      "requestedFreq": 1,
+      "responseCount": 1,
+      "quoteCount": 2,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 1,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.588,
+        "high": 14.55,
+        "low": 14.55,
+        "last": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 1,
+        "quoteTime": "1789164003011",
+        "freqTime": "1789164060",
+        "open": 14.588,
+        "high": 14.588,
+        "low": 14.588,
+        "last": 14.588
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "INFO3D",
+      "requestedFreq": 1,
+      "responseCount": 4,
+      "quoteCount": 3961,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 1,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.588,
+        "high": 14.55,
+        "low": 14.55,
+        "last": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 1,
+        "quoteTime": "1788904855482",
+        "freqTime": "1788904860",
+        "open": 14.881,
+        "high": 14.883,
+        "low": 14.858,
+        "last": 14.866
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN1",
+      "requestedFreq": 3,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 3,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 3,
+        "quoteTime": "1789159896595",
+        "freqTime": "1789159920",
+        "open": 14.578,
+        "high": 14.58,
+        "low": 14.578,
+        "close": 14.578
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN5",
+      "requestedFreq": 4,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 4,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174200",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 4,
+        "quoteTime": "1789157991396",
+        "freqTime": "1789158000",
+        "open": 14.565,
+        "high": 14.568,
+        "low": 14.559,
+        "close": 14.568
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN15",
+      "requestedFreq": 5,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 5,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 5,
+        "quoteTime": "1789153194962",
+        "freqTime": "1789153200",
+        "open": 14.544,
+        "high": 14.548,
+        "low": 14.535,
+        "close": 14.544
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN30",
+      "requestedFreq": 6,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 6,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 6,
+        "quoteTime": "1789145983164",
+        "freqTime": "1789146000",
+        "open": 14.544,
+        "high": 14.591,
+        "low": 14.535,
+        "close": 14.581
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN60",
+      "requestedFreq": 7,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 7,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 7,
+        "quoteTime": "1789131566469",
+        "freqTime": "1789131600",
+        "open": 14.483,
+        "high": 14.76,
+        "low": 14.39,
+        "close": 14.76
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN120",
+      "requestedFreq": 8,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 8,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789178400",
+        "open": 14.55,
+        "high": 14.55,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 8,
+        "quoteTime": "1789099199463",
+        "freqTime": "1789099200",
+        "open": 14.381,
+        "high": 14.4,
+        "low": 14.289,
+        "close": 14.315
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MIN240",
+      "requestedFreq": 9,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 9,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789178400",
+        "open": 14.588,
+        "high": 14.588,
+        "low": 14.55,
+        "close": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 9,
+        "quoteTime": "1789019999118",
+        "freqTime": "1789020000",
+        "open": 15.23,
+        "high": 15.312,
+        "low": 15.168,
+        "close": 15.309
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "DAY1",
+      "requestedFreq": 10,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 10,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 14.588,
+        "high": 14.588,
+        "low": 14.55,
+        "close": 14.55,
+        "last": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 10,
+        "quoteTime": "1788299708335",
+        "freqTime": "1788192000",
+        "open": 15.175,
+        "high": 15.275,
+        "low": 14.714,
+        "close": 14.724,
+        "last": 14.724
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "WEEK1",
+      "requestedFreq": 11,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 11,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 15.061,
+        "high": 15.462,
+        "low": 14.289,
+        "close": 14.55,
+        "last": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 11,
+        "quoteTime": "1782597603018",
+        "freqTime": "1782576000",
+        "open": 14.312,
+        "high": 14.991,
+        "low": 12.8,
+        "close": 13.4,
+        "last": 13.4
+      }
+    },
+    {
+      "code": "JZJ_ag_PS",
+      "side": "S",
+      "label": "MONTH1",
+      "requestedFreq": 12,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PS",
+        "freq": 12,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 15.175,
+        "high": 15.462,
+        "low": 14.289,
+        "close": 14.55,
+        "last": 14.55
+      },
+      "last": {
+        "code": "JZJ_ag_PS",
+        "freq": 12,
+        "quoteTime": "1761944384719",
+        "freqTime": "1761840000",
+        "open": 10.597,
+        "high": 12.365,
+        "low": 10.349,
+        "close": 10.919,
+        "last": 10.919
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "INFO",
+      "requestedFreq": 1,
+      "responseCount": 1,
+      "quoteCount": 2,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 1,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.488,
+        "high": 14.45,
+        "low": 14.45,
+        "last": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 1,
+        "quoteTime": "1789164003011",
+        "freqTime": "1789164060",
+        "open": 14.488,
+        "high": 14.488,
+        "low": 14.488,
+        "last": 14.488
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "INFO3D",
+      "requestedFreq": 1,
+      "responseCount": 4,
+      "quoteCount": 3961,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 1,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.488,
+        "high": 14.45,
+        "low": 14.45,
+        "last": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 1,
+        "quoteTime": "1788904855482",
+        "freqTime": "1788904860",
+        "open": 14.781,
+        "high": 14.783,
+        "low": 14.758,
+        "last": 14.766
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN1",
+      "requestedFreq": 3,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 3,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789173960",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 3,
+        "quoteTime": "1789159896595",
+        "freqTime": "1789159920",
+        "open": 14.478,
+        "high": 14.48,
+        "low": 14.478,
+        "close": 14.478
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN5",
+      "requestedFreq": 4,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 4,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174200",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 4,
+        "quoteTime": "1789157991396",
+        "freqTime": "1789158000",
+        "open": 14.465,
+        "high": 14.468,
+        "low": 14.459,
+        "close": 14.468
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN15",
+      "requestedFreq": 5,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 5,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 5,
+        "quoteTime": "1789153194962",
+        "freqTime": "1789153200",
+        "open": 14.444,
+        "high": 14.448,
+        "low": 14.435,
+        "close": 14.444
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN30",
+      "requestedFreq": 6,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 6,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 6,
+        "quoteTime": "1789145983164",
+        "freqTime": "1789146000",
+        "open": 14.444,
+        "high": 14.491,
+        "low": 14.435,
+        "close": 14.481
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN60",
+      "requestedFreq": 7,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 7,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789174800",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 7,
+        "quoteTime": "1789131566469",
+        "freqTime": "1789131600",
+        "open": 14.383,
+        "high": 14.66,
+        "low": 14.29,
+        "close": 14.66
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN120",
+      "requestedFreq": 8,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 8,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789178400",
+        "open": 14.45,
+        "high": 14.45,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 8,
+        "quoteTime": "1789099199463",
+        "freqTime": "1789099200",
+        "open": 14.281,
+        "high": 14.3,
+        "low": 14.189,
+        "close": 14.215
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MIN240",
+      "requestedFreq": 9,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 9,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789178400",
+        "open": 14.488,
+        "high": 14.488,
+        "low": 14.45,
+        "close": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 9,
+        "quoteTime": "1789019999118",
+        "freqTime": "1789020000",
+        "open": 15.13,
+        "high": 15.212,
+        "low": 15.068,
+        "close": 15.209
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "DAY1",
+      "requestedFreq": 10,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 10,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 14.488,
+        "high": 14.488,
+        "low": 14.45,
+        "close": 14.45,
+        "last": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 10,
+        "quoteTime": "1788299708335",
+        "freqTime": "1788192000",
+        "open": 15.075,
+        "high": 15.175,
+        "low": 14.614,
+        "close": 14.624,
+        "last": 14.624
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "WEEK1",
+      "requestedFreq": 11,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 11,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 14.961,
+        "high": 15.362,
+        "low": 14.189,
+        "close": 14.45,
+        "last": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 11,
+        "quoteTime": "1782597603018",
+        "freqTime": "1782576000",
+        "open": 14.212,
+        "high": 14.891,
+        "low": 12.7,
+        "close": 13.3,
+        "last": 13.3
+      }
+    },
+    {
+      "code": "JZJ_ag_PB",
+      "side": "B",
+      "label": "MONTH1",
+      "requestedFreq": 12,
+      "responseCount": 1,
+      "quoteCount": 12,
+      "errors": [],
+      "first": {
+        "code": "JZJ_ag_PB",
+        "freq": 12,
+        "quoteTime": "1789173930124",
+        "freqTime": "1789142400",
+        "open": 15.075,
+        "high": 15.362,
+        "low": 14.189,
+        "close": 14.45,
+        "last": 14.45
+      },
+      "last": {
+        "code": "JZJ_ag_PB",
+        "freq": 12,
+        "quoteTime": "1761944384719",
+        "freqTime": "1761840000",
+        "open": 10.547,
+        "high": 12.259,
+        "low": 10.299,
+        "close": 10.869,
+        "last": 10.869
+      }
+    }
+  ]
+}

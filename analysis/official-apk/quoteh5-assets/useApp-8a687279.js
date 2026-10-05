@@ -1,0 +1,1 @@
+const n=navigator.userAgent,d=n.indexOf("Android")>-1||n.indexOf("Adr")>-1,i=!!n.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);function o(){return(n,o="")=>{try{d?o?window.Android&&window.Android[`${n}`](JSON.stringify(o)):window.Android&&window.Android[`${n}`]():i&&window.webkit&&window.webkit.messageHandlers[`${n}`].postMessage(o)}catch(r){}}}export{o as u};

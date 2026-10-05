@@ -1,0 +1,200 @@
+{
+  "files": [
+    "diff-1702ae89.js",
+    "DINfont-e08d4a7b.js",
+    "lib-e80ca805.js",
+    "quoteh5-979d8a7a.js",
+    "quoteh5-legacy-d2a35cbf.js",
+    "useApp-8a687279.js",
+    "vendor-957fb7c9.js"
+  ],
+  "urls": [
+    "http://www.apache.org/licenses/LICENSE-2.0",
+    "http://www.w3.org/1999/xlink",
+    "http://www.w3.org/2000/svg",
+    "https://github.com/facebook/regenerator/blob/main/LICENSE",
+    "https://ii.jzj9999.com/web/article/index?header=false",
+    "https://ii.jzj9999.com/web/download.html",
+    "https://oem.jin10.com/rongtonggold/index.html",
+    "https://rtjgfsc.rtjzj.com",
+    "https://shop.m.jd.com/shop/home?shopId=10000065&utm_source=iosapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=Wxfriends&ad_od=share&gx=RnAomz8IOXyRidpZ_sA9&gxd=RnAow2NROjLcmZ0U-oQjWH-4YFsBHl-P0BHRbb62u3Wq2wssUByvSZ7zvt3NLOY",
+    "wss://rtjwbqt.ytj9999.com:8443/gateway"
+  ],
+  "imports": [
+    "./DINfont-e08d4a7b.js",
+    "./DINfont-legacy-d0341eda.js",
+    "./diff-1702ae89.js",
+    "./lib-e80ca805.js",
+    "./useApp-8a687279.js",
+    "./vendor-957fb7c9.js"
+  ],
+  "generatedSymbols": [
+    "AuthReq",
+    "AuthResp",
+    "ExtraField",
+    "GoldDeliveryField",
+    "QuotationField",
+    "QuotationFreq",
+    "QuotationMsg",
+    "QuotationRequest",
+    "QuotationResponse",
+    "QuoteMsgID",
+    "QuoteQueryCondition",
+    "RealtimeField",
+    "ServerInnerField",
+    "SubscribeFlag",
+    "TradeStatus",
+    "TradeStatusMsg",
+    "bool",
+    "bytes",
+    "double",
+    "exec",
+    "exports",
+    "finish",
+    "fixed32",
+    "float",
+    "fork",
+    "int32",
+    "ldelim",
+    "length",
+    "msg",
+    "pbv2",
+    "quotation",
+    "reset",
+    "sfixed32",
+    "sint32",
+    "string",
+    "toHash",
+    "toJSON",
+    "zzDecode",
+    "zzEncode"
+  ],
+  "definitions": {
+    "QuoteMsgID": "e.QuoteMsgID=function(){const e={},t=Object.create(e);return t[e[0]=\"quotation_broadcast\"]=0,t[e[1]=\"status_broadcast\"]=1,t[e[16]=\"heart_beat\"]=16,t[e[18]=\"latestQuotation\"]=18,t[e[20]=\"qryQuotation\"]=20,t[e[24]=\"unsubscribe\"]=24,t[e[28]=\"qry_status\"]=28,t[e[30]=\"qry_gold_delivery\"]=30,t[e[32]=\"auth\"]=32,t[e[34]=\"waring\"]=34,t[e[36]=\"qry_waring\"]=36,t[e[64]=\"codes_category_json\"]=64,t[e[66]=\"codes_info_json\"]=66,t[e[68]=\"codes_f10_json\"]=68,t[e[70]=\"qry_all_settle\"]=70,t[e[80]=\"qry_option_info\"]=80,t[e[82]=\"qry_cbond_yield\"]=82,t}(),e.QuotationMsg=function(){function e(e){if(this.response=[],e)for(let t=Object.keys(e),r=0;r<t.length;++r)null!=e[t[r]]&&(this[t[r]]=e[t[r]])}return e.prototype.msgid=0,e.prototype.seq=0,e.prototype.request=null,e.prototype.response=$util.emptyArray,e.prototype.jsonReq=\"\",e.prototype.jsonResp=\"\",e.prototype.errMsg=\"\",e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.msgid&&Object.hasOwnProperty.call(e,\"msgid\")&&t.uint32(8).int32(e.msgid),null!=e.seq&&Object.hasOwnProperty.call(e,\"seq\")&&t.uint32(16).sint32(e.seq),null!=e.request&&Object.hasOwnProperty.call(e,\"request\")&&$root.jadegold.msg.quotation.pbv2.QuotationRequest.encode(e.request,t.uint32(34).fork()).ldelim(),null!=e.response&&e.response.length)for(let r=0;r<e.response.length;++r)$root.jadegold.msg.quotation.pbv2.QuotationResponse.encode(e.response[r],t.uint32(42).fork()).ldelim();return null!=e.jsonReq&&Object.hasOwnProperty.call(e,\"jsonReq\")&&t.uint32(66).string(e.jsonReq),null!=e.jsonResp&&Object.hasOwnProperty.call(e,\"jsonResp\")&&t.uint32(74).string(e.jsonResp),null!=e.errMsg&&Object.hasOwnProperty.call(e,\"errMsg\")&&t.uint32(138).string(e.errMsg),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationMsg;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.msgid=e.int32();break;case 2:o.seq=e.sint32();break;case 4:o.request=$root.jadegold.msg.quotation.pbv2.QuotationRequest.decode(e,e.uint32());break;case 5:o.response&&o.response.length||(o.response=[]),o.response.push($root.jadegold.msg.quotation.pbv2.QuotationResponse.decode(e,e.uint32()));break;case 8:o.jsonReq=e.string();break;case 9:o.jsonResp=e.string();break;case 17:o.errMsg=e.string();break;default:e.skipType(7&t)}}return o},e.decodeDelimited=function(e){return e instanceof $Reader||(e=new $Reader(e)),th",
+    "QuotationFreq": "e.QuotationFreq=function(){const e={},t=Object.create(e);return t[e[0]=\"REALTIME\"]=0,t[e[1]=\"INFO\"]=1,t[e[2]=\"TICK\"]=2,t[e[3]=\"MIN1\"]=3,t[e[4]=\"MIN5\"]=4,t[e[5]=\"MIN15\"]=5,t[e[6]=\"MIN30\"]=6,t[e[7]=\"MIN60\"]=7,t[e[8]=\"MIN120\"]=8,t[e[9]=\"MIN240\"]=9,t[e[10]=\"DAY1\"]=10,t[e[11]=\"WEEK1\"]=11,t[e[12]=\"MONTH1\"]=12,t}(),e.RealtimeField=function(){function e(e){if(this.askPrice=[],this.askVol=[],this.bidPrice=[],this.bidVol=[],e)for(let t=Object.keys(e),r=0;r<t.length;++r)null!=e[t[r]]&&(this[t[r]]=e[t[r]])}return e.prototype.last=0,e.prototype.askPrice=$util.emptyArray,e.prototype.askVol=$util.emptyArray,e.prototype.bidPrice=$util.emptyArray,e.prototype.bidVol=$util.emptyArray,e.prototype.tag=0,e.prototype.posiDelta=0,e.prototype.highLimit=0,e.prototype.lowLimit=0,e.prototype.tickVolume=$util.Long?$util.Long.fromBits(0,0,!1):0,e.prototype.updown=0,e.prototype.updownRate=0,e.prototype.average=0,e.prototype.tradeday=0,e.prototype.infoVolume=$util.Long?$util.Long.fromBits(0,0,!1):0,e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.last&&Object.hasOwnProperty.call(e,\"last\")&&t.uint32(9).double(e.last),null!=e.askPrice&&e.askPrice.length){t.uint32(18).fork();for(let r=0;r<e.askPrice.length;++r)t.double(e.askPrice[r]);t.ldelim()}if(null!=e.askVol&&e.askVol.length){t.uint32(26).fork();for(let r=0;r<e.askVol.length;++r)t.int64(e.askVol[r]);t.ldelim()}if(null!=e.bidPrice&&e.bidPrice.length){t.uint32(34).fork();for(let r=0;r<e.bidPrice.length;++r)t.double(e.bidPrice[r]);t.ldelim()}if(null!=e.bidVol&&e.bidVol.length){t.uint32(42).fork();for(let r=0;r<e.bidVol.length;++r)t.int64(e.bidVol[r]);t.ldelim()}return null!=e.tag&&Object.hasOwnProperty.call(e,\"tag\")&&t.uint32(48).int32(e.tag),null!=e.posiDelta&&Object.hasOwnProperty.call(e,\"posiDelta\")&&t.uint32(57).double(e.posiDelta),null!=e.highLimit&&Object.hasOwnProperty.call(e,\"highLimit\")&&t.uint32(65).double(e.highLimit),null!=e.lowLimit&&Object.hasOwnProperty.call(e,\"lowLimit\")&&t.uint32(73).double(e.lowLimit),null!=e.tickVolume&&Object.hasOwnProperty.call(e,\"tickVolume\")&&t.uint32(80).int64(e.tickVolume),null!=e.updown&&Object.hasOwnProperty.call(e,\"updown\")&&t.uint32(89).double(e.updown),null!=e.updownRate&&Object.hasOwnProperty.call(e,\"updownRate\")&&t.uint32(97).double(e.updownRate),null!=e.average&&Object.hasOwnProperty.call(e,\"average\")&&t.uint32(105).double(e.average),null!=e.tradeday&&Object.hasOwnProperty.call(e,\"tradeday\")&&t.uint32(112).int32(e.tradeday),null!=e.infoVolume&&",
+    "QuoteQueryCondition": "e.QuoteQueryCondition=function(){function e(e){if(e)for(let t=Object.keys(e),r=0;r<t.length;++r)null!=e[t[r]]&&(this[t[r]]=e[t[r]])}return e.prototype.size=0,e.prototype.begintime=0,e.prototype.endtime=0,e.prototype.infoDays=0,e.create=function(t){return new e(t)},e.encode=function(e,t){return t||(t=$Writer.create()),null!=e.size&&Object.hasOwnProperty.call(e,\"size\")&&t.uint32(8).int32(e.size),null!=e.begintime&&Object.hasOwnProperty.call(e,\"begintime\")&&t.uint32(21).fixed32(e.begintime),null!=e.endtime&&Object.hasOwnProperty.call(e,\"endtime\")&&t.uint32(29).fixed32(e.endtime),null!=e.infoDays&&Object.hasOwnProperty.call(e,\"infoDays\")&&t.uint32(32).int32(e.infoDays),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuoteQueryCondition;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.size=e.int32();break;case 2:o.begintime=e.fixed32();break;case 3:o.endtime=e.fixed32();break;case 4:o.infoDays=e.int32();break;default:e.skipType(7&t)}}return o},e.decodeDelimited=function(e){return e instanceof $Reader||(e=new $Reader(e)),this.decode(e,e.uint32())},e.verify=function(e){return\"object\"!=typeof e||null===e?\"object expected\":null!=e.size&&e.hasOwnProperty(\"size\")&&!$util.isInteger(e.size)?\"size: integer expected\":null!=e.begintime&&e.hasOwnProperty(\"begintime\")&&!$util.isInteger(e.begintime)?\"begintime: integer expected\":null!=e.endtime&&e.hasOwnProperty(\"endtime\")&&!$util.isInteger(e.endtime)?\"endtime: integer expected\":null!=e.infoDays&&e.hasOwnProperty(\"infoDays\")&&!$util.isInteger(e.infoDays)?\"infoDays: integer expected\":null},e.fromObject=function(e){if(e instanceof $root.jadegold.msg.quotation.pbv2.QuoteQueryCondition)return e;let t=new $root.jadegold.msg.quotation.pbv2.QuoteQueryCondition;return null!=e.size&&(t.size=0|e.size),null!=e.begintime&&(t.begintime=e.begintime>>>0),null!=e.endtime&&(t.endtime=e.endtime>>>0),null!=e.infoDays&&(t.infoDays=0|e.infoDays),t},e.toObject=function(e,t){t||(t={});let r={};return t.defaults&&(r.size=0,r.begintime=0,r.endtime=0,r.infoDays=0),null!=e.size&&e.hasOwnProperty(\"size\")&&(r.size=e.size),null!=e.begintime&&e.hasOwnProperty(\"begintime\")&&(r.begintime=e.begintime),null!=e.endtime&&e.hasOwnProperty(\"endtime\")&&(r.endtime=e.endtime),null!=e.infoDays&&e.hasOwnProperty(\"infoDays\")&&(r.infoDays=e.infoDays),r},e.prototype.toJSON=function(){return this.constructor.t"
+  },
+  "contextCount": 66,
+  "selected": [
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "qryQuotation",
+      "at": 36569,
+      "context": "s.util,$root=minimal$1.exports.roots.default||(minimal$1.exports.roots.default={});$root.jadegold=(()=>{const e={};return e.msg=function(){const e={};return e.quotation=function(){const e={};return e.pbv2=function(){const e={};return e.QuoteMsgID=function(){const e={},t=Object.create(e);return t[e[0]=\"quotation_broadcast\"]=0,t[e[1]=\"status_broadcast\"]=1,t[e[16]=\"heart_beat\"]=16,t[e[18]=\"latestQuotation\"]=18,t[e[20]=\"qryQuotation\"]=20,t[e[24]=\"unsubscribe\"]=24,t[e[28]=\"qry_status\"]=28,t[e[30]=\"qry_gold_delivery\"]=30,t[e[32]=\"auth\"]=32,t[e[34]=\"waring\"]=34,t[e[36]=\"qry_waring\"]=36,t[e[64]=\"codes_category_json\"]=64,t[e[66]=\"codes_info_json\"]=66,t[e[68]=\"codes_f10_json\"]=68,t[e[70]=\"qry_all_settle\"]=70,t[e[80]=\"qry_option_info\"]=80,t[e[82]=\"qry_cbond_yield\"]=82,t}(),e.QuotationMsg=function(){function e(e){if(this.response=[],e)for(let t=Object.keys(e),r=0;r<t.length;++r)null!=e[t[r]]&&(this[t[r]]=e[t[r]])}return e.prototype.msgid=0,e.prototype.seq=0,e.prototype.request=null,e.prototype.response=$util.emptyArray,e.prototype.jsonReq=\"\",e.prototype.jsonResp=\"\",e.prototype.errMsg=\"\",e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.msgid&&Object.hasOwnProperty.call(e,\"msgid\")&&t.uint32(8).int32(e.msgid),null!=e.seq&&Object.hasOwnProperty.call(e,\"seq\")&&t.uint32(16).sint32(e.seq),null!=e.request&&Object.hasOwnProperty.call("
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "qryQuotation",
+      "at": 40395,
+      "context": ")&&!$util.isString(e.errMsg)?\"errMsg: string expected\":null},e.fromObject=function(e){if(e instanceof $root.jadegold.msg.quotation.pbv2.QuotationMsg)return e;let t=new $root.jadegold.msg.quotation.pbv2.QuotationMsg;switch(e.msgid){case\"quotation_broadcast\":case 0:t.msgid=0;break;case\"status_broadcast\":case 1:t.msgid=1;break;case\"heart_beat\":case 16:t.msgid=16;break;case\"latestQuotation\":case 18:t.msgid=18;break;case\"qryQuotation\":case 20:t.msgid=20;break;case\"unsubscribe\":case 24:t.msgid=24;break;case\"qry_status\":case 28:t.msgid=28;break;case\"qry_gold_delivery\":case 30:t.msgid=30;break;case\"auth\":case 32:t.msgid=32;break;case\"waring\":case 34:t.msgid=34;break;case\"qry_waring\":case 36:t.msgid=36;break;case\"codes_category_json\":case 64:t.msgid=64;break;case\"codes_info_json\":case 66:t.msgid=66;break;case\"codes_f10_json\":case 68:t.msgid=68;break;case\"qry_all_settle\":case 70:t.msgid=70;break;case\"qry_option_info\":case 80:t.msgid=80;break;case\"qry_cbond_yield\":case 82:t.msgid=82}if(null!=e.seq&&(t.seq=0|e.seq),null!=e.request){if(\"object\"!=typeof e.request)throw TypeError(\".jadegold.msg.quotation.pbv2.QuotationMsg.request: object expected\");t.request=$root.jadegold.msg.quotation.pbv2.QuotationRequest.fromObject(e.request)}if(e.response){if(!Array.isArray(e.response))throw TypeError(\".jadegold.msg.quotation.pbv2.QuotationMsg.response: array expected\");t.response=[];fo"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "qryQuotation",
+      "at": 145903,
+      "context": "space(e)),publisher.unsubscribe(e,t);try{_contractUnsubscribe(t)}catch(r){}}},broadcastSubscribe=({namespace:e,callback:t})=>{e&&t&&publisher.broadcastSubscribe(e,t)},connectStatusSubscribe=e=>{publisher.connectStatusSubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,ge"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "qryQuotation",
+      "at": 146037,
+      "context": "blisher.broadcastSubscribe(e,t)},connectStatusSubscribe=e=>{publisher.connectStatusSubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "qryQuotation",
+      "at": 146159,
+      "context": "oJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 43134,
+      "context": "nstructor.toObject(this,minimal$1.exports.util.toJSONOptions)},e}(),e.SubscribeFlag=function(){const e={},t=Object.create(e);return t[e[0]=\"SUBSCRIBE\"]=0,t[e[1]=\"KEEP\"]=1,t}(),e.QuotationRequest=function(){function e(e){if(this.codes=[],this.freq=[],e)for(let t=Object.keys(e),r=0;r<t.length;++r)null!=e[t[r]]&&(this[t[r]]=e[t[r]])}return e.prototype.codes=$util.emptyArray,e.prototype.freq=$util.emptyArray,e.prototype.queryCondition=null,e.prototype.subscribeFlag=0,e.prototype.auth=null,e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.codes&&e.codes.length)for(let r=0;r<e.codes.length;++r)t.uint32(10).string(e.codes[r]);if(null!=e.freq&&e.freq.length){t.uint32(18).fork();for(let r=0;r<e.freq.length;++r)t.int32(e.freq[r]);t.ldelim()}return null!=e.queryCondition&&Object.hasOwnProperty.call(e,\"queryCondition\")&&$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.encode(e.queryCondition,t.uint32(26).fork()).ldelim(),null!=e.subscribeFlag&&Object.hasOwnProperty.call(e,\"subscribeFlag\")&&t.uint32(32).int32(e.subscribeFlag),null!=e.auth&&Object.hasOwnProperty.call(e,\"auth\")&&$root.jadegold.msg.quotation.pbv2.AuthReq.encode(e.auth,t.uint32(42).fork()).ldelim(),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 43516,
+      "context": "ype.freq=$util.emptyArray,e.prototype.queryCondition=null,e.prototype.subscribeFlag=0,e.prototype.auth=null,e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.codes&&e.codes.length)for(let r=0;r<e.codes.length;++r)t.uint32(10).string(e.codes[r]);if(null!=e.freq&&e.freq.length){t.uint32(18).fork();for(let r=0;r<e.freq.length;++r)t.int32(e.freq[r]);t.ldelim()}return null!=e.queryCondition&&Object.hasOwnProperty.call(e,\"queryCondition\")&&$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.encode(e.queryCondition,t.uint32(26).fork()).ldelim(),null!=e.subscribeFlag&&Object.hasOwnProperty.call(e,\"subscribeFlag\")&&t.uint32(32).int32(e.subscribeFlag),null!=e.auth&&Object.hasOwnProperty.call(e,\"auth\")&&$root.jadegold.msg.quotation.pbv2.AuthReq.encode(e.auth,t.uint32(42).fork()).ldelim(),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation."
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 43562,
+      "context": "dition=null,e.prototype.subscribeFlag=0,e.prototype.auth=null,e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.codes&&e.codes.length)for(let r=0;r<e.codes.length;++r)t.uint32(10).string(e.codes[r]);if(null!=e.freq&&e.freq.length){t.uint32(18).fork();for(let r=0;r<e.freq.length;++r)t.int32(e.freq[r]);t.ldelim()}return null!=e.queryCondition&&Object.hasOwnProperty.call(e,\"queryCondition\")&&$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.encode(e.queryCondition,t.uint32(26).fork()).ldelim(),null!=e.subscribeFlag&&Object.hasOwnProperty.call(e,\"subscribeFlag\")&&t.uint32(32).int32(e.subscribeFlag),null!=e.auth&&Object.hasOwnProperty.call(e,\"auth\")&&$root.jadegold.msg.quotation.pbv2.AuthReq.encode(e.auth,t.uint32(42).fork()).ldelim(),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.decode(e,e.uint32());"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 43619,
+      "context": "null,e.create=function(t){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.codes&&e.codes.length)for(let r=0;r<e.codes.length;++r)t.uint32(10).string(e.codes[r]);if(null!=e.freq&&e.freq.length){t.uint32(18).fork();for(let r=0;r<e.freq.length;++r)t.int32(e.freq[r]);t.ldelim()}return null!=e.queryCondition&&Object.hasOwnProperty.call(e,\"queryCondition\")&&$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.encode(e.queryCondition,t.uint32(26).fork()).ldelim(),null!=e.subscribeFlag&&Object.hasOwnProperty.call(e,\"subscribeFlag\")&&t.uint32(32).int32(e.subscribeFlag),null!=e.auth&&Object.hasOwnProperty.call(e,\"auth\")&&$root.jadegold.msg.quotation.pbv2.AuthReq.encode(e.auth,t.uint32(42).fork()).ldelim(),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.decode(e,e.uint32());break;case 4:o.subscribeFlag=e.int32();break;case 5:o.aut"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 43643,
+      "context": "){return new e(t)},e.encode=function(e,t){if(t||(t=$Writer.create()),null!=e.codes&&e.codes.length)for(let r=0;r<e.codes.length;++r)t.uint32(10).string(e.codes[r]);if(null!=e.freq&&e.freq.length){t.uint32(18).fork();for(let r=0;r<e.freq.length;++r)t.int32(e.freq[r]);t.ldelim()}return null!=e.queryCondition&&Object.hasOwnProperty.call(e,\"queryCondition\")&&$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.encode(e.queryCondition,t.uint32(26).fork()).ldelim(),null!=e.subscribeFlag&&Object.hasOwnProperty.call(e,\"subscribeFlag\")&&t.uint32(32).int32(e.subscribeFlag),null!=e.auth&&Object.hasOwnProperty.call(e,\"auth\")&&$root.jadegold.msg.quotation.pbv2.AuthReq.encode(e.auth,t.uint32(42).fork()).ldelim(),t},e.encodeDelimited=function(e,t){return this.encode(e,t).ldelim()},e.decode=function(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.decode(e,e.uint32());break;case 4:o.subscribeFlag=e.int32();break;case 5:o.auth=$root.jadegold.msg.quo"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 44436,
+      "context": "on(e,t){e instanceof $Reader||(e=$Reader.create(e));let r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.decode(e,e.uint32());break;case 4:o.subscribeFlag=e.int32();break;case 5:o.auth=$root.jadegold.msg.quotation.pbv2.AuthReq.decode(e,e.uint32());break;default:e.skipType(7&t)}}return o},e.decodeDelimited=function(e){return e instanceof $Reader||(e=new $Reader(e)),this.decode(e,e.uint32())},e.verify=function(e){if(\"object\"!=typeof e||null===e)return\"object expected\";if(null!=e.codes&&e.hasOwnProperty(\"codes\")){if(!Array.isArray(e.codes))return\"codes: array expected\";for(let t=0;t<e.codes.length;++t)if(!$util.isString(e.codes[t]))return\"codes: string[] expected\"}if(null!=e.freq&&e.hasOwnProperty(\"freq\")){if(!Array.isArray(e.freq))return\"freq: array expected\";for(let t=0;t<e.freq.length;++t)switch(e.freq[t]){default:return\"freq: enum value[] expected\";case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:case 11:case 12:}}if(null!=e.queryCondition&&e.hasOwnPropert"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 44490,
+      "context": "t r=void 0===t?e.len:e.pos+t,o=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;for(;e.pos<r;){let t=e.uint32();switch(t>>>3){case 1:o.codes&&o.codes.length||(o.codes=[]),o.codes.push(e.string());break;case 2:if(o.freq&&o.freq.length||(o.freq=[]),2==(7&t)){let t=e.uint32()+e.pos;for(;e.pos<t;)o.freq.push(e.int32())}else o.freq.push(e.int32());break;case 3:o.queryCondition=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.decode(e,e.uint32());break;case 4:o.subscribeFlag=e.int32();break;case 5:o.auth=$root.jadegold.msg.quotation.pbv2.AuthReq.decode(e,e.uint32());break;default:e.skipType(7&t)}}return o},e.decodeDelimited=function(e){return e instanceof $Reader||(e=new $Reader(e)),this.decode(e,e.uint32())},e.verify=function(e){if(\"object\"!=typeof e||null===e)return\"object expected\";if(null!=e.codes&&e.hasOwnProperty(\"codes\")){if(!Array.isArray(e.codes))return\"codes: array expected\";for(let t=0;t<e.codes.length;++t)if(!$util.isString(e.codes[t]))return\"codes: string[] expected\"}if(null!=e.freq&&e.hasOwnProperty(\"freq\")){if(!Array.isArray(e.freq))return\"freq: array expected\";for(let t=0;t<e.freq.length;++t)switch(e.freq[t]){default:return\"freq: enum value[] expected\";case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:case 11:case 12:}}if(null!=e.queryCondition&&e.hasOwnProperty(\"queryCondition\")){let t=$root.jadegold.msg.quotatio"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "queryCondition",
+      "at": 45369,
+      "context": "\"codes: array expected\";for(let t=0;t<e.codes.length;++t)if(!$util.isString(e.codes[t]))return\"codes: string[] expected\"}if(null!=e.freq&&e.hasOwnProperty(\"freq\")){if(!Array.isArray(e.freq))return\"freq: array expected\";for(let t=0;t<e.freq.length;++t)switch(e.freq[t]){default:return\"freq: enum value[] expected\";case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:case 10:case 11:case 12:}}if(null!=e.queryCondition&&e.hasOwnProperty(\"queryCondition\")){let t=$root.jadegold.msg.quotation.pbv2.QuoteQueryCondition.verify(e.queryCondition);if(t)return\"queryCondition.\"+t}if(null!=e.subscribeFlag&&e.hasOwnProperty(\"subscribeFlag\")&&!$util.isInteger(e.subscribeFlag))return\"subscribeFlag: integer expected\";if(null!=e.auth&&e.hasOwnProperty(\"auth\")){let t=$root.jadegold.msg.quotation.pbv2.AuthReq.verify(e.auth);if(t)return\"auth.\"+t}return null},e.fromObject=function(e){if(e instanceof $root.jadegold.msg.quotation.pbv2.QuotationRequest)return e;let t=new $root.jadegold.msg.quotation.pbv2.QuotationRequest;if(e.codes){if(!Array.isArray(e.codes))throw TypeError(\".jadegold.msg.quotation.pbv2.QuotationRequest.codes: array expected\");t.codes=[];for(let r=0;r<e.codes.length;++r)t.codes[r]=String(e.codes[r])}if(e.freq){if(!Array.isArray(e.freq))throw TypeError(\".jadegold.msg.quotation.pbv2.QuotationRequest.freq: array expected\");t.freq=[];for(let r=0;r<e.freq.lengt"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getMinuteHistory",
+      "at": 145856,
+      "context": "if(e){t&&t.length||(t=publisher.listCodesByNamespace(e)),publisher.unsubscribe(e,t);try{_contractUnsubscribe(t)}catch(r){}}},broadcastSubscribe=({namespace:e,callback:t})=>{e&&t&&publisher.broadcastSubscribe(e,t)},connectStatusSubscribe=e=>{publisher.connectStatusSubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getMinuteHistory",
+      "at": 146876,
+      "context": "ntractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getDayLineHistory",
+      "at": 145983,
+      "context": "oadcastSubscribe=({namespace:e,callback:t})=>{e&&t&&publisher.broadcastSubscribe(e,t)},connectStatusSubscribe=e=>{publisher.connectStatusSubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getDayLineHistory",
+      "at": 146898,
+      "context": "tupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getTick",
+      "at": 146121,
+      "context": "ubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteMsgID.codes_info_json,{}),getContractCategory=()=>doJsonRequest(QuoteMsgID.codes_category_json,{}),getMinuteHistory=(e,t=0)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.INFO],queryCondition:{infoDays:t}}),getDayLineHistory=(e,t=100,r,o)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq[r]],queryCondition:{size:t,endtime:o}}),getTick=(e,t=1)=>doRequest(QuoteMsgID.qryQuotation,{codes:[e],freq:[QuotationFreq.TICK],queryCondition:{size:t}}),getQryStatus=()=>doRequest(QuoteMsgID.qry_status,{codes:[\"RTJ\"]}),index$4=\"\",index$3=\"\",index$2=\"\",index$1=\"\",index=\"\",DINfont=\"\";export{uploadAvatar as A,updateUserInfo as B,_export_sfc as _,useAppStoreWithOut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "getTick",
+      "at": 146863,
+      "context": "ut as a,getContractCategory as b,setupStore as c,defineStore as d,broadcastSubscribe as e,connectStatusSubscribe as f,getContractBaseInfo as g,get as h,getQryStatus as i,closeWs as j,quotationUnsubscribe as k,loadImageCode as l,loginByPwd as m,sendSms as n,loginBySms as o,useUserStore as p,quotationSubscribe as q,restartWs as r,store as s,resetPassword as t,useUserStoreWithOut as u,sendResetSms as v,useAppStore as w,getTick as x,getMinuteHistory as y,getDayLineHistory as z};\n"
+    },
+    {
+      "file": "DINfont-e08d4a7b.js",
+      "needle": "wss://",
+      "at": 144802,
+      "context": "{}){return new Promise(((r,o)=>s(r,o,{msgid:e,request:t})))};return{doRequest:u,doJsonRequest:function(e,t={}){return new Promise(((r,o)=>s(r,o,{msgid:e,json:t})))},reConnect:()=>{n(),o=t()},closeConnect:n}}const{doRequest:doRequest,doJsonRequest:doJsonRequest,publisher:publisher=pushPublisher,reConnect:reConnect,closeConnect:closeConnect}=(()=>{let e={};return location.href.indexOf(\"/article\")>0||(e=initConnection(\"wss://rtjwbqt.ytj9999.com:8443/gateway\")),e})(),restartWs=()=>{reConnect()},closeWs=()=>closeConnect(),_contractSubscribe=(e,t)=>{if(!e||!e.length)return;const r=[];for(const o of e)publisher.hasSubscribe(o)?publisher.triggerNotify(o):r.push(o);return r.length?doRequest(QuoteMsgID.latestQuotation,{codes:r,freq:[QuotationFreq.REALTIME]}):void 0},_contractUnsubscribe=e=>{if(e&&e.length)return doRequest(QuoteMsgID.unsubscribe,{codes:e,freq:[QuotationFreq.INFO]})},quotationSubscribe=({namespace:e,codes:t,callback:r})=>{e&&t&&(r&&publisher.subscribe(t,e,r),_contractSubscribe(t))},quotationUnsubscribe=({namespace:e,codes:t=null})=>{if(e){t&&t.length||(t=publisher.listCodesByNamespace(e)),publisher.unsubscribe(e,t);try{_contractUnsubscribe(t)}catch(r){}}},broadcastSubscribe=({namespace:e,callback:t})=>{e&&t&&publisher.broadcastSubscribe(e,t)},connectStatusSubscribe=e=>{publisher.connectStatusSubscribe(e)},getContractBaseInfo=()=>doJsonRequest(QuoteM"
+    }
+  ]
+}

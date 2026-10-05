@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="0x00000010" android:paddingTop="@7F07030D" android:paddingBottom="@7F07030D" android:layout_width="-2" android:layout_height="-2" app:layout_flexBasisPercent="50.000001%">
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F070340" android:textColor="@7F060116" android:id="@7F0903AF" android:layout_width="-2" android:layout_height="-2" app:fonts="6"/>
+  <com.pjkj.library.common.weight.textview.FontTextView android:textSize="@7F070342" android:textColor="@7F06010E" android:id="@7F0903D4" android:layout_width="-2" android:layout_height="-2" app:fonts="5"/>
+</LinearLayout>
