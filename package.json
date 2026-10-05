@@ -27,7 +27,7 @@
     "capture:mini-compact": "electron . --disable-gpu --data-dir=qa/v04-profile-mini-compact --capture-mini=qa/v04-mini-compact.png",
     "capture:chart-5s": "electron . --disable-gpu --data-dir=qa/v041-profile-chart-5s --capture=qa/v041-chart-5s.png",
     "capture:ai-settings": "electron . --disable-gpu --data-dir=qa/v041-profile-ai-settings --capture=qa/v041-ai-settings.png",
-    "check:syntax": "node --check src/main.cjs && node --check src/preload.cjs && node --check src/renderer.js && node --check src/worker.mjs && node --check src/feed.mjs && node --check src/alerts.mjs && node --check src/ai.mjs && node --check src/news-feed.mjs && node --check src/store.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
     "check": "npm run check:syntax && npm test"
   },
   "dependencies": {
