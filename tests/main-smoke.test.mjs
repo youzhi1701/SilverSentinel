@@ -19,3 +19,11 @@ test('persisted app settings are normalized before use', () => {
   assert.match(main, /isValidClockTime\(value\.quietStart\)/);
   assert.match(main, /isValidClockTime\(value\.quietEnd\)/);
 });
+
+test('embedded official pages cannot navigate the app window to arbitrary hosts', () => {
+  assert.match(main, /const trustedSourceDomains = \['jzj9999\.com', 'ytj9999\.com', 'jin10\.com'\]/);
+  assert.match(main, /function isTrustedSourceUrl\(/);
+  assert.match(main, /will-navigate/);
+  assert.match(main, /shell\.openExternal\(next\)/);
+});
+
