@@ -34,3 +34,12 @@ test('renderer crash recovery is bounded to avoid reload loops', () => {
   assert.match(main, /界面在一分钟内连续异常退出/);
 });
 
+test('hot main-process settings use normalized in-memory caches', () => {
+  for (const name of ['getSettings', 'getAppSettings', 'getAiSettings', 'getAlertStore']) {
+    assert.match(main, new RegExp(`function\\s+${name}\\s*\\(`));
+  }
+  assert.match(main, /const saved = getAppSettings\(\)/);
+  assert.match(main, /const stored = getAlertStore\(\)/);
+  assert.match(main, /const settings = getSettings\(\)/);
+});
+
