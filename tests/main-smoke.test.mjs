@@ -27,3 +27,10 @@ test('embedded official pages cannot navigate the app window to arbitrary hosts'
   assert.match(main, /shell\.openExternal\(next\)/);
 });
 
+test('renderer crash recovery is bounded to avoid reload loops', () => {
+  assert.match(main, /let renderCrashTimes = \[\]/);
+  assert.match(main, /now - time < 60000/);
+  assert.match(main, /renderCrashTimes\.length <= 3/);
+  assert.match(main, /界面在一分钟内连续异常退出/);
+});
+
