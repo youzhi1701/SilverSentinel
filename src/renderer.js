@@ -447,7 +447,23 @@ $('operation-log-list').onclick=async event=>{const button=event.target.closest(
 $('log-module-filter').onchange=renderOperationLogs;
 $('open-data').onclick=()=>api.openData();$('source').onclick=()=>api.openSource();$('open-chart').onclick=()=>api.openChart().catch(error=>toast(userError(error,'无法打开官方行情'),'bad'));$('reload-chart').onclick=refreshChart;$('reconnect').onclick=async()=>{await api.reconnect();toast('正在重新连接融通金行情')};$('minimize').onclick=()=>api.minimize();$('maximize').onclick=()=>api.maximize();$('close').onclick=()=>api.close();$('quit').onclick=()=>api.quit();
 
-api.onMailSettingsChanged(async value=>{mail=value;renderMail();try{alerts=await api.alerts();renderRules()}catch{}});api.onAlertsChanged(value=>{const structure=JSON.stringify((value.rules||[]).map(r=>[r.id,r.enabled,r.name,r.description,r.maxPerDay,r.delivery?.status])),eventChanged=JSON.stringify((value.events||[]).slice(0,3).map(e=>[e.id,e.status,e.time]))!==JSON.stringify((alerts.events||[]).slice(0,3).map(e=>[e.id,e.status,e.time]));alerts=value;if(structure!==lastRuleStructureSignature)renderRules();else{updateRuleLiveRows();$('rules-waiting').textContent=(alerts.rules||[]).filter(r=>r.enabled&&!r.evaluation?.ready).length;$('rules-triggered').textContent=(alerts.rules||[]).reduce((n,r)=>n+Number(r.state?.sentToday||0),0)}if(eventChanged){renderEvents();const latest=(value.events||[])[0];if(latest)api.logSystemEvent({module:'K线',level:'info',message:`预警标记已接收：${latest.ruleName||'预警'}`,details:{eventTime:latest.time,receivedAt:Date.now(),ruleId:latest.ruleId}})}scheduleDrawKline()});api.onAppSettingsChanged(value=>{prefs=value;renderPrefs()});api.onAiSettingsChanged(value=>{ai=value;renderAi()});api.onAlertSound(playSound);api.onSpeakAlert(speak)
+api.onMailSettingsChanged(async value=>{mail=value;renderMail();try{alerts=await api.alerts();renderRules()}catch{}});
+api.onAlertsChanged(value=>{
+  const structure=JSON.stringify((value.rules||[]).map(r=>[r.id,r.enabled,r.name,r.description,r.maxPerDay,r.delivery?.status]));
+  const eventSignature=rows=>JSON.stringify((rows||[]).slice(0,3).map(e=>[e.id,e.status,e.time,e.message,e.completedAt,(e.deliveryResults||[]).length]));
+  const previousLatestId=(alerts.events||[])[0]?.id||'';
+  const eventChanged=eventSignature(value.events)!==eventSignature(alerts.events);
+  alerts=value;
+  if(structure!==lastRuleStructureSignature)renderRules();
+  else{updateRuleLiveRows();$('rules-waiting').textContent=(alerts.rules||[]).filter(r=>r.enabled&&!r.evaluation?.ready).length;$('rules-triggered').textContent=(alerts.rules||[]).reduce((n,r)=>n+Number(r.state?.sentToday||0),0)}
+  if(eventChanged){
+    renderEvents();
+    const latest=(value.events||[])[0];
+    if(latest&&latest.id!==previousLatestId)api.logSystemEvent({module:'K线',level:'info',message:`预警标记已接收：${latest.ruleName||'预警'}`,details:{eventTime:latest.time,receivedAt:Date.now(),ruleId:latest.ruleId}});
+  }
+  scheduleDrawKline();
+});
+api.onAppSettingsChanged(value=>{prefs=value;renderPrefs()});api.onAiSettingsChanged(value=>{ai=value;renderAi()});api.onAlertSound(playSound);api.onSpeakAlert(speak)
 api.onAiProgress(value=>{const state=$('ai-state');state.className=`notice ${value.stage==='complete'?'good':'info'}`;state.innerHTML=`<i class="ph ${value.stage==='complete'?'ph-check-circle':'ph-circle-notch ph-spin'}"></i><span>${escapeHtml(value.message)}</span>`});
 let resizeLayoutTimer=0,lastViewportSignature='';window.addEventListener('resize',()=>{clearTimeout(resizeLayoutTimer);resizeLayoutTimer=setTimeout(()=>{const signature=`${document.documentElement.clientWidth}x${document.documentElement.clientHeight}@${devicePixelRatio||1}`;if(signature!==lastViewportSignature){lastViewportSignature=signature;applyDisplayLayout()}scheduleDrawKline()},120)});document.addEventListener('visibilitychange',()=>{if(!document.hidden){refreshStatus();refreshAlerts();refreshChart();refreshNews()}});
 Promise.all([api.mailSettings(),api.appSettings(),api.alerts(),api.aiSettings()]).then(([m,p,a,i])=>{mail=m;prefs=p;alerts=a;ai=i;renderMail();renderPrefs();renderRules();renderEvents();renderAi();renderOperationLogs();startupStep('settings',true,'本地设置已读取');if(requestedPanel==='analysis')goPage('analysis');if(requestedPanel==='settings')goPage('settings');if(requestedPanel==='mail'||requestedPanel==='logs')goPage('notifications');if(requestedPanel==='rule'){goPage('alerts');setTimeout(()=>openRule(),80)}}).catch(error=>{startupStep('settings',false,'部分设置读取失败');toast(userError(error),'bad')});
