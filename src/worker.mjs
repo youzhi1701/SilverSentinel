@@ -38,4 +38,6 @@ try{
  newsFeed.start();
 }catch(error){send({type:'fatal',message:'监控启动失败：'+error.message});process.exitCode=1}
 
-process.on('uncaughtException',()=>{if(!shutting)send({type:'fatal',message:'采集进程发生错误，请重新启动软件。'});process.exit(1)});
+const failWorker=message=>{if(!shutting)send({type:'fatal',message});process.exit(1)};
+process.on('uncaughtException',()=>failWorker('采集进程发生错误，请重新启动软件。'));
+process.on('unhandledRejection',()=>failWorker('采集进程发生未处理的异步错误，请重新启动软件。'));
