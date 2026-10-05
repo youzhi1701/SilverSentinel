@@ -101,6 +101,7 @@ function readJson(file, fallback) {
   }
   return fallback();
 }
+const cloneJson = value => JSON.parse(JSON.stringify(value));
 
 const settingsPath = () => path.join(app.getPath('userData'), 'mail-settings.json');
 const defaultMailSettings = () => ({
@@ -114,10 +115,23 @@ const defaultMailSettings = () => ({
   logs: [],
   connection: { status: 'untested', time: 0, message: '尚未测试' },
 });
-function readSettings() {
-  return { ...defaultMailSettings(), ...readJson(settingsPath(), defaultMailSettings) };
+let mailSettingsCache = null;
+function normalizeMailSettings(value = {}) {
+  const merged = { ...defaultMailSettings(), ...(value && typeof value === 'object' ? value : {}) };
+  merged.recipients = Array.isArray(merged.recipients) ? merged.recipients : [];
+  merged.logs = Array.isArray(merged.logs) ? merged.logs : [];
+  merged.connection = merged.connection && typeof merged.connection === 'object' ? merged.connection : defaultMailSettings().connection;
+  return merged;
 }
-const writeSettings = value => atomicWrite(settingsPath(), value);
+function getSettings() {
+  if (!mailSettingsCache) mailSettingsCache = normalizeMailSettings(readJson(settingsPath(), defaultMailSettings));
+  return mailSettingsCache;
+}
+function readSettings() { return cloneJson(getSettings()); }
+function writeSettings(value) {
+  mailSettingsCache = normalizeMailSettings(cloneJson(value));
+  atomicWrite(settingsPath(), mailSettingsCache);
+}
 function encryptSecret(value) {
   if (!safeStorage.isEncryptionAvailable()) throw Error('当前系统无法安全保存邮箱授权码');
   return safeStorage.encryptString(value).toString('base64');
@@ -128,7 +142,7 @@ function decryptSecret(value, label = '密钥') {
   catch { throw Error(`${label}无法读取，请重新填写`); }
 }
 function publicSettings() {
-  const value = readSettings();
+  const value = getSettings();
   let password = '', secretError = '';
   try { password = value.password ? decryptSecret(value.password, '邮箱授权码') : ''; } catch (error) { secretError = error.message; }
   const rules = readAlertStore().rules;
@@ -230,21 +244,27 @@ function publicAiSettings() {
 
 const alertPath = () => path.join(app.getPath('userData'), 'alert-settings.json');
 const defaultAlertStore = () => ({ rules: [], states: {}, events: [], queue: [] });
-function readAlertStore() {
-  try {
-    const value = readJson(alertPath(), defaultAlertStore);
-    return {
-      rules: Array.isArray(value.rules) ? value.rules : [],
-      states: value.states && typeof value.states === 'object' ? value.states : {},
-      events: Array.isArray(value.events) ? value.events : [],
-      queue: Array.isArray(value.queue) ? value.queue : [],
-    };
-  } catch { return defaultAlertStore(); }
+let alertStoreCache = null;
+function normalizeAlertStore(value = {}) {
+  return {
+    rules: Array.isArray(value.rules) ? value.rules : [],
+    states: value.states && typeof value.states === 'object' && !Array.isArray(value.states) ? value.states : {},
+    events: Array.isArray(value.events) ? value.events : [],
+    queue: Array.isArray(value.queue) ? value.queue : [],
+  };
 }
-const writeAlertStore = value => atomicWrite(alertPath(), value);
+function getAlertStore() {
+  if (!alertStoreCache) alertStoreCache = normalizeAlertStore(readJson(alertPath(), defaultAlertStore));
+  return alertStoreCache;
+}
+function readAlertStore() { return cloneJson(getAlertStore()); }
+function writeAlertStore(value) {
+  alertStoreCache = normalizeAlertStore(cloneJson(value));
+  atomicWrite(alertPath(), alertStoreCache);
+}
 function publicAlerts() {
-  const stored = readAlertStore();
-  const settings = readSettings();
+  const stored = getAlertStore();
+  const settings = getSettings();
   const recipients = Array.isArray(settings.recipients) ? settings.recipients : [];
   const rules = (alertEngine ? alertEngine.publicRules() : stored.rules).map(rule => {
     if (!rule.notifyEmail) return { ...rule, delivery: { status: 'local', message: '使用本地提醒' } };
