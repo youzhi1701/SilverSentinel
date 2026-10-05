@@ -31,6 +31,13 @@ const iconPath = path.join(__dirname, '../assets/shengshi-logo.png');
 const windowIconPath = path.join(__dirname, '../assets/shengshi-logo.ico');
 const chartUrl = 'https://i.jzj9999.com/quoteh5';
 const newsUrl = 'https://oem.jin10.com/rongtonggold/index.html';
+const trustedSourceDomains = ['jzj9999.com', 'ytj9999.com', 'jin10.com'];
+function isTrustedSourceUrl(value) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === 'https:' && trustedSourceDomains.some(domain => parsed.hostname === domain || parsed.hostname.endsWith(`.${domain}`));
+  } catch { return false; }
+}
 const chartIntervals = new Set(['5s', '15s', '30s', '1', '5', '15', '30', '60', '120', '240', 'day', 'week', 'month']);
 const chartSizes = new Set([120, 300, 600, 1000]);
 const retryDelays = [60000, 300000, 900000, 1800000, 3600000];
@@ -68,7 +75,8 @@ function openSourceWindow(url, title='融通金官方数据') {
   if (sourceWindow && !sourceWindow.isDestroyed()) { sourceWindow.setTitle(`${title} · 盛世白银`);sourceWindow.webContents.setAudioMuted(true); sourceWindow.loadURL(url); sourceWindow.show(); sourceWindow.focus(); return true; }
   sourceWindow = new BrowserWindow({ width: 1240, height: 840, minWidth: 820, minHeight: 600, show:false,title: `${title} · 盛世白银`, icon: windowIconPath, parent: window, autoHideMenuBar: true, backgroundColor:'#090f12', webPreferences: { contextIsolation: true, sandbox: true, nodeIntegration: false } });
   sourceWindow.webContents.setAudioMuted(true);
-  sourceWindow.webContents.setWindowOpenHandler(({url: next}) => { if (/^https:\/\//i.test(next)) sourceWindow.loadURL(next); return { action: 'deny' }; });
+  sourceWindow.webContents.setWindowOpenHandler(({url: next}) => { if (isTrustedSourceUrl(next)) sourceWindow.loadURL(next); else if (/^https:\/\//i.test(next)) shell.openExternal(next); return { action: 'deny' }; });
+  sourceWindow.webContents.on('will-navigate', (event, next) => { if (isTrustedSourceUrl(next)) return; event.preventDefault(); if (/^https:\/\//i.test(next)) shell.openExternal(next); });
   sourceWindow.webContents.on('did-start-loading',()=>sourceWindow?.setProgressBar(2));
   sourceWindow.webContents.on('did-stop-loading',()=>sourceWindow?.setProgressBar(-1));
   sourceWindow.webContents.on('did-fail-load',(_event,code,description)=>{sourceWindow?.setProgressBar(-1);sourceWindow?.setTitle(`加载失败：${description} · 盛世白银`);addSystemLog('外部页面','error',`${title}加载失败`,{code,description,url})});
