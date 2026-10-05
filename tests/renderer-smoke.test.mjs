@@ -114,3 +114,14 @@ test('display identity migration preserves legacy layouts without creating unlim
   assert.doesNotMatch(renderer, /display-layout-backup:\$\{Date\.now\(\)\}/);
 });
 
+test('display reset clears detail overrides and redraws the chart', () => {
+  assert.match(renderer, /localStorage\.removeItem\(detailLayoutKey\(\)\)/);
+  assert.match(renderer, /panel\?\.style\.removeProperty\('--panel-scale'\)/);
+  assert.match(renderer, /scheduleDrawKline\(\);toast\('已清除异常尺寸并恢复当前设备推荐布局'/);
+});
+
+test('display detection failure preserves the already loaded layout', () => {
+  assert.match(renderer, /displayLayout=migrateDisplayLayout\(displayLayout\)/);
+  assert.match(renderer, /显示器信息读取失败 · 保留当前安全布局/);
+});
+
