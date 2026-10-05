@@ -184,7 +184,11 @@ const defaultAppSettings = () => ({
   windowMaximized: false,
 });
 function readAppSettings() {
-  return { ...defaultAppSettings(), ...readJson(appSettingsPath(), defaultAppSettings) };
+  const value = { ...defaultAppSettings(), ...readJson(appSettingsPath(), defaultAppSettings) };
+  value.uiScale = clampUiScale(value.uiScale);
+  value.quietStart = isValidClockTime(value.quietStart) ? value.quietStart : '';
+  value.quietEnd = isValidClockTime(value.quietEnd) ? value.quietEnd : '';
+  return value;
 }
 const writeAppSettings = value => atomicWrite(appSettingsPath(), value);
 const operationLogPath = () => path.join(app.getPath('userData'), 'operation-log.json');
@@ -197,7 +201,12 @@ function addOperationLog(module,action,before,after,restoreType=''){const rows=r
 
 const aiSettingsPath = () => path.join(app.getPath('userData'), 'ai-settings.json');
 const defaultAiSettings = () => ({ enabled: false, autoAnalyze: true, autoTimes: ['09:30','15:30'], lastAutoSlot: '', autoSlots: {}, apiKey: '', model: 'deepseek-v4-flash', resultsByMarket: {}, historyByMarket: {}, lastResult: null, lastError: '', lastRunAt: 0 });
-function readAiSettings() { return { ...defaultAiSettings(), ...readJson(aiSettingsPath(), defaultAiSettings) }; }
+function readAiSettings() {
+  const value = { ...defaultAiSettings(), ...readJson(aiSettingsPath(), defaultAiSettings) };
+  const times = Array.isArray(value.autoTimes) ? value.autoTimes.filter(isValidClockTime) : [];
+  value.autoTimes = times.length === 2 && times[0] !== times[1] ? times.sort() : ['09:30','15:30'];
+  return value;
+}
 const writeAiSettings = value => atomicWrite(aiSettingsPath(), value);
 function publicAiSettings() {
   const value = readAiSettings();
