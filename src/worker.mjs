@@ -13,7 +13,6 @@ try{
  feed=new Feed();
  newsFeed=new NewsFeed(path.join(path.dirname(process.argv[2]),'news-cache.json'));
  feed.on('quote',point=>{try{store.append(point);storageError=null}catch{storageError='历史保存失败，请检查磁盘空间。'}});
- feed.on('status',()=>{});
  let count=0,lastSnapshotSignature='',lastSnapshotSentAt=0;
  const publishSnapshot=()=>{
   const news=newsFeed.snapshot(1),data={...feed.snapshot(),count,storageError,newsStatus:news.status,newsMessage:news.message,newsCount:news.count,newsLastUpdate:news.lastUpdate};
