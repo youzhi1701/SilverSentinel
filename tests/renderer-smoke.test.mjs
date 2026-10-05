@@ -85,3 +85,16 @@ test('sound and speech use separate effective volume paths', () => {
   assert.match(html, /试听语音播报/);
   assert.match(html, /100%为原始电平，300%为3倍电平/);
 });
+
+test('live alert updates treat events as newest-first and avoid stale tail comparisons', () => {
+  assert.match(renderer, /slice\(0,3\)\.map\(e=>\[e\.id,e\.status,e\.time\]\)/);
+  assert.match(renderer, /const latest=\(value\.events\|\|\[\]\)\[0\]/);
+  assert.doesNotMatch(renderer, /slice\(-3\)\.map\(e=>\[e\.id,e\.status,e\.time\]\)/);
+});
+
+test('high-frequency market rendering is guarded by stable signatures', () => {
+  assert.match(renderer, /lastSessionSignature/);
+  assert.match(renderer, /if\(signature===lastSessionSignature\)return/);
+  assert.match(renderer, /if\(signature===lastChoiceSignature\)return/);
+});
+
