@@ -14,7 +14,13 @@ try{
  newsFeed=new NewsFeed(path.join(path.dirname(process.argv[2]),'news-cache.json'));
  feed.on('quote',point=>{try{store.append(point);storageError=null}catch{storageError='历史保存失败，请检查磁盘空间。'}});
  feed.on('status',()=>{});
- let count=0;const publishSnapshot=()=>{const news=newsFeed.snapshot(1);send({type:'snapshot',data:{...feed.snapshot(),count,storageError,newsStatus:news.status,newsMessage:news.message,newsCount:news.count,newsLastUpdate:news.lastUpdate}})};
+ let count=0,lastSnapshotSignature='',lastSnapshotSentAt=0;
+ const publishSnapshot=()=>{
+  const news=newsFeed.snapshot(1),data={...feed.snapshot(),count,storageError,newsStatus:news.status,newsMessage:news.message,newsCount:news.count,newsLastUpdate:news.lastUpdate};
+  const signature=JSON.stringify(data),now=Date.now();
+  if(signature===lastSnapshotSignature&&now-lastSnapshotSentAt<1000)return;
+  lastSnapshotSignature=signature;lastSnapshotSentAt=now;send({type:'snapshot',data});
+ };
  timer=setInterval(()=>{try{store.flush();count=store.count()}catch{storageError='历史保存失败，请检查磁盘空间。'}},5000);
  snapshotTimer=setInterval(publishSnapshot,100);
  channel.on('message',async({data:message})=>{
