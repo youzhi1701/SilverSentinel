@@ -87,8 +87,9 @@ test('sound and speech use separate effective volume paths', () => {
 });
 
 test('live alert updates treat events as newest-first and avoid stale tail comparisons', () => {
-  assert.match(renderer, /slice\(0,3\)\.map\(e=>\[e\.id,e\.status,e\.time\]\)/);
+  assert.match(renderer, /slice\(0,3\)\.map\(e=>\[e\.id,e\.status,e\.time,e\.message,e\.completedAt,\(e\.deliveryResults\|\|\[\]\)\.length\]\)/);
   assert.match(renderer, /const latest=\(value\.events\|\|\[\]\)\[0\]/);
+  assert.match(renderer, /latest&&latest\.id!==previousLatestId/);
   assert.doesNotMatch(renderer, /slice\(-3\)\.map\(e=>\[e\.id,e\.status,e\.time\]\)/);
 });
 
