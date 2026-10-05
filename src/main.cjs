@@ -69,6 +69,7 @@ let aiRunBusy = false;
 const activeNotifications = new Set();
 const lastAlertQuoteTimes = new Map();
 let hasShownBackgroundNotice = false;
+let renderCrashTimes = [];
 let lastStatus = { status: 'connecting', message: '正在启动采集', quotes: [], count: 0, lastMessage: 0 };
 const waiting = new Map();
 function openSourceWindow(url, title='融通金官方数据') {
@@ -1129,7 +1130,13 @@ if (!captureMode && !smoke && !app.requestSingleInstanceLock()) {
       if (level >= 2) console.error(`Renderer: ${message} (${source}:${line})`);
     });
     window.webContents.on('render-process-gone', (_event, details) => {
-      if (!quitting && details.reason !== 'clean-exit') window.webContents.reload();
+      if (quitting || details.reason === 'clean-exit') return;
+      const now = Date.now();
+      renderCrashTimes = renderCrashTimes.filter(time => now - time < 60000);
+      renderCrashTimes.push(now);
+      addSystemLog('界面','error','渲染进程异常退出',{reason:details.reason,exitCode:details.exitCode,recentCrashes:renderCrashTimes.length});
+      if (renderCrashTimes.length <= 3) window.webContents.reload();
+      else dialog.showErrorBox('盛世白银界面反复异常', '界面在一分钟内连续异常退出。行情后台已停止自动重载，请退出软件后重新打开。');
     });
     window.webContents.session.setPermissionRequestHandler((_contents, _permission, callback) => callback(false));
     window.webContents.on('did-finish-load', () => {
