@@ -7,6 +7,7 @@ const fs = require('node:fs');
 const { execFile } = require('node:child_process');
 const { pathToFileURL } = require('node:url');
 const { randomUUID } = require('node:crypto');
+const { clampUiScale, isValidClockTime } = require('./validation.cjs');
 
 const smoke = process.argv.includes('--smoke-test');
 const demo = process.argv.includes('--demo-ui');
@@ -33,6 +34,7 @@ const newsUrl = 'https://oem.jin10.com/rongtonggold/index.html';
 const chartIntervals = new Set(['5s', '15s', '30s', '1', '5', '15', '30', '60', '120', '240', 'day', 'week', 'month']);
 const chartSizes = new Set([120, 300, 600, 1000]);
 const retryDelays = [60000, 300000, 900000, 1800000, 3600000];
+const ALERT_UI_BROADCAST_MS = 250;
 
 let window;
 let miniWindow;
@@ -272,7 +274,7 @@ function showMainPanel(panel='market'){showWindow();if(window&&!window.isDestroy
 function applyMainZoom() {
   if (!window || window.isDestroyed()) return;
   const saved = readAppSettings();
-  const effective = saved.autoScale === false ? Math.min(2, Math.max(0.5, Number(saved.uiScale) || 1)) : 1;
+  const effective = saved.autoScale === false ? clampUiScale(saved.uiScale) : 1;
   if (Math.abs(window.webContents.getZoomFactor() - effective) < 0.001) return;
   window.webContents.setZoomFactor(effective);
   setTimeout(() => window?.webContents.executeJavaScript("window.dispatchEvent(new Event('resize'))").catch(() => {}), 50);
@@ -535,7 +537,7 @@ async function runAiAnalysis(code='JZJ_ag', automatic=false) {
   } finally { aiRunBusy=false; }
 }
 function beijingScheduleParts(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).reduce((o,p)=>(o[p.type]=p.value,o),{});return {day:`${parts.year}-${parts.month}-${parts.day}`,time:`${parts.hour}:${parts.minute}`}}
-async function checkAiSchedule(){const value=readAiSettings();if(!value.enabled||value.autoAnalyze===false||!value.apiKey||aiRunBusy)return;const {day,time}=beijingScheduleParts(),times=(Array.isArray(value.autoTimes)?value.autoTimes:[]).filter(x=>/^\d{2}:\d{2}$/.test(x)).sort(),slots=times.filter(x=>x<=time).map(x=>`${day} ${x}`),now=Date.now();const slot=slots.find(key=>{const state=value.autoSlots?.[key];return state?.status!=='success'&&Number(state?.attempts||0)<4&&Number(state?.nextRetryAt||0)<=now});if(!slot)return;try{await runAiAnalysis('JZJ_ag',slot)}catch(error){console.error('Automatic AI analysis failed:',error.message)}}
+async function checkAiSchedule(){const value=readAiSettings();if(!value.enabled||value.autoAnalyze===false||!value.apiKey||aiRunBusy)return;const {day,time}=beijingScheduleParts(),times=(Array.isArray(value.autoTimes)?value.autoTimes:[]).filter(isValidClockTime).sort(),slots=times.filter(x=>x<=time).map(x=>`${day} ${x}`),now=Date.now();const slot=slots.find(key=>{const state=value.autoSlots?.[key];return state?.status!=='success'&&Number(state?.attempts||0)<4&&Number(state?.nextRetryAt||0)<=now});if(!slot)return;try{await runAiAnalysis('JZJ_ag',slot)}catch(error){console.error('Automatic AI analysis failed:',error.message)}}
 
 function recipientsForIds(settings, ids) {
   const enabled = (settings.recipients || []).filter(item => item.enabled !== false);
@@ -703,7 +705,7 @@ function processSnapshot(data) {
   if (result.stateChanged && !result.events.length) { persistEngineState(); stateOnlyChanged = true; }
   for (const event of result.events) { addSystemLog('预警','info',`规则命中：${event.ruleName}`,{sourceTime:event.sourceTime,judgedAt:Date.now(),ruleId:event.ruleId,marketCode:event.marketCode,side:event.side}); queueAlert(event); }
   }
-  if (liveEvaluationChanged&&!alertUiBroadcastTimer)alertUiBroadcastTimer=setTimeout(()=>{alertUiBroadcastTimer=null;broadcastVisible('alerts-changed',publicAlerts())},16);
+  if (liveEvaluationChanged&&!alertUiBroadcastTimer)alertUiBroadcastTimer=setTimeout(()=>{alertUiBroadcastTimer=null;broadcastVisible('alerts-changed',publicAlerts())},ALERT_UI_BROADCAST_MS);
   else if (stateOnlyChanged) broadcast('alerts-changed', publicAlerts());
 }
 
@@ -805,7 +807,7 @@ function registerIpc() {
     value.miniAlwaysOnTop = args?.miniAlwaysOnTop !== false;
     value.rememberMiniPosition = args?.rememberMiniPosition !== false;
     value.startAtLogin = !!args?.startAtLogin;
-    value.uiScale = Math.min(2, Math.max(0.25, Number(args?.uiScale) || 1));
+    value.uiScale = clampUiScale(args?.uiScale);
     value.autoScale = args?.autoScale !== false;
     value.miniOpacity = Math.min(1, Math.max(0.7, Number(args?.miniOpacity) || 0.9));
     value.miniDensity = ['strip', 'compact', 'standard', 'expanded'].includes(args?.miniDensity) ? args.miniDensity : 'standard';
@@ -819,8 +821,8 @@ function registerIpc() {
     value.speechEnabled = args?.speechEnabled !== false;
     value.soundVolume = Number.isFinite(Number(args?.soundVolume)) ? Math.min(300, Math.max(0, Number(args.soundVolume))) : 180;
     if (Object.prototype.hasOwnProperty.call(args || {}, 'speechVolume')) value.speechVolume = Math.min(100, Math.max(0, Number(args.speechVolume)));
-    value.quietStart = /^\d{2}:\d{2}$/.test(args?.quietStart || '') ? args.quietStart : '';
-    value.quietEnd = /^\d{2}:\d{2}$/.test(args?.quietEnd || '') ? args.quietEnd : '';
+    value.quietStart = isValidClockTime(args?.quietStart) ? args.quietStart : '';
+    value.quietEnd = isValidClockTime(args?.quietEnd) ? args.quietEnd : '';
     value.miniPosition = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].includes(args?.miniPosition) ? args.miniPosition : 'top-right';
     if (!value.rememberMiniPosition) { value.miniBounds = null; value.miniBoundsByDensity = {}; }
     writeAppSettings(value);
@@ -1001,10 +1003,10 @@ function registerIpc() {
     const value = readAiSettings(),before=safeSnapshot(readAiSettings());
     value.enabled = !!args?.enabled;
     value.autoAnalyze = args?.autoAnalyze !== false;
-    value.autoTimes = [args?.autoTime1,args?.autoTime2].map(x=>clean(x,5)).filter(x=>/^\d{2}:\d{2}$/.test(x));
-    if(value.autoTimes.length!==2)value.autoTimes=['09:30','15:30'];
-    if(value.autoTimes[0]===value.autoTimes[1])throw Error('两次自动分析时间不能相同');
-    value.autoTimes.sort();
+    const requestedTimes = [args?.autoTime1,args?.autoTime2].map(x=>clean(x,5));
+    if(!requestedTimes.every(isValidClockTime)) throw Error('请输入有效的自动分析时间');
+    if(requestedTimes[0]===requestedTimes[1])throw Error('两次自动分析时间不能相同');
+    value.autoTimes = requestedTimes.sort();
     value.model = ['deepseek-flash', 'deepseek-v4-flash', 'deepseek-v4-pro'].includes(args?.model) ? (args.model === 'deepseek-flash' ? 'deepseek-v4-flash' : args.model) : 'deepseek-v4-flash';
     if (clean(args?.apiKey, 300)) value.apiKey = encryptSecret(clean(args.apiKey, 300));
     writeAiSettings(value);
@@ -1117,7 +1119,7 @@ if (!captureMode && !smoke && !app.requestSingleInstanceLock()) {
       if (!input.control || input.type !== 'keyDown' || !['+', '=', '-', '0'].includes(input.key)) return;
       event.preventDefault();
       const settings = readAppSettings();
-      settings.uiScale = input.key === '0' ? 1 : Math.min(2, Math.max(0.25, (Number(settings.uiScale) || 1) + (input.key === '-' ? -0.05 : 0.05))); settings.autoScale=false;
+      settings.uiScale = input.key === '0' ? 1 : clampUiScale((Number(settings.uiScale) || 1) + (input.key === '-' ? -0.05 : 0.05)); settings.autoScale=false;
       writeAppSettings(settings);
       applyMainZoom();
       broadcast('app-settings-changed', settings);
