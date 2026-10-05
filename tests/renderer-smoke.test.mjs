@@ -99,3 +99,10 @@ test('high-frequency market rendering is guarded by stable signatures', () => {
   assert.match(renderer, /if\(auxCodes\.join\('\|'\)!==previousAuxCodes\)localStorage\.setItem\('aux-markets'/);
 });
 
+test('detail editor uses one persisted scale model without compounding inline font sizes', () => {
+  assert.match(renderer, /function detailLayoutKey\(\)\{return `detail-layout:\$\{stableDisplayKey\|\|'fallback'\}`\}/);
+  assert.match(renderer, /panel\.style\.setProperty\('--panel-scale',next\)/);
+  assert.doesNotMatch(renderer, /style\.fontSize=`calc\(/);
+  assert.match(styles, /\.nova-market \.chart-panel>\* \{zoom:var\(--panel-scale,1\)\}/);
+});
+
