@@ -145,7 +145,7 @@ function publicSettings() {
   const value = getSettings();
   let password = '', secretError = '';
   try { password = value.password ? decryptSecret(value.password, '邮箱授权码') : ''; } catch (error) { secretError = error.message; }
-  const rules = readAlertStore().rules;
+  const rules = getAlertStore().rules;
   return {
     enabled: !!value.enabled,
     fromName: value.fromName,
