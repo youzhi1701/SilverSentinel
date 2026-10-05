@@ -459,11 +459,11 @@ api.onAlertsChanged(value=>{
   if(eventChanged){
     renderEvents();
     const latest=(value.events||[])[0];
-    if(latest&&latest.id!==previousLatestId)api.logSystemEvent({module:'K线',level:'info',message:`预警标记已接收：${latest.ruleName||'预警'}`,details:{eventTime:latest.time,receivedAt:Date.now(),ruleId:latest.ruleId}});
+    if(latest&&latest.id!==previousLatestId)api.logSystemEvent({module:'K线',level:'info',message:`预警标记已接收：${latest.ruleName||'预警'}`,details:{eventTime:latest.time,receivedAt:Date.now(),ruleId:latest.ruleId}}).catch(()=>{});
   }
   scheduleDrawKline();
 });
-api.onAppSettingsChanged(value=>{prefs=value;renderPrefs()});api.onAiSettingsChanged(value=>{ai=value;renderAi()});api.onAlertSound(playSound);api.onSpeakAlert(speak)
+api.onAppSettingsChanged(value=>{prefs=value;renderPrefs()});api.onAiSettingsChanged(value=>{ai=value;renderAi()});api.onAlertSound(value=>playSound(value).catch(error=>api.logSystemEvent?.({module:'声音',level:'warning',message:'预警声音播放失败',details:{error:userError(error)}}).catch(()=>{})));api.onSpeakAlert(speak)
 api.onAiProgress(value=>{const state=$('ai-state');state.className=`notice ${value.stage==='complete'?'good':'info'}`;state.innerHTML=`<i class="ph ${value.stage==='complete'?'ph-check-circle':'ph-circle-notch ph-spin'}"></i><span>${escapeHtml(value.message)}</span>`});
 let resizeLayoutTimer=0,lastViewportSignature='';window.addEventListener('resize',()=>{clearTimeout(resizeLayoutTimer);resizeLayoutTimer=setTimeout(()=>{const signature=`${document.documentElement.clientWidth}x${document.documentElement.clientHeight}@${devicePixelRatio||1}`;if(signature!==lastViewportSignature){lastViewportSignature=signature;applyDisplayLayout()}scheduleDrawKline()},120)});document.addEventListener('visibilitychange',()=>{if(!document.hidden){refreshStatus();refreshAlerts();refreshChart();refreshNews()}});
 Promise.all([api.mailSettings(),api.appSettings(),api.alerts(),api.aiSettings()]).then(([m,p,a,i])=>{mail=m;prefs=p;alerts=a;ai=i;renderMail();renderPrefs();renderRules();renderEvents();renderAi();renderOperationLogs();startupStep('settings',true,'本地设置已读取');if(requestedPanel==='analysis')goPage('analysis');if(requestedPanel==='settings')goPage('settings');if(requestedPanel==='mail'||requestedPanel==='logs')goPage('notifications');if(requestedPanel==='rule'){goPage('alerts');setTimeout(()=>openRule(),80)}}).catch(error=>{startupStep('settings',false,'部分设置读取失败');toast(userError(error),'bad')});
