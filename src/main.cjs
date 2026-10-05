@@ -206,14 +206,23 @@ const defaultAppSettings = () => ({
   windowBounds: null,
   windowMaximized: false,
 });
-function readAppSettings() {
-  const value = { ...defaultAppSettings(), ...readJson(appSettingsPath(), defaultAppSettings) };
-  value.uiScale = clampUiScale(value.uiScale);
-  value.quietStart = isValidClockTime(value.quietStart) ? value.quietStart : '';
-  value.quietEnd = isValidClockTime(value.quietEnd) ? value.quietEnd : '';
-  return value;
+let appSettingsCache = null;
+function normalizeAppSettings(value = {}) {
+  const next = { ...defaultAppSettings(), ...(value && typeof value === 'object' ? value : {}) };
+  next.uiScale = clampUiScale(next.uiScale);
+  next.quietStart = isValidClockTime(next.quietStart) ? next.quietStart : '';
+  next.quietEnd = isValidClockTime(next.quietEnd) ? next.quietEnd : '';
+  return next;
 }
-const writeAppSettings = value => atomicWrite(appSettingsPath(), value);
+function getAppSettings() {
+  if (!appSettingsCache) appSettingsCache = normalizeAppSettings(readJson(appSettingsPath(), defaultAppSettings));
+  return appSettingsCache;
+}
+function readAppSettings() { return cloneJson(getAppSettings()); }
+function writeAppSettings(value) {
+  appSettingsCache = normalizeAppSettings(cloneJson(value));
+  atomicWrite(appSettingsPath(), appSettingsCache);
+}
 const operationLogPath = () => path.join(app.getPath('userData'), 'operation-log.json');
 const systemLogPath = () => path.join(app.getPath('userData'), 'system-log.json');
 const safeSnapshot = value => JSON.parse(JSON.stringify(value, (key, item) => ['password','apiKey','text'].includes(key) ? undefined : item));
@@ -315,7 +324,7 @@ function showWindow() {
 function showMainPanel(panel='market'){showWindow();if(window&&!window.isDestroyed())window.webContents.send('navigate-panel',panel)}
 function applyMainZoom() {
   if (!window || window.isDestroyed()) return;
-  const saved = readAppSettings();
+  const saved = getAppSettings();
   const effective = saved.autoScale === false ? clampUiScale(saved.uiScale) : 1;
   if (Math.abs(window.webContents.getZoomFactor() - effective) < 0.001) return;
   window.webContents.setZoomFactor(effective);
