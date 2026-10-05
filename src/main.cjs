@@ -205,6 +205,10 @@ function readAiSettings() {
   const value = { ...defaultAiSettings(), ...readJson(aiSettingsPath(), defaultAiSettings) };
   const times = Array.isArray(value.autoTimes) ? value.autoTimes.filter(isValidClockTime) : [];
   value.autoTimes = times.length === 2 && times[0] !== times[1] ? times.sort() : ['09:30','15:30'];
+  const slots = value.autoSlots && typeof value.autoSlots === 'object' && !Array.isArray(value.autoSlots) ? Object.entries(value.autoSlots) : [];
+  value.autoSlots = Object.fromEntries(slots.sort((a,b)=>String(b[0]).localeCompare(String(a[0]))).slice(0,120));
+  const histories = value.historyByMarket && typeof value.historyByMarket === 'object' && !Array.isArray(value.historyByMarket) ? value.historyByMarket : {};
+  value.historyByMarket = Object.fromEntries(Object.entries(histories).map(([code,rows])=>[code,Array.isArray(rows)?rows.slice(0,50):[]]));
   return value;
 }
 const writeAiSettings = value => atomicWrite(aiSettingsPath(), value);
