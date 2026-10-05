@@ -1,4 +1,4 @@
-﻿node_modules/
+node_modules/
 release/
 release-*/
 qa/
@@ -8,3 +8,12 @@ outputs/
 .electron-cache/
 .npm-cache/
 .tools/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.dmp
+coverage/
+.DS_Store
+Thumbs.db
