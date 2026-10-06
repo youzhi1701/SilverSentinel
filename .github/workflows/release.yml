@@ -28,6 +28,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Ensure Electron runtime
+        shell: pwsh
+        run: |
+          if (!(Test-Path "node_modules/electron/dist/electron.exe")) {
+            node node_modules/electron/install.js
+          }
+          if (!(Test-Path "node_modules/electron/dist/electron.exe")) {
+            throw "Electron runtime was not downloaded"
+          }
+
       - name: Run checks
         run: npm run check
 
