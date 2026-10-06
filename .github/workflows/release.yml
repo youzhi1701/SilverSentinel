@@ -42,7 +42,7 @@ jobs:
         run: npm run check
 
       - name: Build Windows installer and portable edition
-        run: npx electron-builder --win nsis portable --x64
+        run: npx electron-builder --win nsis portable --x64 --publish never
 
       - name: Verify artifacts
         shell: pwsh
