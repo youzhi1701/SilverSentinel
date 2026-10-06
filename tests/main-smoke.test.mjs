@@ -15,9 +15,9 @@ test('live alert UI broadcasting is throttled away from per-frame writes', () =>
 });
 
 test('persisted app settings are normalized before use', () => {
-  assert.match(main, /value\.uiScale = clampUiScale\(value\.uiScale\)/);
-  assert.match(main, /isValidClockTime\(value\.quietStart\)/);
-  assert.match(main, /isValidClockTime\(value\.quietEnd\)/);
+  assert.match(main, /next\.uiScale = clampUiScale\(next\.uiScale\)/);
+  assert.match(main, /isValidClockTime\(next\.quietStart\)/);
+  assert.match(main, /isValidClockTime\(next\.quietEnd\)/);
 });
 
 test('embedded official pages cannot navigate the app window to arbitrary hosts', () => {
