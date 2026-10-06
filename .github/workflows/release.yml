@@ -1,0 +1,61 @@
+name: Windows Release
+
+on:
+  push:
+    paths:
+      - ".release-trigger"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: silversentinel-release
+  cancel-in-progress: false
+
+jobs:
+  build-release:
+    if: startsWith(github.event.head_commit.message, 'release:')
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run checks
+        run: npm run check
+
+      - name: Build Windows installer and portable edition
+        run: npx electron-builder --win nsis portable --x64
+
+      - name: Verify artifacts
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem "release-1.2.0-floating-rebuild" -Filter "*.exe"
+          if ($files.Count -lt 2) { throw "Expected installer and portable EXE" }
+          $files | ForEach-Object { Write-Host $_.FullName }
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: SilverSentinel-v1.2.0-Windows
+          path: release-1.2.0-floating-rebuild/*.exe
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.2.0
+          name: SilverSentinel v1.2.0
+          target_commitish: ${{ github.sha }}
+          draft: false
+          prerelease: false
+          make_latest: true
+          generate_release_notes: true
+          files: release-1.2.0-floating-rebuild/*.exe
